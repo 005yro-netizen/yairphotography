@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>צילום אריאל רבינסקי | Ariel Ravinsky Photography</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <img src="images/your-image-file.jpg" alt="תמונה ראשית" class="main-photo" style="display:block;margin:32px auto;border-radius:12px;max-width:600px;box-shadow:0 2px 8px rgba(0,0,0,0.1);" />
+    <header class="header">
+        <div class="logo"><img src="logo.png" alt="Logo" /></div>
+        <nav class="nav">
+            <ul>
+                <li><a href="#home">בית</a></li>
+                <li><a href="#gallery">גלריה</a></li>
+                <li><a href="#contact">צור קשר</a></li>
+            </ul>
+        </nav>
+        <div class="lang-switch">
+            <button id="hebrew-btn" title="עברית"><img src="israel-flag.png" alt="עברית" /></button>
+            <button id="english-btn" title="English"><img src="usa-flag.png" alt="English" /></button>
+        </div>
+    </header>
+    <section class="hero">
+        <img src="background.jpg" alt="Hero" class="hero-img" />
+    </section>
+    <main>
+        <section class="picture-section">
+        </section>
+        <section class="text-section">
+            <h2>ברוכים הבאים לצילום אריאל רבינסקי</h2>
+            <p>הוסיפו כאן טקסט על השירותים שלכם, גלריה, או כל מידע שתרצו.</p>
+        </section>
+        <section class="contact-section" id="contact">
+            <h2>צור קשר</h2>
+            <div class="contact-info">
+                <p>טלפון: <a href="tel:077-9975535">077-9975535</a></p>
+                <p>וואטסאפ: <a href="https://wa.me/+9720543303368" target="_blank">054-3303368</a></p>
+                <p>אימייל: <a href="mailto:a5864272@gmail.com">a5864272@gmail.com</a></p>
+            </div>
+            <form class="contact-form">
+                <input type="text" name="name" placeholder="שם" required />
+                <input type="tel" name="phone" placeholder="טלפון" required />
+                <textarea name="message" placeholder="הודעה" required></textarea>
+                <button type="submit">שלח</button>
+            </form>
+        </section>
+    </main>
+    <footer class="footer">
+        <p>&copy; 2025 צילום אריאל רבינסקי. כל הזכויות שמורות.</p>
+    </footer>
+    <a href="https://wa.me/+9720543303368" class="whatsapp-float" target="_blank" title="שלח הודעה בוואטסאפ">
+        <img src="whatsapp.png" alt="WhatsApp" />
+    </a>
+    <script src="lang-switch.js"></script>
+</body>
+</html>
