@@ -40,8 +40,20 @@
 <!-- Main content -->
 <main class="page-wrap">
 
+  <!-- Intro text above galleries -->
+  <!-- <section class="home-intro" aria-labelledby="intro-title">
+    <div class="home-intro-box">
+      <div class="home-intro-name">���� �������</div>
+      <h2 id="intro-title" class="home-intro-title">��� �������, ������ ����</h2>
+      <div class="cta">
+        <a class="btn" href="#contact">��� ���</a>
+      </div>
+    </div>
+  </section> -->
+
   <!-- Hero Section -->
     <section class="hero" aria-labelledby="hero-title">
+      <h2 id="hero-title" class="visually-hidden">Hero</h2>
     <div class="marquee-hero" aria-label="סרט נע של תמונות בית">
       <div class="marquee-track">
         <div class="marquee-group">
@@ -63,10 +75,10 @@
   </section>
 
   <!-- Intro text above galleries -->
-  <section class="home-intro" aria-labelledby="intro-title">
+  <section class="home-intro" aria-labelledby="intro-title-2">
     <div class="home-intro-box">
       <div class="home-intro-name">יאיר רוזנברג</div>
-      <h2 id="intro-title" class="home-intro-title">צלם אירועים, טיולים ונוף</h2>
+      <h2 id="intro-title-2" class="home-intro-title">צלם אירועים, טיולים ונוף</h2>
       <div class="cta">
         <a class="btn" href="#contact">צור קשר</a>
       </div>
@@ -368,15 +380,10 @@
           const labelEl = card.querySelector(".stat-label");
           if (labelEl) labelEl.textContent = cfg.label;
           if (numberEl) {
-  numberEl.setAttribute("data-target", String(cfg.value));
-  numberEl.setAttribute("data-suffix", cfg.suffix || "");
-  numberEl.textContent = format(cfg.value) + (cfg.suffix || "");
-} else {
-    numberEl.setAttribute("data-target", String(cfg.value));
-    numberEl.setAttribute("data-suffix", cfg.suffix || "");
-    numberEl.textContent = format(cfg.value) + (cfg.suffix || "");
-  }
-}
+            numberEl.setAttribute("data-target", String(cfg.value));
+            numberEl.setAttribute("data-suffix", cfg.suffix || "");
+            numberEl.textContent = format(cfg.value) + (cfg.suffix || "");
+          }
         });
 
         // הופעה עדינה + Counter-Up כשגלוי
