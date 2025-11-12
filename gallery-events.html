@@ -1,0 +1,492 @@
+﻿<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>גלריית אירועים - צילומי חוץ / בר מצווה / בר מצווה בכותל / ברית</title>
+  <meta name="description" content="גלריית האירועים של יאיר רוזנברג: צילומי חוץ, בר מצווה, בר מצווה בכותל וברית." />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .header .nav a[href="index.html#faq"]::before { content: "שאלות נפוצות"; }
+  </style>
+  <style>
+    /* Prevent extra zoom while in lightbox (allow fullscreen only) */
+    .lightbox { touch-action: none; overscroll-behavior: contain; }
+    .lightbox .lightbox-img { pointer-events: none; max-width: 100%; max-height: 100%; user-select: none; }
+  </style>
+</head>
+<body class="page-events">
+
+<header class="header">
+  <div class="header-inner">
+    <div class="logo"><a href="index.html" style="color:#fff; text-decoration:none;">Yair Rozenberg</a></div>
+    <nav class="nav" id="navMenu" aria-label="תפריט ראשי">
+      <ul>
+        <li><a href="index.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"/></svg> בית</a></li>
+        <li><a class="active" href="index.html#gallery"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M15 12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h1.172a3 3 0 0 0 2.12-.879l.83-.828A1 1 0 0 1 6.827 3h2.344a1 1 0 0 1 .707.293l.828.828A3 3 0 0 0 12.828 5H14a1 1 0 0 1 1 1zM2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4z"/><path d="M8 11a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5m0 1a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7M3 6.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0"/></svg> גלריה</a></li>
+        <li><a href="about.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/></svg> אודות</a></li>
+        <li><a href="contact.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/></svg> צור קשר</a></li>
+        <li><a href="index.html#faq"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14z"/><path d="M5.255 5.786a.237.237 0 0 1 .241-.247h.825c.138 0 .24.113.223.25-.007.053-.032.107-.077.154C6.936 6.5 6.474 6.936 6.474 7.5v.086c0 .102.028.2.08.287.05.086.13.15.225.18.695.212 1.086.726 1.086 1.16 0 .66-.526 1.26-1.503 1.26-.793 0-1.22-.346-1.22-.775 0-.237.07-.457.2-.638.143-.196.328-.35.547-.456.118-.055.255-.084.393-.084h.761c.138 0 .246.113.246.25 0 .136-.11.25-.246.25h-.761c-.196 0-.358.14-.358.31 0 .117.12.212.353.212.474 0 .801-.21.801-.582 0-.215-.179-.456-.53-.56-.28-.08-.324-.177-.324-.28 0-.21.192-.414.468-.6.76-.52 1.272-1.004 1.272-1.73 0-1.07-.888-1.893-2.199-1.893-1.18 0-2.24.64-2.285 1.786-.002.057.046.106.105.106h.87zM8 13a.905.905 0 1 1 0-1.81.905.905 0 0 1 0 1.81z"/></svg> שאלות נפוצות</a></li>
+      </ul>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="פתח תפריט">&#9776;</button>
+  </div>
+</header>
+<div class="overlay" id="overlay"></div>
+
+<main class="container page">
+  <nav class="breadcrumbs" aria-label="פירורי לחם">
+    <a href="index.html">בית</a> &gt; <a href="index.html#gallery">גלריה</a> &gt; <span aria-current="page">אירועים</span>
+  </nav>
+
+  <header class="page-header">
+    <h1>גלריית אירועים</h1>
+  </header>
+
+  <!-- Tabs for sub-categories -->
+  <ul class="tabs" role="tablist">
+    <li><button class="tab active" id="tab-outdoor" role="tab" aria-selected="true" data-target="outdoor">צילומי חוץ</button></li>
+    <li><button class="tab" id="tab-barmitzvah" role="tab" aria-selected="false" data-target="barmitzvah">בר מצווה</button></li>
+    <li><button class="tab" id="tab-bm-kotel" role="tab" aria-selected="false" data-target="bm-kotel">בר מצווה בכותל</button></li>
+    <li><button class="tab" id="tab-brit" role="tab" aria-selected="false" data-target="brit">ברית</button></li>
+  </ul>
+
+  <!-- צילומי חוץ Gallery (39) -->
+  <section id="outdoor" class="tab-panel active" role="tabpanel" aria-labelledby="tab-outdoor">
+    <figure class="gallery-hero">
+      <img src="images/bar-mitzvah-jerusalem1.JPG" alt="צילומי חוץ 1" />
+    </figure>
+    <p>
+      צילומי חוץ מלאים באור טבעי, תנועה ושמחה. אני מוביל אתכם למיקומים יפים ונגישים,
+      דואג לאווירה קלילה ונעימה ומדגיש את הקשר והחיוך הטבעי שלכם. התמונות יספרו את הסיפור שלכם –
+      בדיוק כפי שאתם, באותנטיות ובסטייל.
+    </p>
+    <div class="gallery-grid">
+      <img src="images/bar-mitzvah-jerusalem2.JPG" alt="צילומי חוץ 2">
+      <img src="images/bar-mitzvah-jerusalem3.JPG" alt="צילומי חוץ 3">
+      <img src="images/bar-mitzvah-jerusalem4.JPG" alt="צילומי חוץ 4">
+      <img src="images/bar-mitzvah-jerusalem5.JPG" alt="צילומי חוץ 5">
+      <img src="images/bar-mitzvah-jerusalem6.jpg" alt="צילומי חוץ 6">
+      <img src="images/bar-mitzvah-jerusalem7.jpg" alt="צילומי חוץ 7">
+      <img src="images/bar-mitzvah-jerusalem8.jpg" alt="צילומי חוץ 8">
+      <img src="images/bar-mitzvah-jerusalem9.jpg" alt="צילומי חוץ 9">
+      <img src="images/bar-mitzvah-jerusalem10.jpg" alt="צילומי חוץ 10">
+      <img src="images/bar-mitzvah-jerusalem11.jpg" alt="צילומי חוץ 11">
+      <img src="images/bar-mitzvah-jerusalem12.jpg" alt="צילומי חוץ 12">
+      <img src="images/bar-mitzvah-jerusalem13.jpg" alt="צילומי חוץ 13">
+      <img src="images/bar-mitzvah-jerusalem14.jpg" alt="צילומי חוץ 14">
+      <img src="images/bar-mitzvah-jerusalem15.jpg" alt="צילומי חוץ 15">
+      <img src="images/bar-mitzvah-jerusalem16.jpg" alt="צילומי חוץ 16">
+      <img src="images/bar-mitzvah-jerusalem17.jpg" alt="צילומי חוץ 17">
+      <img src="images/bar-mitzvah-jerusalem18.jpg" alt="צילומי חוץ 18">
+      <img src="images/bar-mitzvah-jerusalem19.jpg" alt="צילומי חוץ 19">
+      <img src="images/bar-mitzvah-jerusalem20.jpg" alt="צילומי חוץ 20">
+      <img src="images/bar-mitzvah-jerusalem21.jpg" alt="צילומי חוץ 21">
+      <img src="images/bar-mitzvah-jerusalem22.jpg" alt="צילומי חוץ 22">
+      <img src="images/bar-mitzvah-jerusalem23.jpg" alt="צילומי חוץ 23">
+      <img src="images/bar-mitzvah-jerusalem24.jpg" alt="צילומי חוץ 24">
+      <img src="images/bar-mitzvah-jerusalem25.jpg" alt="צילומי חוץ 25">
+      <img src="images/bar-mitzvah-jerusalem26.jpg" alt="צילומי חוץ 26">
+      <img src="images/bar-mitzvah-jerusalem27.jpg" alt="צילומי חוץ 27">
+      <img src="images/bar-mitzvah-jerusalem28.jpg" alt="צילומי חוץ 28">
+      <img src="images/bar-mitzvah-jerusalem29.jpg" alt="צילומי חוץ 29">
+      <img src="images/bar-mitzvah-jerusalem30.jpg" alt="צילומי חוץ 30">
+      <img src="images/bar-mitzvah-jerusalem31.jpg" alt="צילומי חוץ 31">
+      <img src="images/bar-mitzvah-jerusalem32.jpg" alt="צילומי חוץ 32">
+      <img src="images/bar-mitzvah-jerusalem33.jpg" alt="צילומי חוץ 33">
+      <img src="images/bar-mitzvah-jerusalem34.jpg" alt="צילומי חוץ 34">
+      <img src="images/bar-mitzvah-jerusalem35.jpg" alt="צילומי חוץ 35">
+      <img src="images/bar-mitzvah-jerusalem36.jpg" alt="צילומי חוץ 36">
+      <img src="images/bar-mitzvah-jerusalem37.jpg" alt="צילומי חוץ 37">
+      <img src="images/bar-mitzvah-jerusalem38.jpg" alt="צילומי חוץ 38">
+      <img src="images/bar-mitzvah-jerusalem39.jpg" alt="צילומי חוץ 39">
+    </div>
+  </section>
+
+  <!-- בר מצווה Gallery (21) -->
+  <section id="barmitzvah" class="tab-panel" role="tabpanel" aria-labelledby="tab-barmitzvah">
+    <figure class="gallery-hero">
+      <img src="images/barmitzvah1.jpg" alt="בר מצווה 1" />
+    </figure>
+    <p>
+      בר מצווה הוא רגע של התרגשות גדולה. אני מתמקד ברגעים האמיתיים – החיבוק של ההורים,
+      החברים שמלווים, החיוך הגאה והפרטים הקטנים שמרכיבים זיכרון גדול. יחד ניצור אלבום מרגש
+      ומכובד שישאר אתכם לשנים קדימה.
+    </p>
+    <div class="gallery-grid">
+      <img src="images/barmitzvah2.JPG" alt="צילומים בר מצווה 2">
+      <img src="images/barmitzvah3.jpg" alt="צילומים בר מצווה 3">
+      <img src="images/barmitzvah4.jpg" alt="צילומים בר מצווה 4">
+      <img src="images/barmitzvah5.jpg" alt="צילומים בר מצווה 5">
+      <img src="images/barmitzvah6.jpg" alt="צילומים בר מצווה 6">
+      <img src="images/barmitzvah7.jpg" alt="צילומים בר מצווה 7">
+      <img src="images/barmitzvah8.jpg" alt="צילומים בר מצווה 8">
+      <img src="images/barmitzvah9.jpg" alt="צילומים בר מצווה 9">
+      <img src="images/barmitzvah10.jpg" alt="צילומים בר מצווה 10">
+      <img src="images/barmitzvah11.jpg" alt="צילומים בר מצווה 11">
+      <img src="images/barmitzvah12.jpg" alt="צילומים בר מצווה 12">
+      <img src="images/barmitzvah13.jpg" alt="צילומים בר מצווה 13">
+      <img src="images/barmitzvah14.jpg" alt="צילומים בר מצווה 14">
+      <img src="images/barmitzvah15.jpg" alt="צילומים בר מצווה 15">
+      <img src="images/barmitzvah16.jpg" alt="צילומים בר מצווה 16">
+      <img src="images/barmitzvah17.jpg" alt="צילומים בר מצווה 17">
+      <img src="images/barmitzvah18.jpg" alt="צילומים בר מצווה 18">
+      <img src="images/barmitzvah19.jpg" alt="צילומים בר מצווה 19">
+      <img src="images/barmitzvah20.jpg" alt="צילומים בר מצווה 20">
+      <img src="images/barmitzvah21.jpg" alt="צילומים בר מצווה 21">
+    </div>
+  </section>
+
+  <!-- בר מצווה בכותל Gallery (uses existing images only) -->
+  <section id="bm-kotel" class="tab-panel" role="tabpanel" aria-labelledby="tab-bm-kotel">
+    <figure class="gallery-hero">
+      <img src="images/bar-mitzvah-kotel1.jpg" alt="בר מצווה בכותל 1" />
+    </figure>
+    <p>
+      בר מצווה בכותל היא חוויה עוצמתית ומרגשת בלב ירושלים. האוויר הירושלמי, שירת המתפללים,
+      התופים והשופרות – יוצרים רקע חד־פעמי שמעצים כל רגע. אני מלווה אתכם לכל אורך היום:
+      מההגעה וההתארגנות, דרך הבידוק והמעבר בשערים ועד הטקס עצמו והריקודים שאחריו. היכרות עמוקה
+      עם הזרימה, עם המקומות המוצלים והרקעים היפים מאפשרת לי לתזמן נכון, להרגיע את הקצב כשצריך
+      ולדאוג שתוכלו ליהנות מהחוויה בלי דאגות. תיעוד מקצועי של היום הזה חשוב במיוחד – זהו זיכרון
+      משפחתי של אמונה, שייכות ואהבה. נבנה יחד מסלול קצר ונוח, נבחר נקודות צילום ירושלמיות אותנטיות
+      ונשלב צילומי משפחה מסודרים לצד רגעים ספונטניים, כך שהסיפור של היום יישאר אתכם לשנים קדימה.
+    </p>
+    <div class="gallery-grid">
+      <img loading="lazy" src="images/bar-mitzvah-kotel2.jpg" alt="בר מצווה בכותל 2">
+      <img loading="lazy" src="images/bar-mitzvah-kotel3.jpg" alt="בר מצווה בכותל 3">
+      <img loading="lazy" src="images/bar-mitzvah-kotel4.jpg" alt="בר מצווה בכותל 4">
+      <img loading="lazy" src="images/bar-mitzvah-kotel5.jpg" alt="בר מצווה בכותל 5">
+      <img loading="lazy" src="images/bar-mitzvah-kotel6.jpg" alt="בר מצווה בכותל 6">
+      <img loading="lazy" src="images/bar-mitzvah-kotel7.jpg" alt="בר מצווה בכותל 7">
+      <img loading="lazy" src="images/bar-mitzvah-kotel8.jpg" alt="בר מצווה בכותל 8">
+      <img loading="lazy" src="images/bar-mitzvah-kotel9.jpg" alt="בר מצווה בכותל 9">
+      <img loading="lazy" src="images/bar-mitzvah-kotel10.jpg" alt="בר מצווה בכותל 10">
+      <img loading="lazy" src="images/bar-mitzvah-kotel11.jpg" alt="בר מצווה בכותל 11">
+      <img loading="lazy" src="images/bar-mitzvah-kotel12.jpg" alt="בר מצווה בכותל 12">
+      <img loading="lazy" src="images/bar-mitzvah-kotel13.jpg" alt="בר מצווה בכותל 13">
+      <img loading="lazy" src="images/bar-mitzvah-kotel14.jpg" alt="בר מצווה בכותל 14">
+      <img loading="lazy" src="images/bar-mitzvah-kotel15.jpg" alt="בר מצווה בכותל 15">
+      <img loading="lazy" src="images/bar-mitzvah-kotel16.jpg" alt="בר מצווה בכותל 16">
+      <img loading="lazy" src="images/bar-mitzvah-kotel17.jpg" alt="בר מצווה בכותל 17">
+      <img loading="lazy" src="images/bar-mitzvah-kotel18.jpg" alt="בר מצווה בכותל 18">
+      <img loading="lazy" src="images/bar-mitzvah-kotel19.jpg" alt="בר מצווה בכותל 19">
+      <img loading="lazy" src="images/bar-mitzvah-kotel20.jpg" alt="בר מצווה בכותל 20">
+      <img loading="lazy" src="images/bar-mitzvah-kotel21.jpg" alt="בר מצווה בכותל 21">
+    </div>
+  </section>
+
+  <!-- ברית Gallery (21) -->
+  <section id="brit" class="tab-panel" role="tabpanel" aria-labelledby="tab-brit">
+    <figure class="gallery-hero">
+      <img src="images/brit1.jpg" alt="ברית 1" />
+    </figure>
+    <p>
+      צילום ברית מצריך רגישות, מהירות ודיוק. אני מתמקד ברגעים האינטימיים והמרגשים –
+      קבלת התינוק, הברכות, החיוכים של המשפחה – ומדגיש אור רך ונקי. התוצאה: תיעוד נעים,
+      מכבד ומלא שמחה של יום גדול לקטנטן.
+    </p>
+    <div class="gallery-grid">
+      <img src="images/brit2.jpg" alt="ברית 2">
+      <img src="images/brit3.jpg" alt="ברית 3">
+      <img src="images/brit4.jpg" alt="ברית 4">
+      <img src="images/brit5.jpg" alt="ברית 5">
+      <img src="images/brit6.jpg" alt="ברית 6">
+      <img src="images/brit7.jpg" alt="ברית 7">
+      <img src="images/brit8.jpg" alt="ברית 8">
+      <img src="images/brit9.jpg" alt="ברית 9">
+      <img src="images/brit10.jpg" alt="ברית 10">
+      <img src="images/brit11.jpg" alt="ברית 11">
+      <img src="images/brit12.jpg" alt="ברית 12">
+      <img src="images/brit13.jpg" alt="ברית 13">
+      <img src="images/brit14.jpg" alt="ברית 14">
+      <img src="images/brit15.jpg" alt="ברית 15">
+      <img src="images/brit16.jpg" alt="ברית 16">
+      <img src="images/brit17.jpg" alt="ברית 17">
+      <img src="images/brit18.jpg" alt="ברית 18">
+      <img src="images/brit19.jpg" alt="ברית 19">
+      <img src="images/brit20.jpg" alt="ברית 20">
+      <img src="images/brit21.jpg" alt="ברית 21">
+      <img src="images/brit22.jpg" alt="ברית 22">
+      <img src="images/brit23.jpg" alt="ברית 23">
+      <img src="images/brit24.jpg" alt="ברית 24">
+      <img src="images/brit25.jpg" alt="ברית 25">
+      <img src="images/brit26.jpg" alt="ברית 26">
+      <img src="images/brit27.jpg" alt="ברית 27">
+      <img src="images/brit28.jpg" alt="ברית 28">
+      <img src="images/brit29.jpg" alt="ברית 29">
+      <img src="images/brit30.jpg" alt="ברית 30">
+      <!-- הוסף עוד תמונות כשזמינות -->
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <p>&copy; 2025 יאיר רוזנברג. כל הזכויות שמורות.</p>
+</footer>
+
+<!-- Lightbox for gallery images -->
+<div id="lightbox" class="lightbox" aria-hidden="true">
+  <span class="close" aria-label="סגור גלריה">&times;</span>
+  <button class="fullscreen-toggle" type="button" aria-label="מסך מלא" aria-pressed="false" data-fullscreen="false">
+    <svg class="icon-enter" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4H4v3m0-3 5 5M17 4h3v3m0-3-5 5M7 20H4v-3m0 3 5-5M17 20h3v-3m0 3-5-5"/>
+    </svg>
+    <svg class="icon-exit" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 9H5V5h4m6 0h4v4h-4M9 15H5v4h4m6 0h4v-4h-4"/>
+    </svg>
+  </button>
+  <img class="lightbox-img" src="" alt="" />
+  <a class="prev" aria-label="התמונה הקודמת">&#10094;</a>
+  <a class="next" aria-label="התמונה הבאה">&#10095;</a>
+</div>
+
+<!-- Tabs logic + menu + lightbox -->
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navMenu = document.getElementById('navMenu');
+  const overlay = document.getElementById('overlay');
+
+  function toggleMenu(open) {
+    if (window.innerWidth > 900) return;
+    navMenu.classList.toggle('open', open);
+    overlay.classList.toggle('show', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
+
+  if (hamburger) hamburger.addEventListener('click', () => toggleMenu(!navMenu.classList.contains('open')));
+  if (overlay) overlay.addEventListener('click', () => toggleMenu(false));
+  document.querySelectorAll('#navMenu a').forEach(a => a.addEventListener('click', () => toggleMenu(false)));
+
+  // Tabs + Lightbox
+  document.addEventListener('DOMContentLoaded', function() {
+    // Tabs
+    const tabButtons = Array.from(document.querySelectorAll('.tab'));
+    const tabPanels = Array.from(document.querySelectorAll('.tab-panel'));
+
+    const activateTab = (tab) => {
+      const targetId = tab.dataset.target;
+      tabButtons.forEach((btn) => {
+        const isActive = btn === tab;
+        btn.classList.toggle('active', isActive);
+        btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+      });
+      tabPanels.forEach((panel) => {
+        const isActive = panel.id === targetId;
+        panel.classList.toggle('active', isActive);
+        panel.setAttribute('aria-hidden', isActive ? 'false' : 'true');
+        panel.toggleAttribute('hidden', !isActive);
+      });
+    };
+
+    tabButtons.forEach((tab) => tab.addEventListener('click', () => activateTab(tab)));
+    if (tabButtons.length) activateTab(tabButtons.find(t => t.classList.contains('active')) || tabButtons[0]);
+
+    // Fallback for missing Kotel images: show placeholder instead of broken image
+    (function initKotelPlaceholders() {
+      const placeholderSVG = `
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
+          <defs>
+            <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#0f172a"/>
+              <stop offset="100%" stop-color="#334155"/>
+            </linearGradient>
+          </defs>
+          <rect width="1200" height="800" fill="url(#g)"/>
+          <g fill="#e2e8f0" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">
+            <text x="600" y="400" font-size="64">{TEXT}</text>
+            <text x="600" y="460" font-size="28" fill="#94a3b8">תמונה תוצג כאן כשהקובץ יתווסף</text>
+          </g>
+        </svg>`;
+      const imgs = Array.from(document.querySelectorAll('#bm-kotel .gallery-grid img'));
+      imgs.forEach(img => {
+        img.addEventListener('error', () => {
+          // Try alternate case for extension once (.jpg <-> .JPG)
+          if (!img.dataset.triedCaseSwitch) {
+            img.dataset.triedCaseSwitch = 'true';
+            const s = img.getAttribute('src') || '';
+            if (s.toLowerCase().endsWith('.jpg')) {
+              img.src = s.slice(0, -4) + (s.endsWith('.jpg') ? '.JPG' : '.jpg');
+              return;
+            }
+          }
+          // Fallback placeholder
+          if (img.dataset.fallbackApplied === 'true') return;
+          img.dataset.fallbackApplied = 'true';
+          const label = img.getAttribute('alt') || 'בקרוב';
+          const svg = placeholderSVG.replace('{TEXT}', label);
+          img.src = 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(svg);
+          img.classList.add('placeholder');
+        });
+      });
+    })();
+
+    // Lightbox
+    const lightbox = document.getElementById('lightbox');
+    let lightboxImg = lightbox.querySelector('.lightbox-img');
+    const closeBtn = lightbox.querySelector('.close');
+    const prevBtn = lightbox.querySelector('.prev');
+    const nextBtn = lightbox.querySelector('.next');
+    const fullscreenBtn = lightbox.querySelector('.fullscreen-toggle');
+
+    const isFullscreenActive = () => (
+      document.fullscreenElement === lightbox ||
+      document.webkitFullscreenElement === lightbox ||
+      document.mozFullScreenElement === lightbox ||
+      document.msFullscreenElement === lightbox
+    );
+
+    const requestLightboxFullscreen = () => {
+      if (lightbox.requestFullscreen) return lightbox.requestFullscreen();
+      if (lightbox.webkitRequestFullscreen) return lightbox.webkitRequestFullscreen();
+      if (lightbox.mozRequestFullScreen) return lightbox.mozRequestFullScreen();
+      if (lightbox.msRequestFullscreen) return lightbox.msRequestFullscreen();
+      return null;
+    };
+
+    const exitLightboxFullscreen = () => {
+      if (document.exitFullscreen) return document.exitFullscreen();
+      if (document.webkitExitFullscreen) return document.webkitExitFullscreen();
+      if (document.mozCancelFullScreen) return document.mozCancelFullScreen();
+      if (document.msExitFullscreen) return document.msExitFullscreen();
+      return null;
+    };
+
+    const syncFullscreenState = () => {
+      if (!fullscreenBtn) return;
+      const active = isFullscreenActive();
+      fullscreenBtn.dataset.fullscreen = active ? 'true' : 'false';
+      fullscreenBtn.setAttribute('aria-pressed', active ? 'true' : 'false');
+      fullscreenBtn.setAttribute('aria-label', active ? 'יציאה ממסך מלא' : 'מסך מלא');
+      lightbox.classList.toggle('fullscreen-active', active);
+    };
+
+    // Active image list for the current panel (includes hero as first item)
+    let images = [];
+    let currentIndex = 0;
+
+    function setActiveImagesForPanel(panel) {
+      const gridImgs = Array.from(panel.querySelectorAll('.gallery-grid img'));
+      const hero = panel.querySelector('.gallery-hero img');
+      images = hero ? [hero, ...gridImgs] : gridImgs;
+    }
+
+    const openLightbox = (index) => {
+      currentIndex = index;
+      showImage();
+      lightbox.classList.add('open');
+      lightbox.setAttribute('aria-hidden', 'false');
+      // Default: open without fullscreen; user may enable fullscreen via the toggle
+      syncFullscreenState();
+    };
+
+    const closeLightbox = () => {
+      if (isFullscreenActive()) exitLightboxFullscreen();
+      lightbox.classList.remove('open');
+      lightbox.setAttribute('aria-hidden', 'true');
+      syncFullscreenState();
+    };
+
+    const shiftImage = (direction) => {
+      const delta = direction === 'next' ? 1 : -1;
+      currentIndex = (currentIndex + delta + images.length) % images.length;
+      showImage(direction);
+    };
+
+    // Clicking on any grid image opens lightbox within its panel (hero included as index 0)
+    document.querySelectorAll('.gallery-grid img').forEach((img) => {
+      img.addEventListener('click', () => {
+        const panel = img.closest('.tab-panel');
+        if (!panel) return;
+        setActiveImagesForPanel(panel);
+        const index = images.indexOf(img);
+        if (index >= 0) openLightbox(index);
+      });
+    });
+    
+    // Make every gallery hero image open the lightbox on that panel's hero (index 0)
+    document.querySelectorAll('.tab-panel').forEach((panel) => {
+      const heroImg = panel.querySelector('.gallery-hero img');
+      if (heroImg) {
+        heroImg.style.cursor = 'pointer';
+        heroImg.addEventListener('click', () => {
+          setActiveImagesForPanel(panel);
+          openLightbox(0);
+        });
+      }
+    });
+    closeBtn.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+    prevBtn.addEventListener('click', () => shiftImage('prev'));
+    nextBtn.addEventListener('click', () => shiftImage('next'));
+
+    if (fullscreenBtn) {
+      fullscreenBtn.addEventListener('click', () => {
+        if (isFullscreenActive()) {
+          exitLightboxFullscreen();
+        } else {
+          const req = requestLightboxFullscreen();
+          if (req && typeof req.then === 'function') req.catch(() => {});
+        }
+      });
+    }
+
+    ['fullscreenchange','webkitfullscreenchange','mozfullscreenchange','MSFullscreenChange']
+      .forEach((eventName) => document.addEventListener(eventName, syncFullscreenState));
+
+    window.addEventListener('keydown', (e) => {
+      if (!lightbox.classList.contains('open')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') prevBtn.click();
+      if (e.key === 'ArrowRight') nextBtn.click();
+    });
+
+    function showImage(direction) {
+      const targetImage = images[currentIndex];
+      if (!lightbox.classList.contains('open') || !direction) {
+        lightboxImg.src = targetImage.src;
+        lightboxImg.alt = targetImage.alt;
+        return;
+      }
+
+      const newImg = document.createElement('img');
+      newImg.className = 'lightbox-img';
+      newImg.src = targetImage.src;
+      newImg.alt = targetImage.alt;
+      newImg.style.position = 'absolute';
+      newImg.style.top = '50%';
+      newImg.style.left = '50%';
+      newImg.style.opacity = '0';
+      newImg.style.transition = 'transform 0.6s ease, opacity 0.6s ease';
+
+      const enterX = direction === 'next' ? '150%' : '-250%';
+      const exitX = direction === 'next' ? '-250%' : '150%';
+      newImg.style.transform = 'translate(' + enterX + ', -50%)';
+
+      lightbox.appendChild(newImg);
+
+      lightboxImg.style.transition = 'transform 0.6s ease, opacity 0.6s ease';
+      lightboxImg.style.position = 'absolute';
+
+      requestAnimationFrame(() => {
+        lightboxImg.style.transform = 'translate(' + exitX + ', -50%)';
+        lightboxImg.style.opacity = '0';
+        newImg.style.transform = 'translate(-50%, -50%)';
+        newImg.style.opacity = '1';
+      });
+
+      setTimeout(() => {
+        lightbox.removeChild(lightboxImg);
+        lightboxImg = newImg;
+      }, 600);
+    }
+  });
+</script>
+
+</body>
+</html>
+
+
+
+
+
+

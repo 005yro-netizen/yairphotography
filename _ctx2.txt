@@ -1,0 +1,54 @@
+ 147:   <section id="bm-kotel" class="tab-panel" hidden aria-hidden="true" role="tabpanel" aria-labelledby="tab-bm-kotel">
+ 148:     <div class="gallery-grid">
+ 149:       <img src="images/bar-mitzvah-jerusalem1.JPG" alt="αψ ξφεεδ αλεϊμ 1">
+ 150:       <img src="images/bar-mitzvah-jerusalem2.JPG" alt="αψ ξφεεδ αλεϊμ 2">
+ 151:       <img src="images/bar-mitzvah-jerusalem3.JPG" alt="αψ ξφεεδ αλεϊμ 3">
+ 152:       <img src="images/bar-mitzvah-jerusalem4.JPG" alt="αψ ξφεεδ αλεϊμ 4">
+ 153:       <img src="images/bar-mitzvah-jerusalem5.JPG" alt="αψ ξφεεδ αλεϊμ 5">
+ 154:       <img src="images/bar-mitzvah-jerusalem6.jpg" alt="αψ ξφεεδ αλεϊμ 6">
+ 155:       <img src="images/bar-mitzvah-jerusalem7.jpg" alt="αψ ξφεεδ αλεϊμ 7">
+ 156:       <img src="images/bar-mitzvah-jerusalem8.jpg" alt="αψ ξφεεδ αλεϊμ 8">
+ 157:       <img src="images/bar-mitzvah-jerusalem9.jpg" alt="αψ ξφεεδ αλεϊμ 9">
+ 158:       <img src="images/bar-mitzvah-jerusalem10.jpg" alt="αψ ξφεεδ αλεϊμ 10">
+ 159:       <img src="images/bar-mitzvah-jerusalem11.jpg" alt="αψ ξφεεδ αλεϊμ 11">
+ 160:       <img src="images/bar-mitzvah-jerusalem12.jpg" alt="αψ ξφεεδ αλεϊμ 12">
+ 161:       <img src="images/bar-mitzvah-jerusalem13.jpg" alt="αψ ξφεεδ αλεϊμ 13">
+ 162:       <img src="images/bar-mitzvah-jerusalem14.jpg" alt="αψ ξφεεδ αλεϊμ 14">
+ 163:       <img src="images/bar-mitzvah-jerusalem15.jpg" alt="αψ ξφεεδ αλεϊμ 15">
+ 164:       <img src="images/bar-mitzvah-jerusalem16.jpg" alt="αψ ξφεεδ αλεϊμ 16">
+ 165:       <img src="images/bar-mitzvah-jerusalem17.jpg" alt="αψ ξφεεδ αλεϊμ 17">
+ 166:       <img src="images/bar-mitzvah-jerusalem18.jpg" alt="αψ ξφεεδ αλεϊμ 18">
+ 167:       <img src="images/bar-mitzvah-jerusalem19.jpg" alt="αψ ξφεεδ αλεϊμ 19">
+ 168:       <img src="images/bar-mitzvah-jerusalem20.jpg" alt="αψ ξφεεδ αλεϊμ 20">
+ 169:       <img src="images/bar-mitzvah-jerusalem21.jpg" alt="αψ ξφεεδ αλεϊμ 21">
+ 170:     </div>
+ 171:   </section>
+ 172:   <section id="brit" class="tab-panel" hidden aria-hidden="true" role="tabpanel" aria-labelledby="tab-brit">
+ 173:     <div class="gallery-grid">
+ 174:       <img src="images/brit1.jpg" alt="Χ¦Χ™ΧΧ•Χ Χ‘Χ¨Χ™Χª 1">
+ 175:       <img src="images/brit2.jpg" alt="Χ¦Χ™ΧΧ•Χ Χ‘Χ¨Χ™Χª 2">
+ 176:       <img src="images/brit3.jpg" alt="Χ¦Χ™ΧΧ•Χ Χ‘Χ¨Χ™Χª 3">
+ 177:       <img src="images/brit4.jpg" alt="Χ¦Χ™ΧΧ•Χ Χ‘Χ¨Χ™Χª 4">
+ 178:       <img src="images/brit5.jpg" alt="Χ¦Χ™ΧΧ•Χ Χ‘Χ¨Χ™Χª 5">
+ 179:       <img src="images/brit6.jpg" alt="Χ¦Χ™ΧΧ•Χ Χ‘Χ¨Χ™Χª 6">
+ 180:       <img src="images/brit7.jpg" alt="Χ¦Χ™ΧΧ•Χ Χ‘Χ¨Χ™Χª 7">
+ 181:       <img src="images/brit8.jpg" alt="Χ¦Χ™ΧΧ•Χ Χ‘Χ¨Χ™Χª 8">
+ 182:       <img src="images/brit9.jpg" alt="Χ¦Χ™ΧΧ•Χ Χ‘Χ¨Χ™Χª 9">
+ 183:       <img src="images/brit10.jpg" alt="Χ¦Χ™ΧΧ•Χ Χ‘Χ¨Χ™Χª 10">
+ 184:       <img src="images/brit11.jpg" alt="Χ¦Χ™ΧΧ•Χ Χ‘Χ¨Χ™Χª 11">
+ 185:       <img src="images/brit12.jpg" alt="Χ¦Χ™ΧΧ•Χ Χ‘Χ¨Χ™Χª 12">
+ 186:       <img src="images/brit13.jpg" alt="Χ¦Χ™ΧΧ•Χ Χ‘Χ¨Χ™Χª 13">
+ 187:       <img src="images/brit14.jpg" alt="Χ¦Χ™ΧΧ•Χ Χ‘Χ¨Χ™Χª 14">
+ 188:       <img src="images/brit15.jpg" alt="Χ¦Χ™ΧΧ•Χ Χ‘Χ¨Χ™Χª 15">
+ 189:       <img src="images/brit16.jpg" alt="Χ¦Χ™ΧΧ•Χ Χ‘Χ¨Χ™Χª 16">
+ 190:       <img src="images/brit17.jpg" alt="Χ¦Χ™ΧΧ•Χ Χ‘Χ¨Χ™Χª 17">
+ 191:       <img src="images/brit18.jpg" alt="Χ¦Χ™ΧΧ•Χ Χ‘Χ¨Χ™Χª 18">
+ 192:       <img src="images/brit19.jpg" alt="Χ¦Χ™ΧΧ•Χ Χ‘Χ¨Χ™Χª 19">
+ 193:       <img src="images/brit20.jpg" alt="Χ¦Χ™ΧΧ•Χ Χ‘Χ¨Χ™Χª 20">
+ 194:     </div>
+ 195:   </section>
+ 196: </main>
+ 197: 
+ 198: <footer class="footer">
+ 199:   <p>&copy; 2025 Χ³β„ΆΧ³ΒΧ³β„ΆΧ³Β¨ Χ³Β¨Χ³β€ΆΧ³β€“Χ³Β Χ³β€Χ³Β¨Χ³β€™ Χ³Β¦Χ³β„ΆΧ³ΒΧ³β€ΆΧ³Β. Χ³β€ΊΧ³Β Χ³β€Χ³β€“Χ³β€ΊΧ³β€ΆΧ³β„ΆΧ³β€ΆΧ³Γ— Χ³Β©Χ³ΒΧ³β€ΆΧ³Β¨Χ³β€ΆΧ³Γ—.</p>
+ 200: </footer>

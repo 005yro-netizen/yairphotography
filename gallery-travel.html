@@ -1,0 +1,297 @@
+﻿<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>גלריית טיולים - יאיר רוזנברג צילום</title>
+  <meta name="description" content="גלריית הטיולים של יאיר רוזנברג: מסעות, נופים ותרבויות. תמונות מטיולים ברחבי הארץ והעולם." />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .header .nav a[href="index.html#faq"]::before { content: "שאלות נפוצות"; }
+  </style>
+  <style>
+    /* Prevent extra zoom while in lightbox (allow fullscreen only) */
+    .lightbox { touch-action: none; overscroll-behavior: contain; }
+    .lightbox .lightbox-img { pointer-events: none; max-width: 100%; max-height: 100%; user-select: none; }
+  </style>
+</head>
+<body class="page-travel">
+
+<header class="header">
+  <div class="header-inner">
+    <div class="logo"><a href="index.html" style="color:#fff; text-decoration:none;">Yair Rozenberg</a></div>
+    <nav class="nav" id="navMenu">
+      <ul>
+        <li><a href="index.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"/></svg> בית</a></li>
+        <li><a class="active" href="index.html#gallery"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M15 12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h1.172a3 3 0 0 0 2.12-.879l.83-.828A1 1 0 0 1 6.827 3h2.344a1 1 0 0 1 .707.293l.828.828A3 3 0 0 0 12.828 5H14a1 1 0 0 1 1 1zM2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4z"/><path d="M8 11a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5m0 1a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7M3 6.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0"/></svg> גלריה</a></li>
+        <li><a href="about.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/></svg> אודות</a></li>
+        <li><a href="contact.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/></svg> צור קשר</a></li>
+        <li><a href="index.html#faq"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14z"/><path d="M5.255 5.786a.237.237 0 0 1 .241-.247h.825c.138 0 .24.113.223.25-.007.053-.032.107-.077.154C6.936 6.5 6.474 6.936 6.474 7.5v.086c0 .102.028.2.08.287.05.086.13.15.225.18.695.212 1.086.726 1.086 1.16 0 .66-.526 1.26-1.503 1.26-.793 0-1.22-.346-1.22-.775 0-.237.07-.457.2-.638.143-.196.328-.35.547-.456.118-.055.255-.084.393-.084h.761c.138 0 .246.113.246.25 0 .136-.11.25-.246.25h-.761c-.196 0-.358.14-.358.31 0 .117.12.212.353.212.474 0 .801-.21.801-.582 0-.215-.179-.456-.53-.56-.28-.08-.324-.177-.324-.28 0-.21.192-.414.468-.6.76-.52 1.272-1.004 1.272-1.73 0-1.07-.888-1.893-2.199-1.893-1.18 0-2.24.64-2.285 1.786-.002.057.046.106.105.106h.87zM8 13a.905.905 0 1 1 0-1.81.905.905 0 0 1 0 1.81z"/></svg> שאלות נפוצות</a></li>
+      </ul>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="פתיחת תפריט">&#9776;</button>
+  </div>
+</header>
+<div class="overlay" id="overlay"></div>
+
+<main class="container page">
+  <nav class="breadcrumbs" aria-label="פירורי לחם">
+    <a href="index.html">בית</a> > <a href="index.html#gallery">גלריה</a> > <span aria-current="page">טיולים</span>
+  </nav>
+
+  <header class="page-header">
+    <h1>טיולים</h1>
+  </header>
+
+  <p>
+    גלריית הטיולים מציגה נופים, אור וסיפורים מרחבי הארץ והעולם.
+    מהרגעים השקטים של זריחה ועד הסמטאות התוססות – התמונות נוגעות ברגשות,
+    מדגישות צבע, קצב ואותנטיות, ומזמינות אתכם להרגיש כאילו הייתם שם.
+  </p>
+
+  <div class="gallery-grid">
+    <img src="images/טיווול/travel-1.jpg" alt="טיול 1">
+    <img src="images/טיווול/travel-2.jpg" alt="טיול 2">
+    <img src="images/טיווול/travel-3.jpg" alt="טיול 3">
+    <img src="images/טיווול/travel-4.jpg" alt="טיול 4">
+    <img src="images/טיווול/travel-5.jpg" alt="טיול 5">
+    <img src="images/טיווול/travel-6.jpg" alt="טיול 6">
+    <img src="images/טיווול/travel-7.jpg" alt="טיול 7">
+    <img src="images/טיווול/travel-8.jpg" alt="טיול 8">
+    <img src="images/טיווול/travel-9.jpg" alt="טיול 9">
+    <img src="images/טיווול/travel-10.jpg" alt="טיול 10">
+    <img src="images/טיווול/travel-11.jpg" alt="טיול 11">
+    <img src="images/טיווול/travel-12.jpg" alt="טיול 12">
+    <img src="images/טיווול/travel-13.jpg" alt="טיול 13">
+    <img src="images/טיווול/travel-14.jpg" alt="טיול 14">
+    <img src="images/טיווול/travel-15.jpg" alt="טיול 15">
+    <img src="images/טיווול/travel-16.jpg" alt="טיול 16">
+    <img src="images/טיווול/travel-17.jpg" alt="טיול 17">
+    <img src="images/טיווול/travel-18.jpg" alt="טיול 18">
+    <img src="images/טיווול/travel-19.jpg" alt="טיול 19">
+    <img src="images/טיווול/travel-20.jpg" alt="טיול 20">
+    <img src="images/טיווול/travel-21.jpg" alt="טיול 21">
+    <img src="images/טיווול/travel-22.jpg" alt="טיול 22">
+    <img src="images/טיווול/travel-23.jpg" alt="טיול 23">
+    <img src="images/טיווול/travel-24.jpg" alt="טיול 24">
+    <img src="images/טיווול/travel-25.jpg" alt="טיול 25">
+    <img src="images/טיווול/travel-26.jpg" alt="טיול 26">
+    <img src="images/טיווול/travel-27.jpg" alt="טיול 27">
+    <img src="images/טיווול/travel-28.jpg" alt="טיול 28">
+    <img src="images/טיווול/travel-29.jpg" alt="טיול 29">
+  </div>
+</main>
+
+<footer class="footer">
+  <p>&copy; 2025 יאיר רוזנברג צילום. כל הזכויות שמורות.</p>
+</footer>
+
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox">
+  <span class="close" aria-label="סגור">&times;</span>
+    <button class="fullscreen-toggle" type="button" aria-label="מסך מלא" aria-pressed="false" data-fullscreen="false">
+    <svg class="icon-enter" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4H4v3m0-3 5 5M17 4h3v3m0-3-5 5M7 20H4v-3m0 3 5-5M17 20h3v-3m0 3-5-5"/>
+    </svg>
+    <svg class="icon-exit" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 9H5V5h4m6 0h4v4h-4M9 15H5v4h4m6 0h4v-4h-4"/>
+    </svg>
+  </button>
+  <img class="lightbox-img" src="" alt="">
+  <a class="prev" aria-label="תמונה קודמת">&#10094;</a>
+  <a class="next" aria-label="תמונה הבאה">&#10095;</a>
+</div>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navMenu = document.getElementById('navMenu');
+  const overlay = document.getElementById('overlay');
+
+  function toggleMenu(open) {
+    if (window.innerWidth > 900) return;
+    navMenu.classList.toggle('open', open);
+    overlay.classList.toggle('show', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
+
+  hamburger.addEventListener('click', () => toggleMenu(!navMenu.classList.contains('open')));
+  overlay.addEventListener('click', () => toggleMenu(false));
+  document.querySelectorAll('#navMenu a').forEach(a =>
+    a.addEventListener('click', () => toggleMenu(false))
+  );
+
+  // Lightbox functionality
+  document.addEventListener("DOMContentLoaded", function() {
+    // Remove broken images automatically (e.g., missing files)
+    document.querySelectorAll('.gallery-grid img').forEach(function(img){
+      img.addEventListener('error', function(){ img.remove(); }, { once: true });
+    });
+    // Append images 30–52 dynamically based on existing path
+    (function ensureTravelImages() {
+      const grid = document.querySelector('.gallery-grid');
+      if (!grid) return;
+      const sample = grid.querySelector('img');
+      if (!sample) return;
+      const sampleSrc = sample.getAttribute('src') || '';
+      const baseIdx = sampleSrc.lastIndexOf('travel-');
+      const base = baseIdx >= 0 ? sampleSrc.slice(0, baseIdx) : sampleSrc;
+      const existing = new Set(Array.from(grid.querySelectorAll('img')).map(i => i.getAttribute('src')));
+
+      for (let i = 30; i <= 92; i++) {
+        const src = base + 'travel-' + i + '.jpg';
+        if (existing.has(src)) continue;
+        const img = document.createElement('img');
+        img.src = src;
+        const alt = sample.getAttribute('alt') || '';
+        img.alt = /\d+$/.test(alt) ? alt.replace(/\d+$/, String(i)) : ('Travel ' + i);
+        img.addEventListener('error', function(){ img.remove(); }, { once: true });
+        grid.appendChild(img);
+      }
+    })();
+    const lightbox = document.getElementById('lightbox');
+    let lightboxImg = lightbox.querySelector('.lightbox-img');
+    const closeBtn = lightbox.querySelector('.close');
+    const prevBtn = lightbox.querySelector('.prev');
+    const nextBtn = lightbox.querySelector('.next');
+    const fullscreenBtn = lightbox.querySelector('.fullscreen-toggle');
+
+    const isFullscreenActive = () => {
+      return document.fullscreenElement === lightbox ||
+        document.webkitFullscreenElement === lightbox ||
+        document.mozFullScreenElement === lightbox ||
+        document.msFullscreenElement === lightbox;
+    };
+
+    const requestLightboxFullscreen = () => {
+      if (lightbox.requestFullscreen) return lightbox.requestFullscreen();
+      if (lightbox.webkitRequestFullscreen) return lightbox.webkitRequestFullscreen();
+      if (lightbox.mozRequestFullScreen) return lightbox.mozRequestFullScreen();
+      if (lightbox.msRequestFullscreen) return lightbox.msRequestFullscreen();
+      return null;
+    };
+
+    const exitLightboxFullscreen = () => {
+      if (document.exitFullscreen) return document.exitFullscreen();
+      if (document.webkitExitFullscreen) return document.webkitExitFullscreen();
+      if (document.mozCancelFullScreen) return document.mozCancelFullScreen();
+      if (document.msExitFullscreen) return document.msExitFullscreen();
+      return null;
+    };
+
+    const syncFullscreenState = () => {
+      if (!fullscreenBtn) return;
+      const active = isFullscreenActive();
+      fullscreenBtn.dataset.fullscreen = active ? 'true' : 'false';
+      fullscreenBtn.setAttribute('aria-pressed', active ? 'true' : 'false');
+      fullscreenBtn.setAttribute('aria-label', active ? 'יציאה ממסך מלא' : 'מסך מלא');
+      lightbox.classList.toggle('fullscreen-active', active);
+    };
+
+    const images = Array.from(document.querySelectorAll('.gallery-grid img'));
+    let currentIndex = 0;
+
+    const openLightbox = (index) => {
+      currentIndex = index;
+      showImage();
+      lightbox.classList.add('open');
+      // Default: open without fullscreen; user can switch to fullscreen via the toggle
+      syncFullscreenState();
+    };
+
+    const closeLightbox = () => {
+      if (isFullscreenActive()) {
+        exitLightboxFullscreen();
+      }
+      lightbox.classList.remove('open');
+      syncFullscreenState();
+    };
+
+    const shiftImage = (direction) => {
+      const delta = direction === 'next' ? 1 : -1;
+      currentIndex = (currentIndex + delta + images.length) % images.length;
+      showImage(direction);
+    };
+
+    images.forEach((img, index) => {
+      img.addEventListener('click', () => openLightbox(index));
+    });
+
+    closeBtn.addEventListener('click', closeLightbox);
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    prevBtn.addEventListener('click', () => shiftImage('prev'));
+    nextBtn.addEventListener('click', () => shiftImage('next'));
+
+    if (fullscreenBtn) {
+      fullscreenBtn.addEventListener('click', () => {
+        if (isFullscreenActive()) {
+          exitLightboxFullscreen();
+        } else {
+          const request = requestLightboxFullscreen();
+          if (request && typeof request.then === 'function') {
+            request.catch(() => {});
+          }
+        }
+      });
+    }
+
+    ['fullscreenchange', 'webkitfullscreenchange', 'mozfullscreenchange', 'MSFullscreenChange'].forEach((eventName) => {
+      document.addEventListener(eventName, syncFullscreenState);
+    });
+
+    window.addEventListener('keydown', (e) => {
+      if (!lightbox.classList.contains('open')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') prevBtn.click();
+      if (e.key === 'ArrowRight') nextBtn.click();
+    });
+
+    function showImage(direction) {
+      const targetImage = images[currentIndex];
+      if (!lightbox.classList.contains('open') || !direction) {
+        lightboxImg.src = targetImage.src;
+        lightboxImg.alt = targetImage.alt;
+        return;
+      }
+
+      const newImg = document.createElement('img');
+      newImg.className = 'lightbox-img';
+      newImg.src = targetImage.src;
+      newImg.alt = targetImage.alt;
+      newImg.style.position = 'absolute';
+      newImg.style.top = '50%';
+      newImg.style.left = '50%';
+      newImg.style.opacity = '0';
+      newImg.style.transition = 'transform 0.6s ease, opacity 0.6s ease';
+
+      const enterX = direction === 'next' ? '150%' : '-250%';
+      const exitX = direction === 'next' ? '-250%' : '150%';
+      newImg.style.transform = 'translate(' + enterX + ', -50%)';
+
+      lightbox.appendChild(newImg);
+
+      lightboxImg.style.transition = 'transform 0.6s ease, opacity 0.6s ease';
+      lightboxImg.style.position = 'absolute';
+
+      requestAnimationFrame(() => {
+        lightboxImg.style.transform = 'translate(' + exitX + ', -50%)';
+        lightboxImg.style.opacity = '0';
+        newImg.style.transform = 'translate(-50%, -50%)';
+        newImg.style.opacity = '1';
+      });
+
+      setTimeout(() => {
+        lightbox.removeChild(lightboxImg);
+        lightboxImg = newImg;
+      }, 600);
+    }
+
+    syncFullscreenState();
+  });</script>
+</body>
+</html>
+
+

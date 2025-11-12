@@ -1,0 +1,1 @@
+  <li><button class="tab" role="tab" aria-selected="false" data-target="brit">ברית</button></li>

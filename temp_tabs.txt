@@ -1,0 +1,9 @@
+
+  <!-- Tabs for sub-categories -->
+  <ul class="tabs" role="tablist">
+  <li><button class="tab active" role="tab" aria-selected="true" data-target="outdoor">φιμεξι ηευ</button></li>
+  <li><button class="tab" role="tab" aria-selected="false" data-target="barmitzvah">αψ ξφεεδ</button></li>
+  <li><button class="tab" role="tab" aria-selected="false" data-target="brit">αψιϊ</button></li>
+</ul>
+
+  <!-- Χ³Β¦Χ³β„ΆΧ³ΒΧ³β€ΆΧ³ΒΧ³β„Ά Χ³β€”Χ³β€ΆΧ³Β¥ Gallery -->

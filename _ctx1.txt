@@ -1,0 +1,47 @@
+ 110:       <img src="images/barmitzvah17.jpg" alt="׳¦׳™׳׳•׳ ׳‘׳¨ ׳׳¦׳•׳•׳” 17">
+ 111:       <img src="images/barmitzvah18.jpg" alt="׳¦׳™׳׳•׳ ׳‘׳¨ ׳׳¦׳•׳•׳” 18">
+ 112:       <img src="images/barmitzvah19.jpg" alt="׳¦׳™׳׳•׳ ׳‘׳¨ ׳׳¦׳•׳•׳” 19">
+ 113:       <img src="images/barmitzvah20.jpg" alt="׳¦׳™׳׳•׳ ׳‘׳¨ ׳׳¦׳•׳•׳” 20">
+ 114:       <img src="images/barmitzvah21.jpg" alt="׳¦׳™׳׳•׳ ׳‘׳¨ ׳׳¦׳•׳•׳” 21">
+ 115:     </div>
+ 116:   </section>
+ 117: 
+ 118:   <!-- בר מצווה בכותל Gallery -->
+ 119:   <section id="bm-kotel" class="tab-panel" role="tabpanel" aria-labelledby="tab-bm-kotel">
+ 120:     <div class="gallery-grid">
+ 121:       <img src="images/bar-mitzvah-kotel1.jpg" alt="בר מצווה בכותל 1">
+ 122:       <img src="images/bar-mitzvah-kotel2.jpg" alt="בר מצווה בכותל 2">
+ 123:       <img src="images/bar-mitzvah-kotel3.jpg" alt="בר מצווה בכותל 3">
+ 124:       <img src="images/bar-mitzvah-kotel4.jpg" alt="בר מצווה בכותל 4">
+ 125:       <img src="images/bar-mitzvah-kotel5.jpg" alt="בר מצווה בכותל 5">
+ 126:       <img src="images/bar-mitzvah-kotel6.jpg" alt="בר מצווה בכותל 6">
+ 127:       <img src="images/bar-mitzvah-kotel7.jpg" alt="בר מצווה בכותל 7">
+ 128:       <img src="images/bar-mitzvah-kotel8.jpg" alt="בר מצווה בכותל 8">
+ 129:       <img src="images/bar-mitzvah-kotel9.jpg" alt="בר מצווה בכותל 9">
+ 130:       <img src="images/bar-mitzvah-kotel10.jpg" alt="בר מצווה בכותל 10">
+ 131:       <img src="images/bar-mitzvah-kotel11.jpg" alt="בר מצווה בכותל 11">
+ 132:       <img src="images/bar-mitzvah-kotel12.jpg" alt="בר מצווה בכותל 12">
+ 133:       <img src="images/bar-mitzvah-kotel13.jpg" alt="בר מצווה בכותל 13">
+ 134:       <img src="images/bar-mitzvah-kotel14.jpg" alt="בר מצווה בכותל 14">
+ 135:       <img src="images/bar-mitzvah-kotel15.jpg" alt="בר מצווה בכותל 15">
+ 136:       <img src="images/bar-mitzvah-kotel16.jpg" alt="בר מצווה בכותל 16">
+ 137:       <img src="images/bar-mitzvah-kotel17.jpg" alt="בר מצווה בכותל 17">
+ 138:       <img src="images/bar-mitzvah-kotel18.jpg" alt="בר מצווה בכותל 18">
+ 139:       <img src="images/bar-mitzvah-kotel19.jpg" alt="בר מצווה בכותל 19">
+ 140:       <img src="images/bar-mitzvah-kotel20.jpg" alt="בר מצווה בכותל 20">
+ 141:       <img src="images/bar-mitzvah-kotel21.jpg" alt="בר מצווה בכותל 21">
+ 142:     </div>
+ 143:   </section>
+ 144: 
+ 145:   <!-- ׳³ג€˜׳³ֲ¨׳³ג„¢׳³ֳ— Gallery -->
+ 146:   <!-- בר מצווה בכותל Gallery -->
+ 147:   <section id="bm-kotel" class="tab-panel" hidden aria-hidden="true" role="tabpanel" aria-labelledby="tab-bm-kotel">
+ 148:     <div class="gallery-grid">
+ 149:       <img src="images/bar-mitzvah-jerusalem1.JPG" alt="בר מצווה בכותל 1">
+ 150:       <img src="images/bar-mitzvah-jerusalem2.JPG" alt="בר מצווה בכותל 2">
+ 151:       <img src="images/bar-mitzvah-jerusalem3.JPG" alt="בר מצווה בכותל 3">
+ 152:       <img src="images/bar-mitzvah-jerusalem4.JPG" alt="בר מצווה בכותל 4">
+ 153:       <img src="images/bar-mitzvah-jerusalem5.JPG" alt="בר מצווה בכותל 5">
+ 154:       <img src="images/bar-mitzvah-jerusalem6.jpg" alt="בר מצווה בכותל 6">
+ 155:       <img src="images/bar-mitzvah-jerusalem7.jpg" alt="בר מצווה בכותל 7">
+ 156:       <img src="images/bar-mitzvah-jerusalem8.jpg" alt="בר מצווה בכותל 8">

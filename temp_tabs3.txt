@@ -1,0 +1,15 @@
+    <h1>גלריית אירועים</h1>
+  </header>
+
+  <!-- Tabs for sub-categories -->
+  <ul class="tabs" role="tablist">
+  <li><button class="tab active" role="tab" aria-selected="true" data-target="outdoor">צילומי חוץ</button></li>
+  <li><button class="tab" role="tab" aria-selected="false" data-target="barmitzvah">בר מצווה</button></li>
+  <li><button class="tab" role="tab" aria-selected="false" data-target="brit">ברית</button></li>
+</ul>
+
+  <!-- ׳³ֲ¦׳³ג„¢׳³ֲ׳³ג€¢׳³ֲ׳³ג„¢ ׳³ג€”׳³ג€¢׳³ֲ¥ Gallery -->
+  <section id="outdoor" class="tab-panel active" role="tabpanel" aria-labelledby="tab-outdoor">
+    <div class="gallery-grid">
+      <img src="images/bar-mitzvah-jerusalem1.JPG" alt="צילומי חוץ 1">
+      <img src="images/bar-mitzvah-jerusalem2.JPG" alt="צילומי חוץ 2">

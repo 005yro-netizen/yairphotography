@@ -1,0 +1,81 @@
+    tabButtons.forEach((tab) => {
+      tab.addEventListener('click', () => activateTab(tab));
+    });
+
+    if (tabButtons.length) {
+      activateTab(tabButtons.find((tab) => tab.classList.contains('active')) || tabButtons[0]);
+    }
+
+    const lightbox = document.getElementById('lightbox');
+    let lightboxImg = lightbox.querySelector('.lightbox-img');
+    const closeBtn = lightbox.querySelector('.close');
+    const prevBtn = lightbox.querySelector('.prev');
+    const nextBtn = lightbox.querySelector('.next');
+    const fullscreenBtn = lightbox.querySelector('.fullscreen-toggle');
+
+    const isFullscreenActive = () => {
+      return document.fullscreenElement === lightbox ||
+        document.webkitFullscreenElement === lightbox ||
+        document.mozFullScreenElement === lightbox ||
+        document.msFullscreenElement === lightbox;
+    };
+
+    const requestLightboxFullscreen = () => {
+      if (lightbox.requestFullscreen) return lightbox.requestFullscreen();
+      if (lightbox.webkitRequestFullscreen) return lightbox.webkitRequestFullscreen();
+      if (lightbox.mozRequestFullScreen) return lightbox.mozRequestFullScreen();
+      if (lightbox.msRequestFullscreen) return lightbox.msRequestFullscreen();
+      return null;
+    };
+
+    const exitLightboxFullscreen = () => {
+      if (document.exitFullscreen) return document.exitFullscreen();
+      if (document.webkitExitFullscreen) return document.webkitExitFullscreen();
+      if (document.mozCancelFullScreen) return document.mozCancelFullScreen();
+      if (document.msExitFullscreen) return document.msExitFullscreen();
+      return null;
+    };
+
+    const syncFullscreenState = () => {
+      if (!fullscreenBtn) return;
+      const active = isFullscreenActive();
+      fullscreenBtn.dataset.fullscreen = active ? 'true' : 'false';
+      fullscreenBtn.setAttribute('aria-pressed', active ? 'true' : 'false');
+      fullscreenBtn.setAttribute('aria-label', active ? 'יציאה ממסך מלא' : 'מסך מלא');
+      lightbox.classList.toggle('fullscreen-active', active);
+    };
+
+    const images = Array.from(document.querySelectorAll('.gallery-grid img'));
+    let currentIndex = 0;
+
+    const openLightbox = (index) => {
+      currentIndex = index;
+      showImage();
+      lightbox.classList.add('open');
+      syncFullscreenState();
+    };
+
+    const closeLightbox = () => {
+      if (isFullscreenActive()) {
+        exitLightboxFullscreen();
+      }
+      lightbox.classList.remove('open');
+      syncFullscreenState();
+    };
+
+    const shiftImage = (direction) => {
+      const delta = direction === 'next' ? 1 : -1;
+      currentIndex = (currentIndex + delta + images.length) % images.length;
+      showImage(direction);
+    };
+
+    images.forEach((img, index) => {
+      img.addEventListener('click', () => openLightbox(index));
+    });
+
+    closeBtn.addEventListener('click', closeLightbox);
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+

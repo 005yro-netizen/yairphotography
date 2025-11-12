@@ -1,58 +1,925 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>צילום אריאל רבינסקי | Ariel Ravinsky Photography</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>יאיר רוזנברג | צילום אירועים ונופים</title>
+  <meta name="description" content="יאיר רוזנברג - צלם אירועים, משפחות ונופים. בר מצווה, צילומי חוץ ובריתות באווירה טבעית ומרגשת." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preload" as="image" href="images/home-hero-1.jpg" />
+  <link rel="preload" as="image" href="images/home-hero-2.jpg" />
+  <link rel="preload" as="image" href="images/home-hero-3.jpg" />
+  <link rel="preload" as="image" href="images/home-hero-4.jpg" />
+  <link rel="preload" as="image" href="images/home-hero-5.jpg" />
+  <link rel="preload" as="image" href="images/home-hero-6.jpg" />
+  <link rel="preload" as="image" href="images/home-hero-7.jpg" />
+  <link rel="preload" as="image" href="images/home-hero-8.jpg" />
+  <link rel="preload" as="image" href="images/home-hero-9.jpg" />
+  <link rel="preload" as="image" href="images/home-hero-10.jpg" />
 </head>
-<body>
-    <img src="images/your-image-file.jpg" alt="תמונה ראשית" class="main-photo" style="display:block;margin:32px auto;border-radius:12px;max-width:600px;box-shadow:0 2px 8px rgba(0,0,0,0.1);" />
-    <header class="header">
-        <div class="logo"><img src="logo.png" alt="Logo" /></div>
-        <nav class="nav">
-            <ul>
-                <li><a href="#home">בית</a></li>
-                <li><a href="#gallery">גלריה</a></li>
-                <li><a href="#contact">צור קשר</a></li>
-            </ul>
-        </nav>
-        <div class="lang-switch">
-            <button id="hebrew-btn" title="עברית"><img src="israel-flag.png" alt="עברית" /></button>
-            <button id="english-btn" title="English"><img src="usa-flag.png" alt="English" /></button>
+<body class="home">
+
+<!-- Header -->
+<header class="header">
+  <div class="header-inner">
+    <div class="logo"><a href="index.html" style="color:#fff; text-decoration:none;">Yair Rozenberg</a></div>
+    <nav class="nav" id="navMenu">
+      <ul>
+        <li><a class="active" href="index.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"/></svg> בית</a></li>
+        <li><a href="#gallery"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M15 12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h1.172a3 3 0 0 0 2.12-.879l.83-.828A1 1 0 0 1 6.827 3h2.344a1 1 0 0 1 .707.293l.828.828A3 3 0 0 0 12.828 5H14a1 1 0 0 1 1 1zM2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4z"/><path d="M8 11a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5m0 1a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7M3 6.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0"/></svg> גלריה</a></li>
+        <li><a href="about.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/></svg> אודות</a></li>
+        <li><a href="contact.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/></svg> צור קשר</a></li>
+        <li><a href="#faq"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14z"/><path d="M5.255 5.786a.237.237 0 0 1 .241-.247h.825c.138 0 .24.113.223.25-.007.053-.032.107-.077.154C6.936 6.5 6.474 6.936 6.474 7.5v.086c0 .102.028.2.08.287.05.086.13.15.225.18.695.212 1.086.726 1.086 1.16 0 .66-.526 1.26-1.503 1.26-.793 0-1.22-.346-1.22-.775 0-.237.07-.457.2-.638.143-.196.328-.35.547-.456.118-.055.255-.084.393-.084h.761c.138 0 .246.113.246.25 0 .136-.11.25-.246.25h-.761c-.196 0-.358.14-.358.31 0 .117.12.212.353.212.474 0 .801-.21.801-.582 0-.215-.179-.456-.53-.56-.28-.08-.324-.177-.324-.28 0-.21.192-.414.468-.6.76-.52 1.272-1.004 1.272-1.73 0-1.07-.888-1.893-2.199-1.893-1.18 0-2.24.64-2.285 1.786-.002.057.046.106.105.106h.87zM8 13a.905.905 0 1 1 0-1.81.905.905 0 0 1 0 1.81z"/></svg> שאלות נפוצות</a></li>
+      </ul>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="תפריט">&#9776;</button>
+  </div>
+</header>
+<div class="overlay" id="overlay"></div>
+
+<!-- Main content -->
+<main class="page-wrap">
+
+  <!-- Hero Section -->
+    <section class="hero" aria-labelledby="hero-title">
+    <div class="marquee-hero" aria-label="סרט נע של תמונות בית">
+      <div class="marquee-track">
+        <div class="marquee-group">
+          <img class="marquee-item" src="images/home-hero-1.jpg" alt="" />
+          <img class="marquee-item" src="images/home-hero-2.jpg" alt="" />
+          <img class="marquee-item" src="images/home-hero-3.jpg" alt="" />
+          <img class="marquee-item" src="images/home-hero-4.jpg" alt="" />
+          <img class="marquee-item" src="images/home-hero-5.jpg" alt="" />
+          <img class="marquee-item" src="images/home-hero-6.jpg" alt="" />
+          <img class="marquee-item" src="images/home-hero-7.jpg" alt="" />
+          <img class="marquee-item" src="images/home-hero-8.jpg" alt="" />
+          <img class="marquee-item" src="images/home-hero-9.jpg" alt="" />
+          <img class="marquee-item" src="images/home-hero-10.jpg" alt="" />
         </div>
-    </header>
-    <section class="hero">
-        <img src="background.jpg" alt="Hero" class="hero-img" />
-    </section>
-    <main>
-        <section class="picture-section">
-        </section>
-        <section class="text-section">
-            <h2>ברוכים הבאים לצילום אריאל רבינסקי</h2>
-            <p>הוסיפו כאן טקסט על השירותים שלכם, גלריה, או כל מידע שתרצו.</p>
-        </section>
-        <section class="contact-section" id="contact">
-            <h2>צור קשר</h2>
-            <div class="contact-info">
-                <p>טלפון: <a href="tel:077-9975535">077-9975535</a></p>
-                <p>וואטסאפ: <a href="https://wa.me/+9720543303368" target="_blank">054-3303368</a></p>
-                <p>אימייל: <a href="mailto:a5864272@gmail.com">a5864272@gmail.com</a></p>
-            </div>
-            <form class="contact-form">
-                <input type="text" name="name" placeholder="שם" required />
-                <input type="tel" name="phone" placeholder="טלפון" required />
-                <textarea name="message" placeholder="הודעה" required></textarea>
-                <button type="submit">שלח</button>
-            </form>
-        </section>
-    </main>
-    <footer class="footer">
-        <p>&copy; 2025 צילום אריאל רבינסקי. כל הזכויות שמורות.</p>
-    </footer>
-    <a href="https://wa.me/+9720543303368" class="whatsapp-float" target="_blank" title="שלח הודעה בוואטסאפ">
-        <img src="whatsapp.png" alt="WhatsApp" />
-    </a>
-    <script src="lang-switch.js"></script>
+        <!-- duplicate removed; JS clones the group for seamless loop -->
+      </div>
+    </div>
+    <div class="hero-inner"></div>
+  </section>
+
+  <!-- Intro text above galleries -->
+  <section class="home-intro" aria-labelledby="intro-title">
+    <div class="home-intro-box">
+      <div class="home-intro-name">יאיר רוזנברג</div>
+      <h2 id="intro-title" class="home-intro-title">צלם אירועים, טיולים ונוף</h2>
+      <div class="cta">
+        <a class="btn" href="#contact">צור קשר</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galleries Section -->
+  <section id="gallery" class="gallery-main" aria-labelledby="gallery-title">
+    <h2 id="gallery-title">גלריות</h2>
+    <div class="category-grid">
+      <article class="category-card">
+        <h3>אירועים</h3>
+        <p>צילומי חוץ · בר מצווה · ברית</p>
+        <a class="btn small" href="gallery-events.html">לצפייה בגלריה</a>
+      </article>
+      <article class="category-card">
+        <h3>טיולים</h3>
+        <p>מסעות · נופים · תרבויות</p>
+        <a class="btn small" href="gallery-travel.html">לצפייה בגלריה</a>
+      </article>
+      <article class="category-card">
+        <h3>טבע</h3>
+        <p>חי · פריחה · שקיעות</p>
+        <!-- Nature gallery removed -->
+      </article>
+    </div>
+  </section>
+
+  <!-- Social Proof / Statistics Section: start -->
+  <section id="social-proof-stats" class="stats-section is-inview" dir="rtl" lang="he" aria-label="סטטיסטיקות">
+    <style>
+      /* בסיס נייטרלי עם כבוד למשתני :root אם קיימים + תמיכה ב-dark/light */
+      .stats-section {
+        --sp-bg-default: #ffffff;
+        --sp-surface-default: #f7f7fb;
+        --sp-text-default: #0f172a;
+        --sp-muted-default: #475569;
+        --sp-accent-default: #2563eb;
+        --sp-border-default: #e5e7eb;
+        --sp-shadow-default: 0 10px 30px rgba(2, 6, 23, 0.08);
+
+        color: var(--color-text, var(--text, var(--sp-text-default)));
+        font-family: var(--font-sans, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif);
+        background: var(--color-bg, var(--bg, transparent));
+        direction: rtl;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      @media (prefers-color-scheme: dark) {
+        .stats-section {
+          --sp-bg-default: #0b1220;
+          --sp-surface-default: #0f172a;
+          --sp-text-default: #e2e8f0;
+          --sp-muted-default: #94a3b8;
+          --sp-accent-default: #60a5fa;
+          --sp-border-default: #1f2937;
+          --sp-shadow-default: 0 18px 45px rgba(0, 0, 0, 0.5);
+        }
+      }
+
+      .stats-section .stats-wrap {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 2.5rem 1rem;
+      }
+
+      .stats-section .stats-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        margin-bottom: 1.25rem;
+      }
+
+      .stats-section .stats-title {
+        margin: 0;
+        font-size: clamp(1.25rem, 2.8vw, 1.75rem);
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        color: var(--color-text, var(--text, var(--sp-text-default)));
+      }
+
+      .stats-section .stats-cta {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: .5rem;
+        padding: .55rem .9rem;
+        font-size: .95rem;
+        border-radius: 999px;
+        text-decoration: none;
+        background: var(--color-accent, var(--accent, var(--sp-accent-default)));
+        color: var(--on-accent, #ffffff);
+        border: 1px solid transparent;
+        box-shadow: 0 2px 12px rgba(37, 99, 235, 0.25);
+        transition: transform .12s ease, box-shadow .2s ease, opacity .2s ease;
+        white-space: nowrap;
+      }
+      .stats-section .stats-cta:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 6px 20px rgba(37, 99, 235, 0.35);
+      }
+      .stats-section .stats-cta:focus-visible {
+        outline: 3px solid color-mix(in oklab, var(--color-accent, var(--accent, var(--sp-accent-default))) 55%, white);
+        outline-offset: 2px;
+      }
+
+      .stats-section .stats-grid {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 14px;
+      }
+      /* Hide any non-card list items accidentally inside the stats grid */
+      .stats-section .stats-grid > li:not(.stat-card) { display: none; }
+      @media (min-width: 560px) {
+        .stats-section .stats-grid { gap: 16px; }
+      }
+      @media (min-width: 900px) {
+        .stats-section .stats-grid { gap: 18px; }
+      }
+
+      .stats-section .stat-card {
+        background: var(--color-surface, var(--surface, var(--sp-surface-default)));
+        border: 1px solid var(--color-border, var(--border, var(--sp-border-default)));
+        border-radius: 14px;
+        box-shadow: var(--shadow, var(--sp-shadow-default));
+        padding: 16px 14px;
+        display: grid;
+        grid-template-columns: auto 1fr;
+        grid-template-rows: auto auto;
+        grid-template-areas:
+          "icon number"
+          "icon label";
+        align-items: center;
+        gap: 8px 10px;
+        opacity: 0;
+        transform: translateY(8px);
+        transition: opacity .6s ease, transform .6s ease;
+      }
+      .stats-section.is-inview .stat-card { opacity: 1; transform: translateY(0); }
+      .stats-section.is-inview .stat-card:nth-child(1) { transition-delay: 40ms; }
+      .stats-section.is-inview .stat-card:nth-child(2) { transition-delay: 80ms; }
+      .stats-section.is-inview .stat-card:nth-child(3) { transition-delay: 120ms; }
+      .stats-section.is-inview .stat-card:nth-child(4) { transition-delay: 160ms; }
+      .stats-section.is-inview .stat-card:nth-child(5) { transition-delay: 200ms; }
+      .stats-section.is-inview .stat-card:nth-child(6) { transition-delay: 240ms; }
+
+      .stats-section .icon-wrap {
+        grid-area: icon;
+        width: 36px; height: 36px;
+        display: inline-flex;
+        align-items: center; justify-content: center;
+        border-radius: 10px;
+        background: color-mix(in oklab, var(--color-accent, var(--accent, var(--sp-accent-default))) 14%, transparent);
+        color: var(--color-accent, var(--accent, var(--sp-accent-default)));
+      }
+      .stats-section .icon-wrap svg {
+        width: 22px; height: 22px;
+        stroke: currentColor;
+      }
+
+      .stats-section .stat-number {
+        grid-area: number;
+        font-weight: 800;
+        font-size: clamp(1.35rem, 4.2vw, 1.9rem);
+        letter-spacing: -0.01em;
+        color: var(--color-text, var(--text, var(--sp-text-default)));
+        line-height: 1.1;
+      }
+      .stats-section .stat-label {
+        grid-area: label;
+        margin: 0;
+        font-size: .95rem;
+        color: var(--color-muted, var(--muted, var(--sp-muted-default)));
+        line-height: 1.25;
+        font-weight: 600;
+      }
+
+      /* נגישות: מצב ללא אנימציה */
+      @media (prefers-reduced-motion: reduce) {
+        .stats-section .stat-card { transition: none; transform: none; opacity: 1; }
+        .stats-section .stats-cta { transition: none; }
+      }
+    </style>
+
+    <div class="stats-wrap">
+      <header class="stats-header"></header>
+
+      <ul class="stats-grid" role="list" aria-label="סטטיסטיקות">
+        <!-- כרטיס 1: אירועים -->
+        <li class="stat-card" data-stat-id="events" aria-label="אירועים">
+          <div class="icon-wrap" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <rect x="3" y="6" width="18" height="14" rx="2" stroke-width="1.8"/>
+              <path d="M7 6l2-2h6l2 2" stroke-width="1.8"/>
+              <circle cx="12" cy="13" r="4" stroke-width="1.8"/>
+            </svg>
+          </div>
+          <div class="stat-number" data-target="263" data-suffix="+">263+</div>
+          <h3 class="stat-label">אירועים</h3>
+        </li>
+
+        <!-- כרטיס 2: משפחות שמחות -->
+        <li class="stat-card" data-stat-id="families" aria-label="משפחות שמחות">
+          <div class="icon-wrap" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <circle cx="9" cy="8" r="3" stroke-width="1.8"/>
+              <path d="M15.5 9a2.5 2.5 0 1 0 0-5" stroke-width="1.8"/>
+              <path d="M4 18a5 5 0 0 1 10 0" stroke-width="1.8"/>
+              <path d="M16 18c.3-1.8 1.8-3 3.5-3S23 16.6 23 18" stroke-width="1.8"/>
+            </svg>
+          </div>
+          <div class="stat-number" data-target="230" data-suffix="+">230+</div>
+          <h3 class="stat-label">משפחות שמחות</h3>
+        </li>
+
+        
+
+        <!-- כרטיס 4: גלריות אונליין -->
+        <li class="stat-card" data-stat-id="galleries" aria-label="גלריות אונליין">
+          <div class="icon-wrap" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <rect x="3" y="4" width="8" height="7" rx="1.5" stroke-width="1.8"/>
+              <rect x="13" y="4" width="8" height="7" rx="1.5" stroke-width="1.8"/>
+              <rect x="3" y="13" width="8" height="7" rx="1.5" stroke-width="1.8"/>
+              <rect x="13" y="13" width="8" height="7" rx="1.5" stroke-width="1.8"/>
+            </svg>
+          </div>
+          <div class="stat-number" data-target="320" data-suffix="+">320+</div>
+          <h3 class="stat-label">גלריות אונליין</h3>
+        </li>
+
+        <!-- כרטיס 5: ערים בישראל -->
+        <li class="stat-card" data-stat-id="cities" aria-label="ערים בישראל">
+          <div class="icon-wrap" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M12 21s7-6.4 7-11.2A7 7 0 1 0 5 9.8C5 14.6 12 21 12 21z" stroke-width="1.8"/>
+              <circle cx="12" cy="9.8" r="2" stroke-width="1.8"/>
+            </svg>
+          </div>
+          <div class="stat-number" data-target="25" data-suffix="">25</div>
+          <h3 class="stat-label">ערים בישראל</h3>
+        </li>
+
+        <!-- כרטיס 6: המלצות מאומתות -->
+        <li class="stat-card" data-stat-id="reviews" aria-label="שירות">
+          <div class="icon-wrap" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M12 3l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4L12 18l-5.8 3.1 1.1-6.4L2.6 9.8l6.5-.9L12 3z" stroke-width="1.8"/>
+            </svg>
+          </div>
+          <div class="stat-number" data-target="100" data-suffix="%">100%</div>
+          <h3 class="stat-label">שירות</h3>
+        </li>
+        <li><a href="#faq"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14z"/><path d="M5.255 5.786a.237.237 0 0 1 .241-.247h.825c.138 0 .24.113.223.25-.007.053-.032.107-.077.154C6.936 6.5 6.474 6.936 6.474 7.5v.086c0 .102.028.2.08.287.05.086.13.15.225.18.695.212 1.086.726 1.086 1.16 0 .66-.526 1.26-1.503 1.26-.793 0-1.22-.346-1.22-.775 0-.237.07-.457.2-.638.143-.196.328-.35.547-.456.118-.055.255-.084.393-.084h.761c.138 0 .246.113.246.25 0 .136-.11.25-.246.25h-.761c-.196 0-.358.14-.358.31 0 .117.12.212.353.212.474 0 .801-.21.801-.582 0-.215-.179-.456-.53-.56-.28-.08-.324-.177-.324-.28 0-.21.192-.414.468-.6.76-.52 1.272-1.004 1.272-1.73 0-1.07-.888-1.893-2.199-1.893-1.18 0-2.24.64-2.285 1.786-.002.057.046.106.105.106h.87zM8 13a.905.905 0 1 1 0-1.81.905.905 0 0 1 0 1.81z"/></svg> שאלות נפוצות</a></li>
+      </ul>
+    </div>
+
+    <script>
+      (function () {
+        // קסטומיזציה במקום אחד בלבד: ערכו כאן
+        const CONFIG = {
+          title: "סטטיסטיקות",
+          cta: null,
+          items: [
+            { id: "events",   label: "אירועים",           value: 263, suffix: "+" },
+            { id: "families", label: "משפחות שמחות",     value: 230,  suffix: "+" },
+            { id: "cities",   label: "ערים בישראל",       value: 25,   suffix: ""  },
+            { id: "reviews",  label: "שירות",   value: 100,   suffix: "%" }
+          ]
+        };
+
+        const section = document.getElementById("social-proof-stats");
+        if (!section) return;
+
+        // עידכון טקסטים/מספרים מה-CONFIG (לא נדרשת נגיעה ב-HTML)
+        const format = (n) => new Intl.NumberFormat('he-IL').format(n);
+        const titleEl = section.querySelector(".stats-title");
+        if (titleEl && CONFIG.title) titleEl.textContent = CONFIG.title;
+
+        // הסרת כותרת/כפתור אם קיימים לפי הדרישה
+        const headerEl = section.querySelector('.stats-header');
+        if (headerEl) headerEl.remove();
+        const ctaEl = section.querySelector('.stats-cta');
+        if (ctaEl) ctaEl.remove();
+        const galleriesCard = section.querySelector('[data-stat-id="galleries"]');
+        if (galleriesCard) galleriesCard.remove();
+
+        // מיפוי פריטים לפי id ועדכון DOM
+        const itemMap = Object.fromEntries(CONFIG.items.map(i => [i.id, i]));
+        section.querySelectorAll(".stat-card").forEach(card => {
+          const id = card.getAttribute("data-stat-id");
+          const cfg = itemMap[id];
+          if (!cfg) return;
+          const numberEl = card.querySelector(".stat-number");
+          const labelEl = card.querySelector(".stat-label");
+          if (labelEl) labelEl.textContent = cfg.label;
+          if (numberEl) {
+  numberEl.setAttribute("data-target", String(cfg.value));
+  numberEl.setAttribute("data-suffix", cfg.suffix || "");
+  numberEl.textContent = format(cfg.value) + (cfg.suffix || "");
+} else {
+    numberEl.setAttribute("data-target", String(cfg.value));
+    numberEl.setAttribute("data-suffix", cfg.suffix || "");
+    numberEl.textContent = format(cfg.value) + (cfg.suffix || "");
+  }
+}
+        });
+
+        // הופעה עדינה + Counter-Up כשגלוי
+        const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        const animateCounters = () => {
+          const nums = section.querySelectorAll(".stat-number");
+          nums.forEach((el) => {
+            const target = Number(el.getAttribute("data-target") || "0");
+            const suffix = el.getAttribute("data-suffix") || "";
+            if (!Number.isFinite(target)) return;
+
+            if (prefersReducedMotion) {
+              el.textContent = format(target) + suffix;
+              return;
+            }
+
+            const duration = 1200; // ms
+            const start = 0;
+            const startTime = performance.now();
+            // מתחילים מ-0 רק כשהמקטע גלוי
+            el.textContent = format(0) + suffix;
+
+            const step = (now) => {
+              const t = Math.min((now - startTime) / duration, 1);
+              const eased = 1 - Math.pow(1 - t, 3); // easeOutCubic
+              const current = Math.round(start + (target - start) * eased);
+              el.textContent = format(current) + suffix;
+              if (t < 1) requestAnimationFrame(step);
+              else el.textContent = format(target) + suffix;
+            };
+            requestAnimationFrame(step);
+          });
+        };
+
+        const onVisible = (entries, obs) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              section.classList.add("is-inview");
+              animateCounters();
+              obs.disconnect();
+            }
+          });
+        };
+
+        const io = new IntersectionObserver(onVisible, { threshold: 0.35 });
+        io.observe(section);
+      })();
+    </script>
+  </section>
+  <!-- Social Proof / Statistics Section: end -->
+
+  <section id="photo-packages" class="pkgs" dir="rtl" lang="he" aria-labelledby="pkgs-title">
+    <style>
+      /* Pricing packages: clean, high-contrast, RTL */
+      .pkgs { color: #e6eaf2; background: transparent; }
+      .pkgs-wrap { max-width: 1200px; margin: 0 auto; padding: clamp(24px, 5vw, 56px) 16px; }
+      .pkgs-head { text-align: center; margin-bottom: clamp(20px, 4vw, 40px); }
+      .pkgs-title { margin: 0 0 8px; font-weight: 900; letter-spacing: -0.02em; font-size: clamp(26px, 2.4vw, 34px); }
+      .pkgs-sub { margin: 0; color: #a8b3c7; font-size: clamp(14px, 1.2vw, 18px); }
+
+      .pkgs-grid { list-style: none; margin: 0; padding: 0; display: grid; gap: clamp(16px, 2.4vw, 28px);
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); align-items: stretch; }
+
+      .pkg { height: 100%; display: grid; grid-template-rows: auto auto 1fr auto auto; gap: 12px;
+        background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.16); border-radius: 16px; padding: 18px;
+        transition: background-color .25s ease, border-color .25s ease, transform .25s ease; }
+      .pkg:hover{ background: rgba(255,255,255,0.10); border-color: rgba(255,255,255,0.35); transform: translateY(-2px); }
+      .pkg--featured { position: relative; }
+      .pkg--featured .pkg-badge { position: absolute; top: 10px; inset-inline-end: 10px; background: #8ab4ff; color: #0b1220; font-weight: 800; font-size: 12px; padding: 6px 10px; border-radius: 999px; }
+
+      .pkg-name { margin: 0; font-size: 18px; font-weight: 800; letter-spacing: -0.01em; }
+      .pkg-desc { margin: 0; color: #a8b3c7; font-size: 14.5px; line-height: 1.6; }
+
+      .pkg-price { margin: 6px 0 0; color: #fff; }
+      .pkg-price .value { font-weight: 900; font-size: clamp(28px, 5vw, 44px); letter-spacing: 0; }
+      .pkg-price .per { color: #a8b3c7; font-size: 14px; margin-inline-start: 6px; }
+
+      .pkg-list { list-style: none; margin: 6px 0 0; padding: 0; display: grid; gap: 8px; font-size: 15px; }
+      .pkg-list li { display: grid; grid-template-columns: 18px 1fr; gap: 8px; align-items: start; }
+      .pkg-list svg { width: 18px; height: 18px; color: #22d3ee; margin-top: 2px; }
+
+      .pkg-cta { display: inline-flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none;
+        font-weight: 800; border-radius: 10px; padding: 10px 14px; border: 1px solid transparent; }
+      .pkg-cta--outline { color: #e6eaf2; border-color: rgba(255,255,255,0.35); background: transparent; }
+      .pkg-cta--primary { color: #0b1220; background: #8ab4ff; border-color: #8ab4ff; }
+      .pkg-cta--ghost { color: #e6eaf2; background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.18); }
+      .pkg-cta:hover { filter: brightness(1.05); }
+
+      .pkg-more { margin-top: 6px; }
+      .pkg-more > summary { cursor: pointer; list-style: none; user-select: none; display: inline-flex; align-items: center; gap: 8px;
+        color: #c4ccdb; font-weight: 700; font-size: 14px; }
+      .pkg-more > summary::-webkit-details-marker { display: none; }
+      .pkg-more[open] > summary { color: #8ab4ff; }
+      .pkg-more .more-body { margin-top: 10px; color: #cfd6e6; font-size: 14px; }
+      .pkg-more .more-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 6px; }
+
+      @media (min-width: 640px){ .pkg { padding: 20px; border-radius: 18px; } }
+    </style>
+
+    <div class="pkgs-wrap">
+      <header class="pkgs-head">
+        <h2 id="pkgs-title">חבילות צילום</h2>
+        <p class="pkgs-sub">קצר, ברור ומקצועי – בחרו את מה שמתאים לכם.</p>
+      </header>
+
+      <ul class="pkgs-grid" role="list">
+        <li>
+          <article class="pkg" aria-labelledby="pkg-basic-name">
+            <h3 id="pkg-basic-name" class="pkg-name">בסיסית</h3>
+            <p class="pkg-desc">פתרון מדויק ורזה לאירועים קטנים.</p>
+            <div class="pkg-price"><span class="value">₪1,200</span><span class="per">החל מ־</span></div>
+            <ul class="pkg-list">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>צלם סטילס • עד 3 שעות</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>כל התמונות עוברות עריכה</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>גלריה דיגיטלית לשיתוף</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>עד שבוע לקבלת התמונות</li>            </ul>
+            <details class="pkg-more">
+              <summary aria-controls="basic-more">פירוט מלא</summary>
+              <div id="basic-more" class="more-body">
+                <ul class="more-list">
+                  <li>זמן אספקה מהיר</li>
+                  <li>אפשרות להוספת וידאו קצר</li>
+                  <li>תוספת שעות לפי הצורך</li>
+                </ul>
+              </div>
+            </details>
+            <a class="pkg-cta pkg-cta--outline" href="contact.html?pkg=basic" aria-label="בדיקת זמינות לחבילת בסיסית">להצעת מחיר</a>
+          </article>
+        </li>
+
+        <li>
+          <article class="pkg pkg--featured" aria-labelledby="pkg-classic-name">
+            <div class="pkg-badge" aria-hidden="true">מומלצת</div>
+            <h3 id="pkg-classic-name" class="pkg-name">קלאסית</h3>
+            <p class="pkg-desc">החבילה המאוזנת והנפוצה ביותר.</p>
+            <div class="pkg-price"><span class="value">₪1,800</span><span class="per">החל מ־</span></div>
+            <ul class="pkg-list">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>צלם סטילס • עד 5 שעות</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>כל התמונות עוברות עריכה</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>תמונות בקישור לדרייב</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>אפשרות גם ל-USB</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>מתנה בשווי 200 ש''ח</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>עד שבוע לקבלת התמונות</li>            </ul>
+            <details class="pkg-more">
+              <summary aria-controls="classic-more">פירוט מלא</summary>
+              <div id="classic-more" class="more-body">
+                <ul class="more-list">
+                  <li>ליווי מלא מתחילת האירוע</li>
+                  <li>סינון ועריכה קפדניים</li>
+                  <li>אפשרות לאלבום מודפס</li>
+                </ul>
+              </div>
+            </details>
+            <a class="pkg-cta pkg-cta--primary" href="contact.html?pkg=classic" aria-label="שריינו תאריך לחבילת קלאסית">להצעת מחיר</a>
+          </article>
+        </li>
+
+        <li>
+          <article class="pkg" aria-labelledby="pkg-premium-name">
+            <h3 id="pkg-premium-name" class="pkg-name">פרימיום</h3>
+            <p class="pkg-desc">כיסוי מקסימלי ותוצאה קולנועית.</p>
+            <div class="pkg-price"><span class="value">₪2,600</span><span class="per">החל מ־</span></div>
+            <ul class="pkg-list">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>שני צלמים • עד 8 שעות</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>אלבום מעוצב</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>וידאו Highlight + סרט מלא</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>עד שבוע לקבלת התמונות</li>            </ul>
+            <details class="pkg-more">
+              <summary aria-controls="premium-more">פירוט מלא</summary>
+              <div id="premium-more" class="more-body">
+                <ul class="more-list">
+                  <li>תכנון לוח זמנים מותאם</li>
+                  <li>ציוד גיבוי מלא</li>
+                  <li>סטודיו נייד לצילומי משפחה</li>
+                </ul>
+              </div>
+            </details>
+            <a class="pkg-cta pkg-cta--ghost" href="contact.html?pkg=premium" aria-label="דברו איתי על חבילת פרימיום">להצעת מחיר</a>
+          </article>
+        </li>
+      </ul>
+    </div>
+
+    <script>
+      // Improve details accessibility state
+      (function(){
+        var wraps = document.querySelectorAll('#photo-packages details');
+        wraps.forEach(function(d){
+          d.addEventListener('toggle', function(){ d.setAttribute('aria-expanded', d.open ? 'true' : 'false'); });
+        });
+      })();
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "שירותי צילום אירועים",
+        "provider": { "@type": "LocalBusiness", "name": "Yair Rozenberg" },
+        "areaServed": "ירושלים, ישראל",
+        "offers": [
+          {"@type":"Offer","name":"בסיסית","price":"1200","priceCurrency":"ILS","availability":"https://schema.org/InStock","url":"contact.html?pkg=basic"},
+          {"@type":"Offer","name":"קלאסית","price":"1800","priceCurrency":"ILS","availability":"https://schema.org/InStock","url":"contact.html?pkg=classic"},
+          {"@type":"Offer","name":"פרימיום","price":"2600","priceCurrency":"ILS","availability":"https://schema.org/InStock","url":"contact.html?pkg=premium"}
+        ]
+      }
+    </script>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="faq-section" aria-labelledby="faq-title" dir="rtl" lang="he">
+    <style>
+      .faq-section {
+        --bg: #0b1224;
+        --surface: rgba(255,255,255,0.06);
+        --text: #e7eaf1;
+        --muted: #aab2c8;
+        --accent: #8ab4ff;
+        --ring: #90cdf4;
+        --radius: 16px;
+        color: var(--text);
+        background: linear-gradient(180deg, transparent 0%, rgba(255,255,255,0.03) 100%);
+      }
+      .faq-section .faq-wrap { max-width: 1100px; margin: 0 auto; padding: clamp(20px, 4vw, 40px); }
+      .faq-section .faq-title { margin: 0 0 16px; text-align: center; font-weight: 900; letter-spacing: -0.02em; font-size: clamp(26px, 2.4vw, 34px); }
+      .faq-section .faq-sub { margin: 0 0 26px; text-align: center; color: var(--muted); font-size: clamp(15px, 1.2vw, 18px); }
+      .faq-section .faq-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+      .faq-section .faq-item { background: var(--surface); border: 1px solid color-mix(in oklab, var(--accent) 22%, transparent); border-radius: var(--radius); box-shadow: 0 8px 24px rgba(0,0,0,.25); padding: clamp(14px, 2.2vw, 20px); }
+      .faq-section .faq-q { margin: 0 0 10px; font-weight: 800; letter-spacing: -0.01em; font-size: clamp(18px, 1.6vw, 22px); color: var(--text); }
+      .faq-section .faq-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+      .faq-section .faq-open,
+      .faq-section .faq-close {
+        display: inline-flex; align-items: center; justify-content: center;
+        gap: 8px; padding: 10px 14px; border-radius: 999px; cursor: pointer;
+        font-weight: 800; border: 1px solid color-mix(in oklab, var(--accent) 45%, transparent);
+        background: linear-gradient(135deg, var(--accent), color-mix(in oklab, var(--accent) 72%, #ffffff));
+        color: #0a1020; text-decoration: none; user-select: none;
+        transition: transform .18s ease, box-shadow .25s ease, filter .25s ease;
+        box-shadow: 0 8px 22px rgba(10,16,32,.25);
+      }
+      .faq-section .faq-open:hover,
+      .faq-section .faq-close:hover { transform: translateY(-1px); box-shadow: 0 14px 30px rgba(10,16,32,.35); filter: saturate(1.05); }
+      .faq-section .faq-open:focus-visible,
+      .faq-section .faq-close:focus-visible { outline: 3px solid color-mix(in oklab, var(--ring) 75%, transparent); outline-offset: 2px; }
+      .faq-section .faq-open.is-open { background: linear-gradient(135deg, color-mix(in oklab, var(--accent) 80%, #ffffff), var(--accent)); }
+      .faq-section .faq-a { margin-top: 12px; color: var(--text); line-height: 1.7; }
+      .faq-section .faq-a p { margin: 0 0 8px; color: var(--text); }
+      .faq-section .faq-a p + p { margin-top: 8px; }
+      .faq-section .faq-a ul { margin: 6px 0 10px; padding-inline-start: 1.1em; }
+      .faq-section .faq-a li { margin: 4px 0; color: var(--text); }
+      @media (prefers-reduced-motion: reduce) {
+        .faq-section .faq-open, .faq-section .faq-close { transition: none; }
+      }
+    </style>
+
+    <div class="faq-wrap">
+      <h2 id="faq-title" class="faq-title">שאלות נפוצות</h2>
+      <p class="faq-sub">תשובות לשאלות הנפוצות של לקוחות לגבי צילום בר מצווה בכותל</p>
+      <ul class="faq-list" role="list">
+        <li class="faq-item" role="listitem">
+          <h3 class="faq-q">מה כולל צילום בר מצווה בכותל?</h3>
+          <div class="faq-actions">
+            <button type="button" class="faq-open" aria-expanded="false" aria-controls="faq-a1">הצג תשובה</button>
+          </div>
+          <div id="faq-a1" class="faq-a" hidden>
+            <p>צילום בר מצווה כולל בתוכו צילום סטילס במתחם הכותל המערבי ובו: צילום חתן בר מצווה, צילום טקס עליה לתורה, הנחת תפילין, צילומי משפחה, צילום ספונטני אומנותי, צילום תיעודי, תמונות מבוימות, צילום קבוצתי וצילומי אווירה (תהלוכת תופים), וכן צילום סיורים (מנהרות הכותל וכו').</p>
+            <p>כאופציה נוספת ניתן להמשיך למסעדה ו/או לסיור בעיר.</p>
+            
+          </div>
+        </li>
+
+        <li class="faq-item" role="listitem">
+          <h3 class="faq-q">מה המחיר הזול ביותר לחבילת צילום בר מצווה בכותל?</h3>
+          <div class="faq-actions">
+            <button type="button" class="faq-open" aria-expanded="false" aria-controls="faq-a2">הצג תשובה</button>
+          </div>
+          <div id="faq-a2" class="faq-a" hidden>
+            <p>המחיר הכי זול לצילום בר מצווה בכותל הוא 1,000 ש"ח.</p>
+            
+          </div>
+        </li>
+
+        <li class="faq-item" role="listitem">
+          <h3 class="faq-q">צילום משולב עליה בכותל — מה זה בעצם?</h3>
+          <div class="faq-actions">
+            <button type="button" class="faq-open" aria-expanded="false" aria-controls="faq-a3">הצג תשובה</button>
+          </div>
+          <div id="faq-a3" class="faq-a" hidden>
+            <p>צילום משולב זה טרנד די חדש בשוק הישראלי. צלם אחד מצלם קטעי וידאו קצרים ותמונות תוך כדי האירוע.</p>
+            <p>התוצאה שאתם מקבלים היא קליפ תקציר מתומצת מהאירוע והרבה תמונות. חשוב לציין שצילום סטילס הוא עדיין הדומיננטי.</p>
+            
+          </div>
+        </li>
+
+        <li class="faq-item" role="listitem">
+          <h3 class="faq-q">מה מחיר צילום בר מצווה בכותל?</h3>
+          <div class="faq-actions">
+            <button type="button" class="faq-open" aria-expanded="false" aria-controls="faq-a4">הצג תשובה</button>
+          </div>
+          <div id="faq-a4" class="faq-a" hidden>
+            <p>מחירים לצילום בר מצווה בכותל נעים בין 800 ל‑2,800 ש"ח, בהתאם לחבילה הנבחרת. מחיר מומלץ: 1,800 ש"ח.</p>
+            
+          </div>
+        </li>
+
+        <li class="faq-item" role="listitem">
+          <h3 class="faq-q">כמה זמן צילום הנחת תפילין בכותל?</h3>
+          <div class="faq-actions">
+            <button type="button" class="faq-open" aria-expanded="false" aria-controls="faq-a5">הצג תשובה</button>
+          </div>
+          <div id="faq-a5" class="faq-a" hidden>
+            <p>בדרך כלל כשעתיים, כולל צילומי משפחות ואורחים.</p>
+            
+          </div>
+        </li>
+
+        <li class="faq-item" role="listitem">
+          <h3 class="faq-q">איך מקבלים תמונות מבר מצווה בכותל?</h3>
+          <div class="faq-actions">
+            <button type="button" class="faq-open" aria-expanded="false" aria-controls="faq-a6">הצג תשובה</button>
+          </div>
+          <div id="faq-a6" class="faq-a" hidden>
+            <p>ישנן כמה אפשרויות לקבלת התמונות:</p>
+            <ul>
+              <li>בצורה דיגיטלית — דרך קישור לענן ייעודי עבורכם.</li>
+              <li>על דיסק און קי בדואר (בתוספת תשלום).</li>
+              <li>תמונות מפותחות או אלבום דיגיטלי (בתוספת תשלום).</li>
+            </ul>
+            <p>וכמובן ניתן לשלב בין האפשרויות.</p>
+            
+          </div>
+        </li>
+
+        <li class="faq-item" role="listitem">
+          <h3 class="faq-q">תוך כמה זמן מקבלים תמונות מהאירוע?</h3>
+          <div class="faq-actions">
+            <button type="button" class="faq-open" aria-expanded="false" aria-controls="faq-a7">הצג תשובה</button>
+          </div>
+          <div id="faq-a7" class="faq-a" hidden>
+            <p>אני מתחייב ל‑21 ימי עסקים מיום הצילום, אך לרוב זה הרבה פחות.</p>
+            
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <script>
+      (function(){
+        const section = document.getElementById('faq');
+        if (!section) return;
+        const openers = section.querySelectorAll('.faq-open');
+        openers.forEach(btn => {
+          btn.addEventListener('click', () => {
+            const id = btn.getAttribute('aria-controls');
+            const ans = id ? document.getElementById(id) : null;
+            if (!ans) return;
+            const expanded = btn.getAttribute('aria-expanded') === 'true';
+            if (expanded) {
+              ans.hidden = true;
+              btn.setAttribute('aria-expanded', 'false');
+              btn.classList.remove('is-open');
+              btn.textContent = 'הצג תשובה';
+            } else {
+              ans.hidden = false;
+              btn.setAttribute('aria-expanded', 'true');
+              btn.classList.add('is-open');
+              btn.textContent = 'סגור תשובה';
+            }
+          });
+        });
+        const closers = section.querySelectorAll('.faq-close');
+        closers.forEach(btn => {
+          btn.addEventListener('click', () => {
+            const id = btn.getAttribute('data-for');
+            const ans = id ? document.getElementById(id) : null;
+            if (!ans) return;
+            ans.hidden = true;
+            const opener = section.querySelector('.faq-open[aria-controls="' + id + '"]');
+            if (opener) {
+              opener.setAttribute('aria-expanded', 'false');
+              opener.classList.remove('is-open');
+              opener.textContent = 'הצג תשובה';
+              opener.focus();
+            }
+          });
+        });
+      })();
+    </script>
+  </section>
+
+  <!-- Quick Contact Section -->
+  <section id="contact" class="home-contact" aria-labelledby="contact-title">
+    <h2 id="contact-title">צור קשר</h2>
+    <ul>
+      <li>📞 <a href="tel:0533468597">053-3468597</a></li>
+      <li>💬 <a href="https://wa.me/972533468597" target="_blank" rel="noopener">הודעת וואטסאפ</a></li>
+      <li>✉️ <a href="mailto:005yro@gmail.com">005yro@gmail.com</a></li>
+    </ul>
+    <a class="btn" href="contact.html">לקביעת פגישה</a>
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+  <p>&copy; 2025 יאיר רוזנברג צילום. כל הזכויות שמורות.</p>
+</footer>
+
+<!-- WhatsApp Floating Button -->
+<a class="whatsapp-fab" href="https://wa.me/972533468597" target="_blank" aria-label="שיחת וואטסאפ">
+  <svg viewBox="0 0 32 32"><path d="M19.11 17.16c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.15-.42-2.2-1.34-.81-.72-1.35-1.6-1.51-1.87-.16-.27-.02-.41.12-.55.13-.13.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.45-.84-1.99-.22-.53-.45-.46-.61-.47-.16-.01-.34-.01-.52-.01s-.48.07-.73.34c-.25.27-.96.94-.96 2.3s.98 2.66 1.12 2.84c.14.18 1.92 2.94 4.66 4.12.65.28 1.16.45 1.56.58.65.21 1.24.18 1.7.11.52-.08 1.6-.65 1.83-1.28.23-.63.23-1.17.16-1.28-.07-.11-.25-.18-.52-.32z"></path></svg>
+</a>
+
+<!-- Scripts -->
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navMenu = document.getElementById('navMenu');
+  const overlay = document.getElementById('overlay');
+
+  function toggleMenu(open) {
+    if (window.innerWidth > 900) return;
+    navMenu.classList.toggle('open', open);
+    overlay.classList.toggle('show', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
+
+  hamburger.addEventListener('click', () => toggleMenu(!navMenu.classList.contains('open')));
+  overlay.addEventListener('click', () => toggleMenu(false));
+  document.querySelectorAll('#navMenu a').forEach(a => 
+    a.addEventListener('click', () => toggleMenu(false))
+  );
+
+  // Header scroll effect - toggle background
+  window.addEventListener('scroll', () => {
+    const headerEl = document.querySelector('.header');
+    if (headerEl) {
+      headerEl.classList.toggle('scrolled', window.scrollY > 0);
+    }
+  });
+
+  // Hero caption appears with a later delay via CSS
+  // Inject icons and strip stray characters in quick contact list
+  (function(){
+    const items = document.querySelectorAll('.home-contact ul li');
+    items.forEach(li => {
+      Array.from(li.childNodes).forEach(n => { if (n.nodeType === 3) li.removeChild(n); });
+      const a = li.querySelector('a');
+      if (!a) return;
+      const icon = document.createElement('span');
+      icon.setAttribute('aria-hidden','true');
+      const href = a.getAttribute('href') || '';
+      if (href.startsWith('tel:')) icon.textContent = '📞';
+      else if (href.includes('wa.me')) icon.textContent = '💬';
+      else if (href.startsWith('mailto:')) icon.textContent = '✉️';
+      if (icon.textContent) li.insertBefore(icon, a);
+    });
+  })();
+  // ===== Marquee: JS-driven seamless scroll (avoids CSS jump) =====
+  (function(){
+    const track = document.querySelector('.marquee-track');
+    if (!track) return;
+    // Ensure we have at most two initial groups, then clone as needed
+    while (track.children.length > 2) track.removeChild(track.lastElementChild);
+    if (track.children.length === 1) track.appendChild(track.firstElementChild.cloneNode(true));
+
+    const group = track.querySelector('.marquee-group');
+    let gw = 0; // group width in px
+    let x = 0;  // current offset in px
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
+    let duration = isMobile ? 60 : 45; // slower on phones for smoother feel
+
+    function ensureFillWidth(){
+      // Clone first group until we comfortably exceed viewport width
+      const minWidth = Math.ceil(window.innerWidth * 1.5);
+      while (track.scrollWidth < minWidth) {
+        track.appendChild(track.firstElementChild.cloneNode(true));
+      }
+    }
+
+    function measure(){
+      ensureFillWidth();
+      const rect = group.getBoundingClientRect();
+      gw = rect.width;
+      if (gw > 0) x = x % gw;
+      return gw > 0;
+    }
+
+    function waitImages(cb){
+      const imgs = track.querySelectorAll('img');
+      let left = imgs.length; if (left === 0) { cb(); return; }
+      const done = () => { if (--left <= 0) cb(); };
+      imgs.forEach(img => {
+        if (img.complete) { left--; }
+        else { img.addEventListener('load', done, { once:true }); img.addEventListener('error', done, { once:true }); }
+      });
+      if (left <= 0) cb();
+    }
+
+    function loop(ts){
+      if (!loop.t0) loop.t0 = ts;
+      if (!loop.last) loop.last = ts;
+      const dt = (ts - loop.last) / 1000; loop.last = ts;
+      if (gw > 0) {
+        const pps = gw / duration; // pixels per second
+        x -= pps * dt;
+        if (-x >= gw) x += gw; // wrap seamlessly
+        track.style.transform = 'translateX(' + x + 'px)';
+      }
+      requestAnimationFrame(loop);
+    }
+
+    function onResize(){
+      duration = window.matchMedia('(max-width: 768px)').matches ? 60 : 45;
+      measure();
+    }
+
+    function start(){
+      if (!measure()) { requestAnimationFrame(start); return; }
+      window.addEventListener('resize', onResize);
+      requestAnimationFrame(loop);
+    }
+    waitImages(start);
+  })();
+</script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,81 @@
+    <svg class="icon-exit" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 9H5V5h4m6 0h4v4h-4M9 15H5v4h4m6 0h4v-4h-4"/>
+    </svg>
+  </button>
+  <img class="lightbox-img" src="" alt="">
+  <a class="prev" aria-label="הקודם">&#10094;</a>
+  <a class="next" aria-label="הבא">&#10095;</a>
+</div>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navMenu = document.getElementById('navMenu');
+  const overlay = document.getElementById('overlay');
+
+  function toggleMenu(open) {
+    if (window.innerWidth > 900) return;
+    navMenu.classList.toggle('open', open);
+    overlay.classList.toggle('show', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
+
+  hamburger.addEventListener('click', () => toggleMenu(!navMenu.classList.contains('open')));
+  overlay.addEventListener('click', () => toggleMenu(false));
+  document.querySelectorAll('#navMenu a').forEach(a =>
+    a.addEventListener('click', () => toggleMenu(false))
+  );
+
+  // Lightbox functionality
+  document.addEventListener("DOMContentLoaded", function() {
+    // Tab switching for gallery categories
+    const tabButtons = Array.from(document.querySelectorAll('.tab'));
+
+    // Inject "בר מצווה בכותל" tab after the Bar Mitzvah tab, if missing
+    const tabsContainer = document.querySelector('ul.tabs[role="tablist"]');
+    if (tabsContainer && !document.querySelector('.tab[data-target="bm-kotel"]')) {
+      const bmBtn = document.createElement('button');
+      bmBtn.className = 'tab';
+      bmBtn.setAttribute('role', 'tab');
+      bmBtn.setAttribute('aria-selected', 'false');
+      bmBtn.dataset.target = 'bm-kotel';
+      bmBtn.textContent = 'בר מצווה בכותל';
+      const li = document.createElement('li');
+      li.appendChild(bmBtn);
+      const after = tabsContainer.querySelector('.tab[data-target="barmitzvah"]');
+      if (after && after.parentElement && after.parentElement.nextSibling) {
+        tabsContainer.insertBefore(li, after.parentElement.nextSibling);
+      } else {
+        tabsContainer.appendChild(li);
+      }
+      bmBtn.addEventListener('click', () => activateTab(bmBtn));
+      tabButtons.push(bmBtn);
+    }
+
+    // Ensure Kotel gallery uses its own file names (not outdoor ones)
+    const kotelSection = document.getElementById('bm-kotel');
+    if (kotelSection) {
+      const kotelImgs = kotelSection.querySelectorAll('.gallery-grid img');
+      kotelImgs.forEach((img, i) => {
+        const n = i + 1;
+        img.src = `images/bar-mitzvah-kotel${n}.jpg`;
+        img.alt = `בר מצווה בכותל ${n}`;
+      });
+    }
+    const tabPanels = Array.from(document.querySelectorAll('.tab-panel'));
+
+    const activateTab = (tab) => {
+      const targetId = tab.dataset.target;
+      tabButtons.forEach((btn) => {
+        const isActive = btn === tab;
+        btn.classList.toggle('active', isActive);
+        btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+      });
+      tabPanels.forEach((panel) => {
+        const isActive = panel.id === targetId;
+        panel.classList.toggle('active', isActive);
+        panel.setAttribute('aria-hidden', isActive ? 'false' : 'true');
+        panel.toggleAttribute('hidden', !isActive);
+      });
+    };
+
+    tabButtons.forEach((tab) => {
