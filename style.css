@@ -1283,7 +1283,7 @@ body.home { padding-top: 0; }
 /* keyframes not used when JS-driven */
 /* Header nav: label for FAQ link */
 .header .nav a[href="#faq"]::before { content: "שאלות נפוצות"; }
-/* Language switch button: always visible */
+/* Language switch button: show only on mobile */
 .header .lang-switch {
   display: inline-flex;
   align-items: center;
