@@ -124,6 +124,11 @@
 
   // Lightbox functionality
   document.addEventListener("DOMContentLoaded", function() {
+    // Ensure all grid images use lazy loading and async decoding for better performance
+    document.querySelectorAll('.gallery-grid img').forEach(function(img){
+      if (!img.hasAttribute('loading')) img.setAttribute('loading','lazy');
+      img.setAttribute('decoding','async');
+    });
     // Remove broken images automatically (e.g., missing files)
     document.querySelectorAll('.gallery-grid img').forEach(function(img){
       img.addEventListener('error', function(){ img.remove(); }, { once: true });
@@ -144,6 +149,8 @@
         if (existing.has(src)) continue;
         const img = document.createElement('img');
         img.src = src;
+        img.loading = 'lazy';
+        img.decoding = 'async';
         const alt = sample.getAttribute('alt') || '';
         img.alt = /\d+$/.test(alt) ? alt.replace(/\d+$/, String(i)) : ('Travel ' + i);
         img.addEventListener('error', function(){ img.remove(); }, { once: true });

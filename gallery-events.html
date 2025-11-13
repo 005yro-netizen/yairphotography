@@ -261,9 +261,21 @@
 
   // Tabs + Lightbox
   document.addEventListener('DOMContentLoaded', function() {
+    // Ensure all grid images use lazy loading and async decoding
+    Array.from(document.querySelectorAll('.gallery-grid img')).forEach(function(img){
+      if (!img.hasAttribute('loading')) img.setAttribute('loading','lazy');
+      img.setAttribute('decoding','async');
+    });
     // Tabs
     const tabButtons = Array.from(document.querySelectorAll('.tab'));
     const tabPanels = Array.from(document.querySelectorAll('.tab-panel'));
+
+
+    // Ensure all grid images use lazy/async decoding for performance
+    Array.from(document.querySelectorAll(".gallery-grid img")).forEach(function(img){
+      if (!img.hasAttribute("loading")) img.setAttribute("loading","lazy");
+      img.setAttribute("decoding","async");
+    });
 
     // Fix image extension case for Outdoor gallery (ensure .jpg not .JPG)
     (function fixOutdoorJpgCase() {
