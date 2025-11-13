@@ -973,7 +973,7 @@ section {
   .lightbox .next {
     display: none;
   }
-  /* On mobile, hide fullscreen toggle — images already fill screen */
+  /* On small phones we previously hid fullscreen; we'll override for portrait below */
   .lightbox .fullscreen-toggle {
     display: none;
   }
@@ -1069,8 +1069,33 @@ body { padding-top: 72px; }
 
 /* Also hide the X in landscape on phones (short viewport height) */
 @media (max-height: 480px) and (orientation: landscape) {
-  .lightbox .close {
+  .lightbox .close,
+  .lightbox .prev,
+  .lightbox .next {
     display: none;
+  }
+}
+
+/* Prefer robust targeting of mobile devices: coarse pointer (touch) */
+@media (orientation: landscape) and (hover: none) and (pointer: coarse) {
+  .lightbox .prev,
+  .lightbox .next,
+  .lightbox .close {
+    display: none !important;
+  }
+}
+
+/* In mobile portrait, show fullscreen button so user can enter fullscreen */
+@media (orientation: portrait) and (hover: none) and (pointer: coarse) {
+  .lightbox .fullscreen-toggle {
+    display: flex !important;
+  }
+}
+
+/* Fallback: in small-width portrait, ensure fullscreen is visible */
+@media (max-width: 640px) and (orientation: portrait) {
+  .lightbox .fullscreen-toggle {
+    display: flex;
   }
 }
 /* Homepage: let header overlay the hero image */
