@@ -363,6 +363,9 @@
     // Active image list for the current panel (includes hero as first item)
     let images = [];
     let currentIndex = 0;
+    // Touch swipe helpers
+    let touchStartX = 0, touchStartY = 0, touchStartTime = 0;
+    let didSwipe = false;
 
     function setActiveImagesForPanel(panel) {
       const gridImgs = Array.from(panel.querySelectorAll('.gallery-grid img'));
@@ -431,9 +434,42 @@
       }
     });
     closeBtn.addEventListener('click', closeLightbox);
-    lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+    lightbox.addEventListener('click', (e) => { if (didSwipe) { didSwipe = false; return; } if (e.target === lightbox) closeLightbox(); });
     prevBtn.addEventListener('click', () => shiftImage('prev'));
     nextBtn.addEventListener('click', () => shiftImage('next'));
+
+    // Swipe navigation for mobile: left -> next, right -> prev
+    lightbox.addEventListener('touchstart', (e) => {
+      if (!lightbox.classList.contains('open')) return;
+      const t = e.changedTouches && e.changedTouches[0];
+      if (!t) return;
+      touchStartX = t.clientX;
+      touchStartY = t.clientY;
+      touchStartTime = Date.now();
+      didSwipe = false;
+    }, { passive: true });
+
+    lightbox.addEventListener('touchend', (e) => {
+      if (!lightbox.classList.contains('open')) return;
+      const t = e.changedTouches && e.changedTouches[0];
+      if (!t) return;
+      const dx = t.clientX - touchStartX;
+      const dy = t.clientY - touchStartY;
+      const adx = Math.abs(dx);
+      const ady = Math.abs(dy);
+      const dt = Date.now() - touchStartTime;
+      const threshold = 40; // px
+      const mainlyHorizontal = adx > ady * 1.25;
+      if (adx > threshold && mainlyHorizontal) {
+        if (dx < 0) {
+          shiftImage('next');
+        } else {
+          shiftImage('prev');
+        }
+        didSwipe = true;
+        try { e.preventDefault(); e.stopPropagation(); } catch (err) {}
+      }
+    }, { passive: false });
 
     if (fullscreenBtn) {
       fullscreenBtn.addEventListener('click', () => {
