@@ -434,7 +434,19 @@
       }
     });
     closeBtn.addEventListener('click', closeLightbox);
-    lightbox.addEventListener('click', (e) => { if (didSwipe) { didSwipe = false; return; } if (e.target === lightbox) closeLightbox(); });
+    lightbox.addEventListener('click', (e) => {
+      if (didSwipe) { didSwipe = false; return; }
+      // Mobile-only: taps on the image should NOT close
+      const isMobile = (window.matchMedia && window.matchMedia('(max-width: 640px), (max-height: 480px) and (orientation: landscape)').matches)
+        || (window.innerWidth <= 640 || window.innerHeight <= 480);
+      if (isMobile && lightboxImg) {
+        const r = lightboxImg.getBoundingClientRect();
+        const x = e.clientX, y = e.clientY;
+        const insideImage = x >= r.left && x <= r.right && y >= r.top && y <= r.bottom;
+        if (insideImage) return; // don't close when photo is tapped
+      }
+      if (e.target === lightbox) closeLightbox();
+    });
     prevBtn.addEventListener('click', () => shiftImage('prev'));
     nextBtn.addEventListener('click', () => shiftImage('next'));
 
