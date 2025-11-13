@@ -215,20 +215,20 @@ section {
   margin-left: 0.5rem;
 }
 
-/* Fix garbled header labels by injecting clean text */
-.header .nav a { font-size: 0; }
-.header .nav a::before {
+/* Fix garbled header labels by injecting clean text (Hebrew only) */
+html[lang="he"] .header .nav a { font-size: 0; }
+html[lang="he"] .header .nav a::before {
   font-size: 1rem;
   font-weight: 700;
   color: var(--text);
   margin-inline-start: .4rem;
 }
-.header .nav a.active::before { color: #fff; }
-.header .nav a[href="index.html"]::before { content: "בית"; }
-.header .nav a[href="index.html#gallery"]::before,
-.header .nav a[href="#gallery"]::before { content: "גלריה"; }
-.header .nav a[href="about.html"]::before { content: "אודות"; }
-.header .nav a[href="contact.html"]::before { content: "צור קשר"; }
+html[lang="he"] .header .nav a.active::before { color: #fff; }
+html[lang="he"] .header .nav a[href="index.html"]::before { content: "בית"; }
+html[lang="he"] .header .nav a[href="index.html#gallery"]::before,
+html[lang="he"] .header .nav a[href="#gallery"]::before { content: "גלריה"; }
+html[lang="he"] .header .nav a[href="about.html"]::before { content: "אודות"; }
+html[lang="he"] .header .nav a[href="contact.html"]::before { content: "צור קשר"; }
 
 .hamburger {
   display: none;
@@ -337,13 +337,14 @@ section {
   font-size: clamp(2rem, 3.8vw, 2.8rem);
 }
 /* Override broken titles per page */
-.page-events .page-header h1,
-.page-travel .page-header h1 {
+/* Apply Hebrew title overlay only on Hebrew pages */
+html[lang="he"] .page-events .page-header h1,
+html[lang="he"] .page-travel .page-header h1 {
   position: relative;
   color: transparent;
 }
-.page-events .page-header h1::after { content: "אירועים"; color: #fff; position: absolute; inset: 0 auto auto 0; }
-.page-travel .page-header h1::after { content: "טיולים"; color: #fff; position: absolute; inset: 0 auto auto 0; }
+html[lang="he"] .page-events .page-header h1::after { content: "אירועים"; color: #fff; position: absolute; inset: 0 auto auto 0; }
+html[lang="he"] .page-travel .page-header h1::after { content: "טיולים"; color: #fff; position: absolute; inset: 0 auto auto 0; }
 
 .category-grid {
   display: grid;
@@ -1281,8 +1282,8 @@ body.home { padding-top: 0; }
 
 /* Keyframes: base leftward motion (reversed for left->right) */
 /* keyframes not used when JS-driven */
-/* Header nav: label for FAQ link */
-.header .nav a[href="#faq"]::before { content: "שאלות נפוצות"; }
+/* Header nav: label for FAQ link (Hebrew only) */
+html[lang="he"] .header .nav a[href="#faq"]::before { content: "שאלות נפוצות"; }
 /* Language switch button: show only on mobile */
 .header .lang-switch {
   display: inline-flex;
