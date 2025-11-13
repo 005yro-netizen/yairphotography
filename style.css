@@ -1305,3 +1305,7 @@ html[lang="he"] .header .nav a[href="#faq"]::before { content: "שאלות נפ�
   .header .lang-switch { margin-inline-start: .75rem; }
 }
 
+/* English-only guard to prevent duplicate 'FAQs' text in nav */
+html[lang="en"] .header .nav a[href="#faq"]::before,
+html[lang="en"] .header .nav a[href="index.html#faq"]::before { content: none !important; }
+
