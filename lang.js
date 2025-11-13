@@ -6,12 +6,15 @@
     var file = path.split('/').pop() || 'index.html';
     var saved = localStorage.getItem('preferredLang');
 
-    // If user has a saved preference, ensure path matches it
-    if (saved === 'en' && !isEn) {
-      window.location.replace((path.endsWith('/') ? 'en/index.html' : ('en/' + file)) + window.location.search + window.location.hash);
-      return;
+    // Default preference is Hebrew unless user explicitly switched
+    if (!saved) {
+      saved = 'he';
+      try { localStorage.setItem('preferredLang', saved); } catch(e) {}
     }
-    if (saved === 'he' && isEn) {
+
+    // Never auto-redirect to English from Hebrew root.
+    // Only enforce Hebrew if user is under /en/ but preference is Hebrew.
+    if (isEn && saved === 'he') {
       window.location.replace('../' + file + window.location.search + window.location.hash);
       return;
     }
@@ -26,16 +29,11 @@
       switchEl.addEventListener('click', function(e){
         e.preventDefault();
         var next = current === 'he' ? 'en' : 'he';
-        localStorage.setItem('preferredLang', next);
-        var target;
-        if (next === 'en') {
-          target = isEn ? file : ('en/' + file);
-        } else {
-          target = isEn ? ('../' + file) : file;
-        }
+        try { localStorage.setItem('preferredLang', next); } catch(e) {}
+        var target = next === 'en' ? (isEn ? file : ('en/' + file))
+                                   : (isEn ? ('../' + file) : file);
         window.location.href = target + window.location.search + window.location.hash;
       });
     });
   } catch(_) {}
 })();
-
