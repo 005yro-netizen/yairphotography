@@ -1,0 +1,21 @@
+/* Image protection: discourage saving/copying without changing visuals */
+img, picture, svg, canvas {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.gallery-grid img, .gallery-hero img {
+  -webkit-touch-callout: none !important;
+  user-select: none !important;
+}
+
+.lightbox .lightbox-img {
+  pointer-events: none;
+  user-select: none;
+}
+
