@@ -190,20 +190,38 @@
     const images = Array.from(document.querySelectorAll('.gallery-grid img'));
     let currentIndex = 0;
 
-    const openLightbox = (index) => {
-      currentIndex = index;
-      showImage();
-      lightbox.classList.add('open');
-      // Default: open without fullscreen; user can switch to fullscreen via the toggle
-      syncFullscreenState();
-    };
+    // Track if we've pushed a history entry for the lightbox
+    let lightboxHistoryActive = false;
+    let isHandlingPopstate = false;
 
-    const closeLightbox = () => {
+    const performCloseLightbox = () => {
       if (isFullscreenActive()) {
         exitLightboxFullscreen();
       }
       lightbox.classList.remove('open');
       syncFullscreenState();
+    };
+
+    const openLightbox = (index) => {
+      currentIndex = index;
+      showImage();
+      lightbox.classList.add('open');
+      // Push a history state so Android/iOS back closes the lightbox first
+      if (!lightboxHistoryActive) {
+        try { history.pushState({ lightbox: true, idx: index }, '', '#lightbox-' + index); } catch (e) {}
+        lightboxHistoryActive = true;
+      }
+      // Default: open without fullscreen; user can switch to fullscreen via the toggle
+      syncFullscreenState();
+    };
+
+    const closeLightbox = () => {
+      // If we created a history state for the lightbox, go back one step to sync URL
+      if (lightboxHistoryActive && !isHandlingPopstate) {
+        try { history.back(); return; } catch (e) { /* fallback to immediate close */ }
+      }
+      performCloseLightbox();
+      lightboxHistoryActive = false;
     };
 
     const shiftImage = (direction) => {
@@ -248,6 +266,21 @@
       if (e.key === 'ArrowLeft') prevBtn.click();
       if (e.key === 'ArrowRight') nextBtn.click();
     });
+
+    // Close lightbox when navigating back in history
+    window.addEventListener('popstate', () => {
+      if (lightbox.classList.contains('open')) {
+        isHandlingPopstate = true;
+        performCloseLightbox();
+        lightboxHistoryActive = false;
+        isHandlingPopstate = false;
+      }
+    });
+
+    // If the page loads with a #lightbox-* hash, ensure it does not trap the user
+    if (location.hash && /^#lightbox-/.test(location.hash)) {
+      try { history.replaceState({}, '', location.pathname + location.search); } catch (e) {}
+    }
 
     function showImage(direction) {
       const targetImage = images[currentIndex];

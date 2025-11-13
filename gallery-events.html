@@ -370,20 +370,36 @@
       images = hero ? [hero, ...gridImgs] : gridImgs;
     }
 
+    // Track a history entry for the lightbox, so mobile Back closes it first
+    let lightboxHistoryActive = false;
+    let isHandlingPopstate = false;
+
+    const performCloseLightbox = () => {
+      if (isFullscreenActive()) exitLightboxFullscreen();
+      lightbox.classList.remove('open');
+      lightbox.setAttribute('aria-hidden', 'true');
+      syncFullscreenState();
+    };
+
     const openLightbox = (index) => {
       currentIndex = index;
       showImage();
       lightbox.classList.add('open');
       lightbox.setAttribute('aria-hidden', 'false');
+      if (!lightboxHistoryActive) {
+        try { history.pushState({ lightbox: true, idx: index }, '', '#lightbox-' + index); } catch (e) {}
+        lightboxHistoryActive = true;
+      }
       // Default: open without fullscreen; user may enable fullscreen via the toggle
       syncFullscreenState();
     };
 
     const closeLightbox = () => {
-      if (isFullscreenActive()) exitLightboxFullscreen();
-      lightbox.classList.remove('open');
-      lightbox.setAttribute('aria-hidden', 'true');
-      syncFullscreenState();
+      if (lightboxHistoryActive && !isHandlingPopstate) {
+        try { history.back(); return; } catch (e) { /* fallback to immediate close */ }
+      }
+      performCloseLightbox();
+      lightboxHistoryActive = false;
     };
 
     const shiftImage = (direction) => {
@@ -439,6 +455,21 @@
       if (e.key === 'ArrowLeft') prevBtn.click();
       if (e.key === 'ArrowRight') nextBtn.click();
     });
+
+    // Back button should close lightbox (go back one step) instead of leaving page
+    window.addEventListener('popstate', () => {
+      if (lightbox.classList.contains('open')) {
+        isHandlingPopstate = true;
+        performCloseLightbox();
+        lightboxHistoryActive = false;
+        isHandlingPopstate = false;
+      }
+    });
+
+    // Clean up accidental hash on load so first back doesn't jump oddly
+    if (location.hash && /^#lightbox-/.test(location.hash)) {
+      try { history.replaceState({}, '', location.pathname + location.search); } catch (e) {}
+    }
 
     function showImage(direction) {
       const targetImage = images[currentIndex];
