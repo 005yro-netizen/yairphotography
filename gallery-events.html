@@ -265,6 +265,17 @@
     const tabButtons = Array.from(document.querySelectorAll('.tab'));
     const tabPanels = Array.from(document.querySelectorAll('.tab-panel'));
 
+    // Fix image extension case for Outdoor gallery (ensure .jpg not .JPG)
+    (function fixOutdoorJpgCase() {
+      try {
+        const imgs = Array.from(document.querySelectorAll('#outdoor .gallery-hero img, #outdoor .gallery-grid img'));
+        imgs.forEach((img) => {
+          const s = img.getAttribute('src') || '';
+          if (/\.JPG$/.test(s)) img.src = s.replace(/\.JPG$/, '.jpg');
+        });
+      } catch (_) {}
+    })();
+
     const activateTab = (tab) => {
       const targetId = tab.dataset.target;
       tabButtons.forEach((btn) => {
