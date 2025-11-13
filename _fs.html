@@ -1,0 +1,634 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta http-equiv="Content-Type" content="text/html" charset=utf-8">
+
+            <meta name="description" content="FormSubmit is a form backend, API and email service for HTML forms. It sends your site's form submission directly into your inbox without a need for any backend code or SMTP setup."/>
+    
+    <meta name="application-name" content="FormSubmit"/>
+    <meta content="index,follow,archive" name="robots">
+    <meta content="en" name="language">
+    <link href="https://formsubmit.co/" rel="canonical">
+    <link href="https://formsubmit.co/" rel="shortlink">
+
+    <link rel="alternate" href="https://formsubmit.co/" hreflang="x-default"><link rel="alternate" href="https://formsubmit.co/" hreflang="en"><link rel="alternate" href="https://formsubmit.co/" hreflang="en-au"><link rel="alternate" href="https://formsubmit.co/" hreflang="en-br"><link rel="alternate" href="https://formsubmit.co/" hreflang="en-ca"><link rel="alternate" href="https://formsubmit.co/" hreflang="en-de"><link rel="alternate" href="https://formsubmit.co/" hreflang="en-gb"><link rel="alternate" href="https://formsubmit.co/" hreflang="en-in"><link rel="alternate" href="https://formsubmit.co/" hreflang="en-nl"><link rel="alternate" href="https://formsubmit.co/" hreflang="en-us">
+
+    <meta class="swiftype" name="path" data-type="enum" content="/">
+    <meta class="swiftype" name="content_type" data-type="enum" content="homePage">
+    <meta class="swiftype" name="title" data-type="string"
+          content="FormSubmit | Easy to use form backend - form endpoints for your HTML forms">
+    <meta class="swiftype" name="description" data-type="string"
+          content="FormSubmit is a form backend, API and email service for HTML forms. It sends your site's form submission directly into your inbox without a need for any backend code or SMTP setup.">
+    <meta class="swiftype" name="image" data-type="enum" content="https://formsubmit.co/image/home-page.png">
+
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="FormSubmit | Easy to use form backend - form endpoints for your HTML forms"/>
+    <meta property="og:url" content="https://formsubmit.co/" />
+    <meta property="og:site_name" content="FormSubmit" />
+    <meta property="og:description"
+          content="FormSubmit is a form backend, API and email service for HTML forms. It sends your site's form submission directly into your inbox without a need for any backend code or SMTP setup.">
+    <meta property="og:image" content="https://formsubmit.co/image/home-page.png">
+    <meta property="og:locale" content="en_US"/>
+
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:site" content="@devrolabs"/>
+    <meta name="twitter:title" content="FormSubmit | Easy to use form backend - form endpoints for your HTML forms"/>
+    <meta name="twitter:domain" content="formsubmit.co"/>
+    <meta name="twitter:description"
+          content="FormSubmit is a form backend, API and email service for HTML forms. It sends your site's form submission directly into your inbox without a need for any backend code or SMTP setup."/>
+    <meta name="twitter:image" content="https://formsubmit.co/image/home-page.png" />
+    <meta name="twitter:creator" content="@devrolabs"/>
+
+    <script type="application/ld+json">
+        {
+          "@context": "http://schema.org",
+          "@type": "WebPage",
+          "url": "https://formsubmit.co/",
+          "description": "Connect your form to our form endpoint and we’ll email you the submissions. No PHP, Javascript, or any backend code is required.",
+          "name": "FormSubmit - Easy form endpoints for your HTML forms",
+          "image": "https://formsubmit.co/image/home-page.png"
+        }
+    </script>
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="WCX7q2Oaptcl9nNttgeDU7sKpcFjHTKYRQVj1KOy">
+
+            <title>FormSubmit | Easy to use form backend - form endpoints for your HTML forms</title>
+    
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://formsubmit.co/js/app.js" defer></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132047961-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-132047961-1');
+    </script>
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800;900&family=Work+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link href="https://formsubmit.co/css/app.css" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="57x57" href="https://formsubmit.co/image/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="https://formsubmit.co/image/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://formsubmit.co/image/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="https://formsubmit.co/image/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://formsubmit.co/image/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="https://formsubmit.co/image/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="https://formsubmit.co/image/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="https://formsubmit.co/image/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://formsubmit.co/image/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="https://formsubmit.co/image/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://formsubmit.co/image/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="https://formsubmit.co/image/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://formsubmit.co/image/favicon/favicon-16x16.png">
+    <link rel="manifest" href="https://formsubmit.co/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="https://formsubmit.co/image/favicon/ms-icon-144x144.png">
+    <meta name="msapplication-config" content="https://formsubmit.co/browserconfig.xml" />
+    <meta name="theme-color" content="#615279">
+        <style>
+        .code {
+            font-size: 15px !important;
+            padding: 0.75em 1em;
+            overflow-x: scroll;
+            white-space: nowrap;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            color: black;
+            font-family: "Roboto Mono", monospace;
+        }
+
+        .setup, .features {
+            padding: 50px 0;
+        }
+
+        .features {
+            background-color: #e3e3da;
+        }
+        .setup h1, .features h1 {
+            padding: 20px 0;
+            color: #23272a;
+            font-weight: bold;
+        }
+
+        .setup h2 {
+            padding-bottom: 10px;
+            padding-top: 20px;
+        }
+
+        .features h4 {
+            padding-bottom: 10px;
+            padding-top: 40px;
+        }
+
+        .setup p {
+            font-size: 17px;
+        }
+
+        .features p {
+            font-size: 17px;
+        }
+
+        .mark {
+            background-color: #ffc7fb !important;
+            border: 1px solid #e3b1df
+        }
+
+        .try h1 {
+            color: #23272a;
+            font-weight: bold;
+            padding: 20px 0;
+        }
+
+        .try {
+            padding: 30px 0 60px 0;
+            text-align: center;
+        }
+
+        .stat {
+            background-color: #23272a;
+            text-align: center;
+            padding: 60px 0;
+        }
+
+        .stat h2 {
+            color: #fff;
+            padding-top: 30px
+        }
+
+        .stat span {
+            font-weight: bold;
+            font-size: 35px
+        }
+
+        .jumbotron {
+            border-radius: unset;
+            padding-bottom: 1rem;
+            background-color: #354d91;
+            margin-bottom: 0;
+            padding-top: 40px;
+        }
+
+        .links a {
+            font-size: 1rem;
+            text-decoration: none;
+        }
+        .links a:hover {
+            color: #D3D3D3 !important;
+        }
+        .links {
+            margin-top: 1.5rem;
+        }
+        .links .col-md-3 {
+            padding-bottom: 10px;
+        }
+
+        .html {
+            font-size: 16px;
+            color: black;
+        }
+
+        .html span {
+            color: #696969;
+        }
+
+        .card {
+            font-family: "Roboto Mono",monospace;
+        }
+        .card p {
+            margin-bottom: 0;
+        }
+
+        .small {
+            padding-top: 10px;
+            font-size: 18px;
+            color: white;
+            font-weight: 400;
+        }
+
+        .head {
+            color: white;
+        }
+
+        .head h1 {
+            font-size: 50px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 900;
+        }
+
+        .head p {
+            font-size: 30px;
+            padding-bottom: 10px;
+        }
+
+        .points {
+            font-size: 14px !important;
+            color: black;
+        }
+    </style>
+    <style>
+        body {
+            /*font-family: 'Inter', sans-serif;*/
+            font-family: 'Work Sans', sans-serif;
+        }
+        .nav-link {
+            color: #354d91 !important;
+            font-size: large;
+        }
+        .nav-link:hover {
+            color: #385199 !important;
+        }
+        /*footer*/
+        .page-footer, footer {
+            background-color: #23272a;
+            padding-top: 15px;
+            padding-bottom: 35px;
+            position: relative;
+        }
+        .footer-box {
+            padding-top: 10px;
+            padding-bottom: 25px;
+        }
+        .footer-nav ul {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            text-align: center;
+        }
+        .footer-nav ul li {
+            display: inline-block;
+            vertical-align: top;
+            text-align: center;
+            padding: 0 15px;
+        }
+        .footer-nav ul li a {
+            display: inline-block;
+            vertical-align: top;
+            color: #fff;
+            text-transform: uppercase;
+            font-size: 16px;
+            padding: 15px 0;
+            text-decoration: none;
+            background-color: transparent;
+        }
+        .footer-nav ul li a:hover {
+            color: #a7a7aa;
+        }
+        .copyright-box {
+            padding-top: 40px;
+            border-top: solid 1px #a7a7aa;
+            position: relative;
+            font-family: "Roboto Mono",monospace;
+            color: #fff;
+        }
+        .copyright-box a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .copyright-box a:hover {
+            color: #a7a7aa;
+        }
+        .social {
+            color: black;
+            padding-right: 35px;
+        }
+        .vl {
+            border-left: 1px solid #ccc;
+            height: 50px;
+            margin-right: 10px;
+        }
+    </style>
+
+
+
+<meta name="NetsparkQuiltingResult" total-length="32208" removed="0" rules-found="w6243,w6193,w6194,w3573,w1707,w3509,w6673,w2656,w4399,w5051,w3709,w4835,w9768,w4829,w4830,w8931,w9473,w12091" />
+</head>
+<body>
+    <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <img height="40px" src="https://formsubmit.co/image/logo.png" alt="FormSubmit logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="vl d-none d-md-block"></div>
+
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/email-link"><b>EMAIL LINK</b> <sup>Beta</sup></a>
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/documentation">DOCS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/live-demo">DEMO</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/help">HELP</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/support">SUPPORT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/services">&#10022; SERVICES</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div>
+            <div class="jumbotron">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center head">
+                    <h1>Easy form endpoints for your HTML forms</h1>
+                    <p>Connect your form to our form endpoint and we’ll email you the submissions. No PHP, Javascript or
+                        any backend code required.</p>
+                </div>
+                <div class="col-md-8 offset-md-2">
+                    <div class="card">
+                        <div class="card-header">
+                            EXAMPLE FORM / CONTACT FORM
+                        </div>
+                        <div class="card-body">
+                            <div class="box action-box">
+                                <div class="box-window"><i></i><i></i><i></i></div>
+                                <p class="html">&lt;form action="<mark style="background-color: #ffc7fb !important;">https://formsubmit.co/<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="dba2b4aea99bbeb6bab2b7f5b8b4b6">[email&#160;protected]</a></mark>"
+                                    method="POST"&gt;<br>
+                                    <span class="gray">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="text" name="name" required&gt;<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="email" name="email" required&gt;<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button type="submit"&gt;Send&lt;/button&gt;<br>
+                                    </span>
+                                    &lt;/form&gt;
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <h2 class="small text-center">Form backend platform for designers and developers.</h2>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row links">
+            <div class="col-md-12">
+                <div class="row text-center">
+                    <div class="col-md-3">
+                        <a style="color:#fff;" target="_blank" title="Fake SMTP server for developers to debug email samples"
+                           href="https://mailcoat.com/?ref=formsubmit"><i class="fas fa-external-link-alt"></i>&nbsp; Fake SMTP Server for Developers</a>
+                    </div>
+                    <div class="col-md-3">
+                        <a style="color:#fff;" target="_blank" title="Verify email address for free with our email checker"
+                           href="https://mailinput.com/?ref=formsubmit"><i class="fas fa-external-link-alt"></i>&nbsp; Verify Email Addresses Online</a>
+                    </div>
+                    <div class="col-md-3">
+                        <a style="color:#fff;" target="_blank" title="A disposable, temporary email address that works perfectly"
+                           href="https://mailgolem.com/?ref=formsubmit"><i class="fas fa-external-link-alt"></i>&nbsp; Temp Mailbox for Email Testing</a>
+                    </div>
+                    <div class="col-md-3">
+                        <a style="color:#fff;" target="_blank" title="Find all email addresses on any domain in seconds"
+                           href="https://maildump.co/?ref=formsubmit"><i class="fas fa-external-link-alt"></i>&nbsp; Find People Behind Any Company</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="margin-bottom: 0; font-size: 16px; color: #091E42"
+         class="alert alert-primary alert-dismissible text-center">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <a href="/services" style="color: #000000; text-decoration: none">
+            <i class="fas fa-reply"></i>
+            <b>Deliver Your Software Projects With a Trusted Partner</b></a>
+    </div>
+
+    <div class="setup">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-10 offset-md-1">
+                    <h1>Setup is easy and free.</h1>
+                    <p>Design a form for your site, and be sure to name all the fields. Then, just point the action to us
+                        and confirm your email address!</p>
+                    <mark style="background-color: #23272a; color: white; padding: 5px">NO REGISTRATION REQUIRED</mark>
+                    <div style="text-align: left">
+                        <h2>1. CONNECT YOUR FORM</h2>
+                        <p>Pointing the action-attribute of your form to our URL will enable submissions to be sent to your
+                            email address.</p>
+                        <p class="code">&lt;form action="https://formsubmit.co/<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="651c0a1017250008040c094b060a08">[email&#160;protected]</a>" method="POST" /&gt;</p>
+                        <h2>2. ADD NAME ATTRIBUTES</h2>
+                        <p>Include a
+                            <mark class="mark">name</mark>
+                            attribute in all form elements (i.e. <em>&lt;input&gt;</em>, <em>&lt;select&gt;</em>, and <em>&lt;textarea&gt;</em>)
+                            to receive the submission data.
+                        </p>
+                        <p class="code">&lt;input type="email" name="email"&gt;</p>
+                        <h2>3. SEND AND CONFIRM</h2>
+                        <p>Submit the form once. This first-time-use will trigger an email requesting confirmation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="try">
+        <div class="container">
+            <div class="text-center">
+                <h1>Do you want to give it a shot?</h1>
+                <p style="font-size: 17px">You can play with our interactive playground. The HTML on the left is
+                    interactive, you can change the elements are included and the form to the right will be updated
+                    immediately. You can change <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7f06100a0d3f1a121e1613511c1012">[email&#160;protected]</a> with your actual email address and then submit the form on
+                    the right to get the submission to your mailbox.</p>
+                <h4><a style="text-decoration: none;" href="/live-demo">Try It Now →</a></h4>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="stat">
+        <div class="container">
+            <mark style="background-color: #e3e3da; color: #666260; padding: 5px;">STATS</mark>
+            <h2>FormSubmit has processed over <span id="submissions">2 million</span> submissions from more than
+                <span id="forms">300,000</span> registered websites.</h2>
+        </div>
+    </div>
+
+
+    <div class="features">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 offset-md-1">
+                    <h1 class="text-center">FormSubmit Advanced Features</h1>
+                    <p class="text-center">Form inputs can have specially named name-attributes, which alter
+                        functionality. They are all prefixed with an underscore.</p>
+
+                    <div>
+                        <h4>
+                            <mark class="mark">_replyto</mark>
+                        </h4>
+                        <p>This value is used for the email's Reply-To field. This way you can directly "Reply" to the
+                            email to respond to the person who originally submitted the form.</p>
+                        <p>To activate this feature your form should request the user's email address.</p>
+                        <p class="code">&lt;input type="email" name="email" placeholder="Email Address"&gt;</p>
+
+                        <h4>
+                            <mark class="mark">_next</mark>
+                        </h4>
+                        <p>By default, after submitting a form the user is shown the FormSubmit "Thank You" page. You
+                            can provide an alternative URL for "Thank You" page.</p>
+                        <p class="code">&lt;input type="hidden" name="_next" value="https://yourdomain.co/thanks.html"&gt;</p>
+
+                        <h4>
+                            <mark class="mark">_subject</mark>
+                        </h4>
+                        <p>This value is used for the email's subject, so that you can quickly reply to submissions
+                            without having to edit the subject line each time.</p>
+                        <p class="code">&lt;input type="hidden" name="_subject" value="New submission!"&gt;</p>
+
+                        <h4>
+                            <mark class="mark">_cc</mark>
+                        </h4>
+                        <p>This value is used for the email's CC Field. This lets you send a copy of each submission to
+                            another email address.</p>
+                        <p class="code">&lt;input type="hidden" name="_cc" value="<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="04656a6b706c6176446169656d682a676b69">[email&#160;protected]</a>"&gt;</p>
+                        <p>If you want to CC multiple email addresses, then just make it a list of email addresses
+                            separate by commas.</p>
+                        <p class="code">&lt;input type="hidden" name="_cc" value="<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="89e8e7e6fde1ecfbc9ece4e8e0e5a7eae6e4">[email&#160;protected]</a>,<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7f061a0b1e11100b171a0d3f1a121e1613511c1012">[email&#160;protected]</a>"&gt;</p>
+
+                        <h4>
+                            <mark class="mark">_blacklist</mark>
+                        </h4>
+                        <p>Add this "blacklist" field along with a list of comma-separated phrases to filter out spam
+                            content from your submissions. Hence submissions that are containing given phrases will be
+                            completely disregarded while fooling spammers.</p>
+                        <p class="code">&lt;input type="hidden" name="_blacklist" value="spammy pattern, banned term,
+                            phrase"&gt;</p>
+                        <p class="points">* We recommend a maximum of 20 phrases as more can slow down the submission
+                            process.</p>
+
+                        <h4>Disable reCAPTCHA
+                            <mark class="mark">_captcha</mark>
+                        </h4>
+                        <p>Don't want your users to complete a reCAPTCHA? Each form now comes with the option to disable
+                            the reCAPTCHA, so you can maintain complete control over your form. You can even keep reCAPTCHA
+                            on a few forms that might be suceptible to spam, while disabling it on others.</p>
+                        <p class="code">&lt;input type="hidden" name="_captcha" value="false"&gt;</p>
+                        <p class="points">* We highly recommend you use the reCAPTCHA (not to disable it) in order to avoid some
+                            technical limitations which we impose from time to time in order to filter out bots, spam,
+                            and other malicious programs.</p>
+
+                        <h4>
+                            <mark class="mark">_autoresponse</mark>
+                        </h4>
+                        <p>You can send an instant response to your users with a copy of the submission. Add a custom
+                            message to the email body.</p>
+                        <p class="code">&lt;input type="hidden" name="_autoresponse" value="your custom message"&gt;</p>
+                        <p>To activate this feature your form should request the user's email address.</p>
+                        <p class="code">&lt;input type="email" name="email" placeholder="Email Address"&gt;</p>
+                        <p class="points">* autoresponse won't work with forms that are disabled reCAPTCHA and forms that are
+                            submitting through AJAX.</p>
+
+                        <h4>
+                            <mark class="mark">_template</mark>
+                        </h4>
+                        <p>You can select an email template from 3 different templates. By default, FormSubmit uses the
+                            basic template.</p>
+                        <p class="code">&lt;input type="hidden" name="_template" value="table"&gt;</p>
+                        <p><a style="text-decoration: none;" href="/email-templates">View all templates here →</a></p>
+
+                        <h4>
+                            <mark class="mark">_webhook</mark>
+                        </h4>
+                        <p>This feature allows you to configure a webhook that will be triggered each time a form
+                            receives a new submission. Webhooks can be used to manipulate data in real-time.</p>
+                        <p class="code">&lt;input type="hidden" name="_webhook"
+                            value="https://yourdomain.co/your-webhook"&gt;</p>
+                        <p>sample webhook response</p>
+                        <p class="code">{
+                            "form_data": {
+                            "name": "Devro LABS",
+                            "email": "<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="325a575e5e5d72565744405d5e5350411c515d5f">[email&#160;protected]</a>",
+                            "message": "hello! there"
+                            }
+                            }</p>
+
+                        <h4 class="text-center"><a style="text-decoration: none;" href="/documentation">Read more
+                                from Documentation →</a></h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <footer class="page-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-ms-12 col-md-12 col-lg-12">
+                    <div class="footer-box">
+                        <nav class="footer-nav">
+                            <ul>
+                                <li><a target="_blank" href="https://devrolabs.com/products-landing-page" title="Devro LABS Products"><i class="fas fa-at"></i> Our Products</a></li>
+                                <li><a target="_blank" href="https://devrolabs.com/" title="Company">Company</a></li>
+                                <li><a href="/documentation" title="Documentation">Documentation</a></li>
+                                <li><a href="/api-documentation" title="API Documentation">API</a></li>
+                                <li><a href="/ajax-documentation" title="AJAX Documentation">AJAX</a></li>
+                                <li><a href="/live-demo" title="Playground">playground</a></li>
+                                <li><a href="/help" title="Help">Help</a></li>
+                                <li><a href="/support" title="Support">Support</a></li>
+                                <li><a href="/services" title="Services">&#10022; Services</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="copyright-box">
+                        <div class="container" style="text-align: left">
+                            <span style="float: left">Copyright © 2025 <a target="_blank" href="https://devrolabs.com/?ref=formsubmit.co"><strong>Devro LABS</strong></a> |  <a target="_blank" href="/privacy.pdf">Privacy</a></span>
+                            <span style="float: right">
+                                <a class="social" target="_blank" href="https://www.facebook.com/devrolabs"><i class="fab fa-facebook-f"></i></a>
+                                <a class="social" target="_blank" href="https://twitter.com/DevroLABS"><i class="fab fa-twitter"></i></a>
+                                <a class="social" target="_blank" href="https://github.com/devrolabs"><i class="fab fa-github"></i></a>
+                                <a class="social" target="_blank" href="https://www.linkedin.com/company/devrolabs"><i class="fab fa-linkedin-in"></i></a>
+                                <a target="_blank" href="https://www.reddit.com/r/DevroLABS/"><i class="fab fa-reddit-alien"></i></a>
+                        </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+        <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        // window.onload = function() {
+        //     $.ajax({
+        //         url: "/get-homepage-stat",
+        //         success: function (stat) {
+        //             $( "#forms" ).html(numberWithCommas(stat['forms']));
+        //             $( "#submissions" ).html(numberWithCommas(stat['submissions']));
+        //         }
+        //     });
+        // };
+
+        // function numberWithCommas(x) {
+        //     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        // }
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'99e0f3b93f3c9b09',t:'MTc2MzA2NTA0MA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
+

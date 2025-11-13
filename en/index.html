@@ -9,6 +9,14 @@
   <link rel="stylesheet" href="../protect-images.css" />
   <script src="../lang.js"></script>
   <script src="../protect-images.js" defer></script>
+  <!-- Handwriting fonts for tagline only -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=Gveret+Levin+AlefAlefAlef:wght@400&display=swap" rel="stylesheet">
+  <style>
+    html[lang="he"] .home-intro-tagline { font-family: 'Gveret Levin AlefAlefAlef','Heebo',cursive; font-weight: 400; font-size: clamp(1.1rem, 2.6vw, 1.45rem); letter-spacing: .2px; }
+    html[lang="en"] .home-intro-tagline { font-family: 'Caveat','Heebo',cursive; font-weight: 400; font-size: clamp(1.1rem, 2.6vw, 1.45rem); letter-spacing: .2px; }
+  </style>
   <link rel="preload" as="image" href="../images/home-hero-1.jpg" />
   <link rel="preload" as="image" href="../images/home-hero-2.jpg" />
   <link rel="preload" as="image" href="../images/home-hero-3.jpg" />
@@ -74,9 +82,10 @@
 
     <!-- Intro text above galleries -->
   <section class="home-intro" aria-labelledby="intro-title-2">
-    <div class="home-intro-box">
-      <div class="home-intro-name">Yair Rozenberg</div>
-      <h2 id="intro-title-2" class="home-intro-title">Event Photographer</h2>
+      <div class="home-intro-box">
+        <div class="home-intro-name">Yair Rozenberg</div>
+        <h2 id="intro-title-2" class="home-intro-title">Event Photographer</h2>
+        <p class="home-intro-tagline">Your event happens once. The photos will stay with you — forever.</p>
       <div class="cta">
         <a class="btn" href="#contact">Contact</a>
       </div>
@@ -282,8 +291,8 @@
           <h3 class="stat-label">אירועים</h3>
         </li>
 
-        <!-- כרטיס 2: משפחות שמחות -->
-        <li class="stat-card" data-stat-id="families" aria-label="משפחות שמחות">
+        <!-- Card 2: Returning Clients -->
+        <li class="stat-card" data-stat-id="families" aria-label="Returning Clients">
           <div class="icon-wrap" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none">
               <circle cx="9" cy="8" r="3" stroke-width="1.8"/>
@@ -292,8 +301,8 @@
               <path d="M16 18c.3-1.8 1.8-3 3.5-3S23 16.6 23 18" stroke-width="1.8"/>
             </svg>
           </div>
-          <div class="stat-number" data-target="230" data-suffix="+">230+</div>
-          <h3 class="stat-label">משפחות שמחות</h3>
+          <div class="stat-number" data-target="NaN" data-suffix="">✓</div>
+          <h3 class="stat-label">Returning Clients</h3>
         </li>
 
         
@@ -346,7 +355,7 @@
           cta: null,
           items: [
             { id: "events",   label: "אירועים",           value: 263, suffix: "+" },
-            { id: "families", label: "משפחות שמחות",     value: 230,  suffix: "+" },
+            { id: "families", label: "Returning Clients",     value: 230,  suffix: "" },
             { id: "cities",   label: "ערים בישראל",       value: 25,   suffix: ""  },
             { id: "reviews",  label: "שירות",   value: 100,   suffix: "%" }
           ]
@@ -377,7 +386,7 @@
           const numberEl = card.querySelector(".stat-number");
           const labelEl = card.querySelector(".stat-label");
           if (labelEl) labelEl.textContent = cfg.label;
-          if (numberEl) {
+          if (numberEl && id !== "families") {
             numberEl.setAttribute("data-target", String(cfg.value));
             numberEl.setAttribute("data-suffix", cfg.suffix || "");
             numberEl.textContent = format(cfg.value) + (cfg.suffix || "");
@@ -713,9 +722,50 @@
       <p>Delivery is within 21 business days, with a small preview sooner when possible.</p>
     </div>
   </li>
-</ul>
-    <a class="btn" href="contact.html">לקביעת פגישה</a>
-  </section>
+  </ul>
+  <script>
+    (function(){
+      const section = document.getElementById('faq');
+      if (!section) return;
+      const openers = section.querySelectorAll('.faq-open');
+      openers.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const id = btn.getAttribute('aria-controls');
+          const ans = id ? document.getElementById(id) : null;
+          if (!ans) return;
+          const expanded = btn.getAttribute('aria-expanded') === 'true';
+          if (expanded) {
+            ans.hidden = true;
+            btn.setAttribute('aria-expanded', 'false');
+            btn.classList.remove('is-open');
+            btn.textContent = 'Read answer';
+          } else {
+            ans.hidden = false;
+            btn.setAttribute('aria-expanded', 'true');
+            btn.classList.add('is-open');
+            btn.textContent = 'Hide answer';
+          }
+        });
+      });
+      const closers = section.querySelectorAll('.faq-close');
+      closers.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const id = btn.getAttribute('data-for');
+          const ans = id ? document.getElementById(id) : null;
+          if (!ans) return;
+          ans.hidden = true;
+          const opener = section.querySelector('.faq-open[aria-controls="' + id + '"]');
+          if (opener) {
+            opener.setAttribute('aria-expanded', 'false');
+            opener.classList.remove('is-open');
+            opener.textContent = 'Read answer';
+            opener.focus();
+          }
+        });
+      });
+    })();
+  </script>
+   </section>
 
   <!-- Quick Contact Section -->
   <section id="contact" class="home-contact" aria-labelledby="contact-title">
@@ -852,6 +902,7 @@
 </script>
 </body>
 </html>
+
 
 
 

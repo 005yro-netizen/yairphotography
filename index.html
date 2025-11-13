@@ -9,6 +9,14 @@
   <link rel="stylesheet" href="protect-images.css" />
   <script src="lang.js"></script>
   <script src="protect-images.js" defer></script>
+  <!-- Handwriting fonts for tagline only -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=Gveret+Levin+AlefAlefAlef:wght@400&display=swap" rel="stylesheet">
+  <style>
+    html[lang="he"] .home-intro-tagline { font-family: 'Gveret Levin AlefAlefAlef','Heebo',cursive; font-weight: 400; font-size: clamp(1.1rem, 2.6vw, 1.45rem); letter-spacing: .2px; }
+    html[lang="en"] .home-intro-tagline { font-family: 'Caveat','Heebo',cursive; font-weight: 400; font-size: clamp(1.1rem, 2.6vw, 1.45rem); letter-spacing: .2px; }
+  </style>
   <link rel="preload" as="image" href="images/home-hero-1.jpg" />
   <link rel="preload" as="image" href="images/home-hero-2.jpg" />`n  <link rel="preload" as="image" href="images/home-hero-3.jpg" />`n</head>
 <body class="home">
@@ -75,6 +83,7 @@
     <div class="home-intro-box">
       <div class="home-intro-name">יאיר רוזנברג</div>
       <h2 id="intro-title-2" class="home-intro-title">צלם אירועים, טיולים ונוף</h2>
+        <p class="home-intro-tagline">האירוע שלכם קורה פעם אחת. התמונות שיישארו איתכם – לנצח.</p>
       <div class="cta">
         <a class="btn" href="#contact">צור קשר</a>
       </div>
@@ -280,8 +289,8 @@
           <h3 class="stat-label">אירועים</h3>
         </li>
 
-        <!-- כרטיס 2: משפחות שמחות -->
-        <li class="stat-card" data-stat-id="families" aria-label="משפחות שמחות">
+        <!-- כרטיס 2: לקוחות חוזרים -->
+        <li class="stat-card" data-stat-id="families" aria-label="לקוחות חוזרים">
           <div class="icon-wrap" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none">
               <circle cx="9" cy="8" r="3" stroke-width="1.8"/>
@@ -290,8 +299,8 @@
               <path d="M16 18c.3-1.8 1.8-3 3.5-3S23 16.6 23 18" stroke-width="1.8"/>
             </svg>
           </div>
-          <div class="stat-number" data-target="230" data-suffix="+">230+</div>
-          <h3 class="stat-label">משפחות שמחות</h3>
+          <div class="stat-number" data-target="NaN" data-suffix="">✓</div>
+          <h3 class="stat-label">לקוחות חוזרים</h3>
         </li>
 
         
@@ -413,7 +422,7 @@
           cta: null,
           items: [
             { id: "events",   label: "אירועים",           value: 263, suffix: "+" },
-            { id: "families", label: "משפחות שמחות",     value: 230,  suffix: "+" },
+            { id: "families", label: "לקוחות חוזרים",     value: 230,  suffix: "" },
             { id: "cities",   label: "ערים בישראל",       value: 25,   suffix: ""  },
             { id: "reviews",  label: "שירות",   value: 100,   suffix: "%" }
           ]
@@ -444,7 +453,7 @@
           const numberEl = card.querySelector(".stat-number");
           const labelEl = card.querySelector(".stat-label");
           if (labelEl) labelEl.textContent = cfg.label;
-          if (numberEl) {
+          if (numberEl && id !== "families") {
             numberEl.setAttribute("data-target", String(cfg.value));
             numberEl.setAttribute("data-suffix", cfg.suffix || "");
             numberEl.textContent = format(cfg.value) + (cfg.suffix || "");
@@ -983,6 +992,7 @@
 </script>
 </body>
 </html>
+
 
 
 

@@ -8,10 +8,8 @@
   <link rel="stylesheet" href="../protect-images.css" />
   <script src="../lang.js"></script>
   <script src="../protect-images.js" defer></script>
-  <style>
-    .header .nav a[href="index.html#faq"]::before { content: "FAQs"; }
-  </style>
-  <link rel="stylesheet" href="contact.css" />
+  
+  <link rel="stylesheet" href="../contact.css" />
 </head>
 <body>
 
@@ -35,9 +33,8 @@
 <div class="overlay" id="overlay"></div>
 
 <main class="container page contact-page">
-  <h1>Contact</h1>
-  <p>כל אירוע הוא סיפור - ואת הסיפור שלכם אשמח לספר דרך המצלמה שלי
-מוזמנים לפנות אליי להצעת מחיר או לכל שאלה, ואשמח לחזור אליכם בהקדם</p>
+    <h1>Contact</h1>
+  <p>Every event is a story — I’d love to tell yours through my camera. Feel free to reach out for a quote or with any question, and I’ll get back to you as soon as possible.</p>
 
   <div class="contact-grid">
     <section class="contact-card">
@@ -52,7 +49,7 @@
 
     <section class="contact-card">
       <h2>Contact Form</h2>
-      <form id="contactForm" action="https://formspree.io/f/YOUR-ENDPOINT" method="POST" novalidate>
+      <form id="contactForm" action="https://formsubmit.co/ajax/005yro@gmail.com" method="POST" novalidate>
         <div class="form-group">
           <label for="fullName">Full Name</label>
           <input type="text" id="fullName" name="name" autocomplete="name" required placeholder="Your full name" />
@@ -68,6 +65,8 @@
         <input type="hidden" name="_subject" value="New message from website" />
         <button type="submit" class="btn-primary">Send Message</button>
         <p class="form-status" aria-live="polite"></p>
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_template" value="table" />
       </form>
     </section>
   </div>
@@ -111,22 +110,39 @@
 
       const formData = new FormData(contactForm);
 
-      try {
-        const response = await fetch(contactForm.action, {
-          method: 'POST',
-          headers: { 'Accept': 'application/json' },
-          body: formData
-        });
+      function fallbackToMailto() {
+        const name = document.getElementById('fullName')?.value || '';
+        const fromEmail = document.getElementById('email')?.value || '';
+        const msg = document.getElementById('message')?.value || '';
+        const subject = 'New message from website';
+        const body = `Name: ${name}\nEmail: ${fromEmail}\n\n${msg}`;
+        const mailto = `mailto:005yro@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        window.location.href = mailto;
+      }
 
-        if (response.ok) {
-          statusEl.textContent = 'תודה! ההודעה נשלחה בהצלחה.';
-          contactForm.reset();
-        } else {
-          throw new Error('השליחה נכשלה');
-        }
-      } catch (error) {
-        statusEl.textContent = 'משהו השתבש. נסו שוב או צרו קשר בטלפון/וואטסאפ.';
-      } finally {
+try {
+  const response = await fetch(contactForm.action, {
+    method: "POST",
+    headers: { "Accept": "application/json", "X-Requested-With": "XMLHttpRequest" },
+    body: formData
+  });
+
+  let data = null;
+  try { data = await response.json(); } catch (_) {}
+
+  if (response.ok && !(data && data.success === false)) {
+    statusEl.textContent = "Thanks! Your message was sent.";
+    contactForm.reset();
+  } else {
+    fallbackToMailto();
+    statusEl.textContent = "Opening email client for manual send.";
+    return;
+  }
+} catch (error) {
+  fallbackToMailto();
+  statusEl.textContent = "Opening email client for manual send.";
+  return;
+} finally {
         submitBtn.disabled = false;
         submitBtn.classList.remove('is-loading');
       }
@@ -150,6 +166,9 @@
 </script>
 </body>
 </html>
+
+
+
 
 
 

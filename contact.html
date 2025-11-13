@@ -52,7 +52,7 @@
 
     <section class="contact-card">
       <h2>שלחו הודעה</h2>
-      <form id="contactForm" action="https://formspree.io/f/YOUR-ENDPOINT" method="POST" novalidate>
+      <form id="contactForm" action="https://formsubmit.co/ajax/005yro@gmail.com" method="POST" novalidate>
         <div class="form-group">
           <label for="fullName">שם מלא</label>
           <input type="text" id="fullName" name="name" autocomplete="name" required placeholder="שם ושם משפחה" />
@@ -68,6 +68,8 @@
         <input type="hidden" name="_subject" value="פנייה חדשה מאתר הצילום" />
         <button type="submit" class="btn-primary">שלחו הודעה</button>
         <p class="form-status" aria-live="polite"></p>
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_template" value="table" />
       </form>
     </section>
   </div>
@@ -111,21 +113,39 @@
 
       const formData = new FormData(contactForm);
 
+      function fallbackToMailto() {
+        const name = document.getElementById('fullName')?.value || '';
+        const fromEmail = document.getElementById('email')?.value || '';
+        const msg = document.getElementById('message')?.value || '';
+        const subject = 'New message from website';
+        const body = `Name: ${name}\nEmail: ${fromEmail}\n\n${msg}`;
+        const mailto = `mailto:005yro@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        window.location.href = mailto;
+      }
+
       try {
         const response = await fetch(contactForm.action, {
           method: 'POST',
-          headers: { 'Accept': 'application/json' },
+          headers: { 'Accept': 'application/json', 'X-Requested-With': 'XMLHttpRequest' },
           body: formData
         });
 
-        if (response.ok) {
+        let data = null;
+        try { data = await response.json(); } catch (_) {}
+
+        if (response.ok && !(data && data.success === false)) {
           statusEl.textContent = 'תודה! ההודעה נשלחה בהצלחה.';
+          // Success: no extra notice needed; verification is one-time by email
           contactForm.reset();
         } else {
-          throw new Error('השליחה נכשלה');
+          fallbackToMailto();
+          statusEl.textContent = 'Opening email client for manual send.';
+          return;
         }
       } catch (error) {
-        statusEl.textContent = 'משהו השתבש. נסו שוב או צרו קשר בטלפון/וואטסאפ.';
+        fallbackToMailto();
+        statusEl.textContent = 'Opening email client for manual send.';
+        return;
       } finally {
         submitBtn.disabled = false;
         submitBtn.classList.remove('is-loading');
@@ -150,6 +170,7 @@
 </script>
 </body>
 </html>
+
 
 
 
