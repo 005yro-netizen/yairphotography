@@ -978,6 +978,8 @@ section {
     display: none;
   }
   .lightbox .close {
+    /* Hide the X button on phones */
+    display: none;
     top: 24px;
     right: 24px;
     font-size: 2.4rem;
