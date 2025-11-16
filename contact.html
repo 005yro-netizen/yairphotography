@@ -44,9 +44,9 @@
       <h2>פרטי יצירת קשר</h2>
       <ul class="contact-list">
         <li><span aria-hidden="true">📞</span> <a href="tel:0533468597">053-3468597</a></li>
-        <li><span aria-hidden="true">💬</span> <a href="https://wa.me/972533468597" target="_blank" rel="noopener">הודעת וואטסאפ</a></li>
+        <li><span aria-hidden="true">💬</span> <a href="https://wa.me/972533468597?text=%D7%94%D7%99%D7%99%20%D7%99%D7%90%D7%99%D7%A8%2C%20%D7%A8%D7%90%D7%99%D7%AA%D7%99%20%D7%90%D7%AA%20%D7%94%D7%90%D7%AA%D7%A8%20%D7%A9%D7%9C%D7%9A%20%D7%95%D7%90%D7%A0%D7%99%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%95%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A6%D7%99%D7%9C%D7%95%D7%9D." target="_blank" rel="noopener">הודעת וואטסאפ</a></li>
         <li><span aria-hidden="true">✉️</span> <a href="mailto:005yro@gmail.com">005yro@gmail.com</a></li>
-        <li><span aria-hidden="true">📍</span> ירושלים הרב קוק 9   </li>
+        <li><span aria-hidden="true">📍</span> ירושלים הרב קוק 9</li>
       </ul>
     </section>
 
@@ -73,26 +73,25 @@
       </form>
     </section>
   </div>
-
   <section class="contact-card workflow-section">
-    <h2>חבילות ותהליך</h2>
-    <p>ספרו לי מה אתם חוגגים ואצביע על החבילה שמתאימה לסיפור הזה; אחר כך נבנה יחד מסגרת כיסוי, לוח זמנים ומזכרות שירגישו לכם טבעיים.</p>
+    <h2>חבילות ותהליך העבודה</h2>
+    <p>ספרו לי מה אתם חוגגים ואכווין אתכם לחבילה שמתאימה לסיפור שלכם; יחד נוכל להתאים את ההיקף, לוח הזמנים והזיכרונות כך שהכל ירגיש קרוב ואינטימי.</p>
     <div class="workflow-steps">
       <article class="workflow-step">
-        <h3>1. בחרו חבילה</h3>
-        <p>עיינו בחבילות המזוקקות, הוספות כמו פגישת זוגות או אלבומים, וקבעו איזו קומבינציה מתאימה לכם מבחינת כיסוי ותקציב.</p>
+        <h3>1. בוחרים חבילה</h3>
+        <p>עיינו ברמות הכיסוי המיוחדות, ישרות התוספת או האלבומים היוקרתיים ובחרו את השילוב שמתאים ליום שלכם ולתקציב.</p>
       </article>
       <article class="workflow-step">
-        <h3>2. תכננו את הסיפור</h3>
-        <p>נדבר על לוח הזמנים, מקומות, ורגעים שרוצים להדגיש כדי שהתכנית תרגיש רגועה, מדויקת ונאמנה לאופי שלכם.</p>
+        <h3>2. מתכננים את הסיפור</h3>
+        <p>נדון בלוח הזמנים, במיקומים וברגעים הרגשיים כדי שהתכנון ירגיש רגוע, שקוף ונכון לכם.</p>
       </article>
       <article class="workflow-step">
-        <h3>3. אשרו וצולמו</h3>
-        <p>אשרו את הפרטים, הבטיחו את התאריך עם אישור וקדימה, ואני מגיע עם הציוד והצוות הנדרש.</p>
+        <h3>3. מאשרים ומצלמים</h3>
+        <p>תאשרו את הפרטים, תבטיחו את התאריך; אני מגיע מוכן עם הציוד והצוות המתאימים.</p>
       </article>
       <article class="workflow-step">
-        <h3>4. קבלו וזכרו</h3>
-        <p>תקבלו גלריה פרטית, תמונות ערוכות קפדנית ואפשרויות להדפסים או אלבומים שיעשו את הרגעים נגישים לנצח.</p>
+        <h3>4. מקבלים ומחיים</h3>
+        <p>תקבלו גלריה אישית, תמונות שעברו עריכה מוקפדת ואפשרות להדפסים או אלבומים שיכתבו את הזיכרונות שלכם.</p>
       </article>
     </div>
   </section>
@@ -164,11 +163,13 @@
           fallbackToMailto();
           statusEl.textContent = 'Opening email client for manual send.';
           return;
+          throw new Error('השליחה נכשלה');
         }
       } catch (error) {
         fallbackToMailto();
         statusEl.textContent = 'Opening email client for manual send.';
         return;
+        statusEl.textContent = 'משהו השתבש. נסו שוב או צרו קשר בטלפון/וואטסאפ.';
       } finally {
         submitBtn.disabled = false;
         submitBtn.classList.remove('is-loading');
@@ -177,22 +178,24 @@
   }
 
   // Fix icons for contact list and remove placeholder characters
-  document.querySelectorAll('.contact-list li').forEach((li) => {
-    const iconSpan = li.querySelector('span[aria-hidden="true"]');
-    const link = li.querySelector('a');
-    if (!iconSpan) return;
-    let icon = '📍';
-    if (link) {
-      const href = link.getAttribute('href') || '';
-      if (href.startsWith('tel:')) icon = '📞';
-      else if (href.includes('wa.me')) icon = '💬';
-      else if (href.startsWith('mailto:')) icon = '✉️';
-    }
-    iconSpan.textContent = icon;
-  });
+    document.querySelectorAll('.contact-list li').forEach((li) => {
+      const iconSpan = li.querySelector('span[aria-hidden="true"]');
+      const link = li.querySelector('a');
+      if (!iconSpan) return;
+      let icon = '📍';
+      if (link) {
+        const href = link.getAttribute('href') || '';
+        if (href.startsWith('tel:')) icon = '📞';
+        else if (href.includes('wa.me')) icon = '💬';
+        else if (href.startsWith('mailto:')) icon = '✉️';
+      }
+      iconSpan.textContent = icon;
+    });
 </script>
 </body>
 </html>
+
+
 
 
 
