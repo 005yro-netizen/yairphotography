@@ -344,7 +344,7 @@ html[lang="he"] .page-travel .page-header h1 {
   color: transparent;
 }
 html[lang="he"] .page-events .page-header h1::after { content: "אירועים"; color: #fff; position: absolute; inset: 0 auto auto 0; }
-html[lang="he"] .page-travel .page-header h1::after { content: "טיולים"; color: #fff; position: absolute; inset: 0 auto auto 0; }
+html[lang="he"] .page-travel .page-header h1::after { content: "מסע"; color: #fff; position: absolute; inset: 0 auto auto 0; }
 
 .category-grid {
   display: grid;
@@ -1105,11 +1105,6 @@ body.home { padding-top: 0; }
 /* Homepage: hide hero caption/text entirely */
 .home .hero .hero-inner { display: none !important; }
 
-/* Hide Nature gallery card on homepage */
-#gallery .category-grid > .category-card:nth-child(3) {
-  display: none !important;
-}
-
 /* Homepage category cards: portrait images 3:4 */
 #gallery .category-grid > .category-card::after {
   content: "";
@@ -1129,6 +1124,11 @@ body.home { padding-top: 0; }
 /* Travel image */
 #gallery .category-grid > .category-card:nth-child(2)::after {
   background-image: url('images/TRAVEL.jpg');
+}
+
+/* Bar Mitzvah Kotel image */
+#gallery .category-grid > .category-card:nth-child(3)::after {
+  background-image: url('images/bar-mitzvah-kotel1.jpg');
 }
 
 /* Make the whole category card clickable using existing button link */
@@ -1308,4 +1308,5 @@ html[lang="he"] .header .nav a[href="#faq"]::before { content: "שאלות נפ�
 /* English-only guard to prevent duplicate 'FAQs' text in nav */
 html[lang="en"] .header .nav a[href="#faq"]::before,
 html[lang="en"] .header .nav a[href="index.html#faq"]::before { content: none !important; }
+
 
