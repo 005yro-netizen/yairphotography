@@ -1128,7 +1128,7 @@ body.home { padding-top: 0; }
 
 /* Bar Mitzvah Kotel image */
 #gallery .category-grid > .category-card:nth-child(3)::after {
-  background-image: url('images/bar-mitzvah-kotel1.jpg');
+  background-image: url('images/bar-mitzvah-western-wall-jerusalem-hero-2025.jpg');
 }
 
 /* Make the whole category card clickable using existing button link */
