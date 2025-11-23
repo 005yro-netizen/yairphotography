@@ -145,7 +145,7 @@
       const base = baseIdx >= 0 ? sampleSrc.slice(0, baseIdx) : sampleSrc;
       const existing = new Set(Array.from(grid.querySelectorAll('img')).map(i => i.getAttribute('src')));
 
-      for (let i = 30; i <= 92; i++) {
+      for (let i = 30; i <= 108; i++) {
         const src = base + 'travel-' + i + '.jpg';
         if (existing.has(src)) continue;
         const img = document.createElement('img');
