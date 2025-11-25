@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-  <title>Events Gallery - Outdoor / Bar Mitzvah / Kotel / Brit</title>
+  <title>Events Gallery - Outdoor / Bar Mitzvah / Brit</title>
   <meta name="description" content="גלריית האירועים של יאיר רוזנברג: צילומי חוץ, בר מצווה, בר מצווה בכותל וברית." />
   <link rel="stylesheet" href="../style.css" />
   <link rel="stylesheet" href="../protect-images.css" />
@@ -49,7 +49,6 @@
   <ul class="tabs" role="tablist">
     <li><button class="tab active" id="tab-outdoor" role="tab" aria-selected="true" data-target="outdoor">Outdoor</button></li>
     <li><button class="tab" id="tab-barmitzvah" role="tab" aria-selected="false" data-target="barmitzvah">Bar Mitzvah</button></li>
-    <li><button class="tab" id="tab-bm-kotel" role="tab" aria-selected="false" data-target="bm-kotel">Bar Mitzvah at the Kotel</button></li>
     <li><button class="tab" id="tab-brit" role="tab" aria-selected="false" data-target="brit">Brit</button></li>
   </ul>
 
@@ -128,36 +127,6 @@
       <img src="../images/barmitzvah19.jpg" alt="צילומים בר מצווה 19">
       <img src="../images/barmitzvah20.jpg" alt="צילומים בר מצווה 20">
       <img src="../images/barmitzvah21.jpg" alt="צילומים בר מצווה 21">
-    </div>
-  </section>
-
-  <!-- בר מצווה בכותל Gallery (uses existing images only) -->
-  <section id="bm-kotel" class="tab-panel" role="tabpanel" aria-labelledby="tab-bm-kotel">
-    <figure class="gallery-hero">
-      <img src="../images/bar-mitzvah-western-wall-jerusalem-hero-2025.jpg" alt="בר מצווה בכותל 1" />
-    </figure>
-    <p>At the Kotel, we balance respectful photography with meaningful moments — with a clean, timeless aesthetic.</p>
-    <div class="gallery-grid">
-      <img loading="lazy" src="../images/bar-mitzvah-kotel2.jpg" alt="בר מצווה בכותל 2">
-      <img loading="lazy" src="../images/bar-mitzvah-kotel3.jpg" alt="בר מצווה בכותל 3">
-      <img loading="lazy" src="../images/bar-mitzvah-kotel4.jpg" alt="בר מצווה בכותל 4">
-      <img loading="lazy" src="../images/bar-mitzvah-kotel5.jpg" alt="בר מצווה בכותל 5">
-      <img loading="lazy" src="../images/bar-mitzvah-kotel6.jpg" alt="בר מצווה בכותל 6">
-      <img loading="lazy" src="../images/bar-mitzvah-kotel7.jpg" alt="בר מצווה בכותל 7">
-      <img loading="lazy" src="../images/bar-mitzvah-kotel8.jpg" alt="בר מצווה בכותל 8">
-      <img loading="lazy" src="../images/bar-mitzvah-kotel9.jpg" alt="בר מצווה בכותל 9">
-      <img loading="lazy" src="../images/bar-mitzvah-kotel10.jpg" alt="בר מצווה בכותל 10">
-      <img loading="lazy" src="../images/bar-mitzvah-kotel11.jpg" alt="בר מצווה בכותל 11">
-      <img loading="lazy" src="../images/bar-mitzvah-kotel12.jpg" alt="בר מצווה בכותל 12">
-      <img loading="lazy" src="../images/bar-mitzvah-kotel13.jpg" alt="בר מצווה בכותל 13">
-      <img loading="lazy" src="../images/bar-mitzvah-kotel14.jpg" alt="בר מצווה בכותל 14">
-      <img loading="lazy" src="../images/bar-mitzvah-kotel15.jpg" alt="בר מצווה בכותל 15">
-      <img loading="lazy" src="../images/bar-mitzvah-kotel16.jpg" alt="בר מצווה בכותל 16">
-      <img loading="lazy" src="../images/bar-mitzvah-kotel17.jpg" alt="בר מצווה בכותל 17">
-      <img loading="lazy" src="../images/bar-mitzvah-kotel18.jpg" alt="בר מצווה בכותל 18">
-      <img loading="lazy" src="../images/bar-mitzvah-kotel19.jpg" alt="בר מצווה בכותל 19">
-      <img loading="lazy" src="../images/bar-mitzvah-kotel20.jpg" alt="בר מצווה בכותל 20">
-      <img loading="lazy" src="../images/bar-mitzvah-kotel21.jpg" alt="בר מצווה בכותל 21">
     </div>
   </section>
 
@@ -283,47 +252,28 @@
       });
     };
 
-    tabButtons.forEach((tab) => tab.addEventListener('click', () => activateTab(tab)));
-    if (tabButtons.length) activateTab(tabButtons.find(t => t.classList.contains('active')) || tabButtons[0]);
+    const tabFromHash = () => {
+      const hash = (location.hash || '').replace('#', '');
+      if (!hash) return null;
+      return tabButtons.find((btn) => btn.dataset.target === hash) || null;
+    };
 
-    // Fallback for missing Kotel images: show placeholder instead of broken image
-    (function initKotelPlaceholders() {
-      const placeholderSVG = `
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
-          <defs>
-            <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="#0f172a"/>
-              <stop offset="100%" stop-color="#334155"/>
-            </linearGradient>
-          </defs>
-          <rect width="1200" height="800" fill="url(#g)"/>
-          <g fill="#e2e8f0" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">
-            <text x="600" y="400" font-size="64">{TEXT}</text>
-            <text x="600" y="460" font-size="28" fill="#94a3b8">תמונה תוצג כאן כשהקובץ יתווסף</text>
-          </g>
-        </svg>`;
-      const imgs = Array.from(document.querySelectorAll('#bm-kotel .gallery-grid img'));
-      imgs.forEach(img => {
-        img.addEventListener('error', () => {
-          // Try alternate case for extension once (.jpg <-> .JPG)
-          if (!img.dataset.triedCaseSwitch) {
-            img.dataset.triedCaseSwitch = 'true';
-            const s = img.getAttribute('src') || '';
-            if (s.toLowerCase().endsWith('.jpg')) {
-              img.src = s.slice(0, -4) + (s.endsWith('.jpg') ? '.JPG' : '.jpg');
-              return;
-            }
-          }
-          // Fallback placeholder
-          if (img.dataset.fallbackApplied === 'true') return;
-          img.dataset.fallbackApplied = 'true';
-          const label = img.getAttribute('alt') || 'בקרוב';
-          const svg = placeholderSVG.replace('{TEXT}', label);
-          img.src = 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(svg);
-          img.classList.add('placeholder');
-        });
-      });
-    })();
+    tabButtons.forEach((tab) => tab.addEventListener('click', () => {
+      activateTab(tab);
+      const targetId = tab.dataset.target;
+      if (targetId) {
+        try { history.replaceState(null, '', '#' + targetId); } catch (_) {}
+      }
+    }));
+
+    const initialTab = tabFromHash() || tabButtons.find(t => t.classList.contains('active')) || tabButtons[0];
+    if (initialTab) activateTab(initialTab);
+
+    window.addEventListener('hashchange', () => {
+      const hashTab = tabFromHash();
+      if (hashTab) activateTab(hashTab);
+    });
+
 
     // Lightbox
     const lightbox = document.getElementById('lightbox');
@@ -568,6 +518,8 @@
 
 </body>
 </html>
+
+
 
 
 
