@@ -526,10 +526,25 @@
     <section id="work-process" class="work-process" dir="rtl" lang="he" aria-label="תהליך העבודה">
       <style>
         .work-process { color: #e6eaf2; margin-bottom: clamp(24px, 4vw, 48px); }
+        .work-process-heading {
+          margin: 0 0 12px;
+          font-size: clamp(1.2rem, 2.6vw, 1.6rem);
+          font-weight: 800;
+          color: #ffffff;
+        }
+        .work-process-shell {
+          background: linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+          border: 1px solid rgba(255,255,255,0.14);
+          border-radius: 24px;
+          box-shadow: 0 18px 45px rgba(0,0,0,0.25);
+          padding: clamp(14px, 2vw, 22px);
+          overflow: hidden;
+        }
         .work-process details {
           border: 1px solid rgba(255, 255, 255, 0.2);
-          border-radius: 28px;
-          background: rgba(255, 255, 255, 0.03);
+          border-width: 1px 0 0;
+          border-radius: 0 0 24px 24px;
+          background: rgba(255, 255, 255, 0.04);
           overflow: hidden;
         }
         .work-process summary {
@@ -538,21 +553,22 @@
           font-weight: 800;
           padding: clamp(16px, 2vw, 24px) clamp(20px, 3vw, 28px);
           display: flex;
-          justify-content: space-between;
+          justify-content: center;
           align-items: center;
           color: #ffffff;
           list-style: none;
+          background: linear-gradient(90deg, rgba(138,180,255,0.16), rgba(255,255,255,0));
+          border-top: 1px solid rgba(255,255,255,0.1);
         }
         .work-process summary::marker { display: none; }
-        .work-process summary::after {
-          content: '+';
-          font-size: 1.4em;
-          line-height: 1;
-        }
-        .work-process details[open] summary::after { content: '−'; }
+        .work-process summary::after { content: ''; }
         .work-process-content {
           padding: clamp(16px, 2vw, 30px);
-          max-width: 900px;
+          max-width: 1100px;
+        }
+        .work-process-shell .work-process-content:not(:last-child) {
+          border-bottom: 1px solid rgba(255,255,255,0.14);
+          padding-bottom: clamp(10px, 1.6vw, 18px);
         }
         .work-process-content article + article {
           margin-top: clamp(18px, 2.2vw, 26px);
@@ -588,11 +604,40 @@
         .work-process-content strong {
           color: #ffffff;
         }
+        .work-process summary .summary-icon {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 46px;
+          height: 46px;
+          border-radius: 999px;
+          border: 1px solid rgba(255,255,255,0.32);
+          background: rgba(255,255,255,0.08);
+          font-size: 1.3rem;
+          font-weight: 800;
+          color: #ffffff;
+          box-shadow: 0 10px 24px rgba(0,0,0,0.25);
+        }
+        .work-process details[open] summary .summary-icon {
+          background: rgba(255,255,255,0.18);
+          border-color: rgba(255,255,255,0.48);
+        }
+        .sr-only {
+          position: absolute;
+          width: 1px;
+          height: 1px;
+          padding: 0;
+          margin: -1px;
+          overflow: hidden;
+          clip: rect(0, 0, 0, 0);
+          white-space: nowrap;
+          border: 0;
+        }
       </style>
 
-      <details class="work-process-details">
-        <summary>תהליך העבודה המלא שלנו - מהשיחה הראשונה ועד האלבום המושלם</summary>
-        <div class="work-process-content">
+      <div class="work-process-shell">
+      <h3 class="work-process-heading">תהליך העבודה המלא שלנו - מהשיחה הראשונה ועד האלבום המושלם</h3>
+      <div class="work-process-content">
           <article>
             <h3>שלב 1: השיחה הראשונה והתכנון 📞</h3>
             <p>כל אירוע מתחיל בשיחה אישית איתכם. אנחנו מדברים על הציפיות שלכם, על האווירה שאתם רוצים ליצור ועל הרגעים החשובים שלא רוצים לפספס. יחד נבחר את חבילת הצילום שתתאים בדיוק לאירוע ולתקציב שלכם.</p>
@@ -600,8 +645,16 @@
           <article>
             <h3>שלב 2: יום האירוע - ההגעה והערכות 🎯</h3>
             <h4>הגעה מוקדמת (20 דקות לפני)</h4>
-            <p>אני מגיע לאירוע 20 דקות לפני תחילת הזמן הרשמי כדי להכיר את המרחב, לבדוק את התאורה, לזהות את הזוויות הטובות ביותר ולוודא שהציוד מוכן לחלוטין. כך אני מבטיח שלא יהיו הפתעות ושאני מוכן ברגע שהאורחים הראשונים מגיעים.</p>
+          <p>אני מגיע לאירוע 20 דקות לפני תחילת הזמן הרשמי כדי להכיר את המרחב, לבדוק את התאורה, לזהות את הזוויות הטובות ביותר ולוודא שהציוד מוכן לחלוטין. כך אני מבטיח שלא יהיו הפתעות ושאני מוכן ברגע שהאורחים הראשונים מגיעים.</p>
           </article>
+        </div>
+
+        <details class="work-process-details">
+          <summary aria-label="פתיחת שאר השלבים">
+            <span class="sr-only">לראות את שאר השלבים</span>
+            <span class="summary-icon" aria-hidden="true">+</span>
+          </summary>
+        <div class="work-process-content">
           <article>
             <h3>שלב 3: צילומי המשפחה - הרגע הראשון והחשוב ביותר 👨‍👩‍👧‍👦</h3>
             <h4>למה מתחילים במשפחה?</h4>
@@ -715,6 +768,7 @@
           </article>
         </div>
       </details>
+      </div>
     </section>
 
   <section id="photo-packages" class="pkgs" dir="rtl" lang="he" aria-labelledby="pkgs-title" hidden aria-hidden="true">
@@ -870,8 +924,6 @@
       }
     </script>
   </section>
-
-  "
   <!-- FAQ Section -->
   <section id='faq' class='faq-section' aria-labelledby='faq-title'>
     <style>
