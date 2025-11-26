@@ -429,6 +429,17 @@ html[lang="he"] .page-travel .page-header h1::after { content: "מסע"; color: 
   font-size: 1.05rem;
 }
 
+.home-contact ul li {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .55rem;
+}
+
+.home-contact .contact-icon {
+  font-size: 1.05em;
+}
+
 .home-contact ul li a {
   color: #fff;
   font-weight: 700;
