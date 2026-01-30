@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
   <meta charset="UTF-8" />
@@ -30,7 +30,6 @@
         <li><a href="about.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/></svg> אודות</a></li>
         <li><a href="contact.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/></svg> צור קשר</a></li>
         <li><a href="index.html#faq"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14z"/><path d="M5.255 5.786a.237.237 0 0 1 .241-.247h.825c.138 0 .24.113.223.25-.007.053-.032.107-.077.154C6.936 6.5 6.474 6.936 6.474 7.5v.086c0 .102.028.2.08.287.05.086.13.15.225.18.695.212 1.086.726 1.086 1.16 0 .66-.526 1.26-1.503 1.26-.793 0-1.22-.346-1.22-.775 0-.237.07-.457.2-.638.143-.196.328-.35.547-.456.118-.055.255-.084.393-.084h.761c.138 0 .246.113.246.25 0 .136-.11.25-.246.25h-.761c-.196 0-.358.14-.358.31 0 .117.12.212.353.212.474 0 .801-.21.801-.582 0-.215-.179-.456-.53-.56-.28-.08-.324-.177-.324-.28 0-.21.192-.414.468-.6.76-.52 1.272-1.004 1.272-1.73 0-1.07-.888-1.893-2.199-1.893-1.18 0-2.24.64-2.285 1.786-.002.057.046.106.105.106h.87zM8 13a.905.905 0 1 1 0-1.81.905.905 0 0 1 0 1.81z"/></svg> שאלות נפוצות</a></li>
-        
       </ul>
     </nav>
     <a id="langSwitch" class="lang-switch" href="#" aria-label="Switch language">EN</a>
@@ -88,7 +87,7 @@
 </main>
 
 <footer class="footer">
-  <p>&copy; 2025 יאיר רוזנברג צילום. כל הזכויות שמורות.</p>
+  <p>&copy; 2026 יאיר רוזנברג צילום. כל הזכויות שמורות.</p>
 </footer>
 
 <!-- Lightbox -->
@@ -134,7 +133,17 @@
     });
     // Remove broken images automatically (e.g., missing files)
     document.querySelectorAll('.gallery-grid img').forEach(function(img){
-      img.addEventListener('error', function(){ img.remove(); }, { once: true });
+      img.addEventListener('error', function(){
+        if (!img.dataset.triedCaseSwitch) {
+          img.dataset.triedCaseSwitch = 'true';
+          const s = img.getAttribute('src') || '';
+          if (s.toLowerCase().endsWith('.jpg')) {
+            img.src = s.slice(0, -4) + (s.endsWith('.jpg') ? '.JPG' : '.jpg');
+            return;
+          }
+        }
+        img.remove();
+      }, { once: true });
     });
     // Append images 30–52 dynamically based on existing path
     (function ensureTravelImages() {
@@ -167,27 +176,13 @@
     const nextBtn = lightbox.querySelector('.next');
     const fullscreenBtn = lightbox.querySelector('.fullscreen-toggle');
 
-    const isFullscreenActive = () => {
-      return document.fullscreenElement === lightbox ||
-        document.webkitFullscreenElement === lightbox ||
-        document.mozFullScreenElement === lightbox ||
-        document.msFullscreenElement === lightbox;
-    };
-
-    const requestLightboxFullscreen = () => {
-      if (lightbox.requestFullscreen) return lightbox.requestFullscreen();
-      if (lightbox.webkitRequestFullscreen) return lightbox.webkitRequestFullscreen();
-      if (lightbox.mozRequestFullScreen) return lightbox.mozRequestFullScreen();
-      if (lightbox.msRequestFullscreen) return lightbox.msRequestFullscreen();
-      return null;
-    };
+    const isFullscreenActive = () => !!(document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement);
 
     const exitLightboxFullscreen = () => {
       if (document.exitFullscreen) return document.exitFullscreen();
       if (document.webkitExitFullscreen) return document.webkitExitFullscreen();
       if (document.mozCancelFullScreen) return document.mozCancelFullScreen();
       if (document.msExitFullscreen) return document.msExitFullscreen();
-      return null;
     };
 
     const syncFullscreenState = () => {
@@ -196,7 +191,14 @@
       fullscreenBtn.dataset.fullscreen = active ? 'true' : 'false';
       fullscreenBtn.setAttribute('aria-pressed', active ? 'true' : 'false');
       fullscreenBtn.setAttribute('aria-label', active ? 'יציאה ממסך מלא' : 'מסך מלא');
-      lightbox.classList.toggle('fullscreen-active', active);
+    };
+
+    const performCloseLightbox = () => {
+      if (isFullscreenActive()) {
+        exitLightboxFullscreen();
+      }
+      lightbox.classList.remove('open');
+      syncFullscreenState();
     };
 
     const images = Array.from(document.querySelectorAll('.gallery-grid img'));
@@ -209,14 +211,6 @@
     let lightboxHistoryActive = false;
     let isHandlingPopstate = false;
 
-    const performCloseLightbox = () => {
-      if (isFullscreenActive()) {
-        exitLightboxFullscreen();
-      }
-      lightbox.classList.remove('open');
-      syncFullscreenState();
-    };
-
     const openLightbox = (index) => {
       currentIndex = index;
       showImage();
@@ -226,14 +220,12 @@
         try { history.pushState({ lightbox: true, idx: index }, '', '#lightbox-' + index); } catch (e) {}
         lightboxHistoryActive = true;
       }
-      // Default: open without fullscreen; user can switch to fullscreen via the toggle
       syncFullscreenState();
     };
 
     const closeLightbox = () => {
-      // If we created a history state for the lightbox, go back one step to sync URL
       if (lightboxHistoryActive && !isHandlingPopstate) {
-        try { history.back(); return; } catch (e) { /* fallback to immediate close */ }
+        try { history.back(); return; } catch (e) { /* fallback */ }
       }
       performCloseLightbox();
       lightboxHistoryActive = false;
@@ -307,10 +299,7 @@
         if (isFullscreenActive()) {
           exitLightboxFullscreen();
         } else {
-          const request = requestLightboxFullscreen();
-          if (request && typeof request.then === 'function') {
-            request.catch(() => {});
-          }
+          (lightbox.requestFullscreen || lightbox.webkitRequestFullscreen || lightbox.mozRequestFullScreen || lightbox.msRequestFullscreen).call(lightbox);
         }
       });
     }
@@ -385,7 +374,3 @@
   });</script>
 </body>
 </html>
-
-
-
-

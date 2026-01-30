@@ -1,14 +1,32 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8" />
+  <link rel="icon" type="image/jpeg" href="../images/ME-64.jpg?v=2" />
+  <link rel="apple-touch-icon" href="../images/ME.jpg?v=2" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
   <title>About - Yair Rozenberg</title>
   <link rel="stylesheet" href="../style.css" />
   <link rel="stylesheet" href="../protect-images.css" />
   <script src="../lang.js"></script>
   <script src="../protect-images.js" defer></script>
-  
+  <style>
+    /* Mobile-first layout: Image on top, text below */
+    .about-panel {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .about-hero {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 24px;
+    }
+    .about-panel .text-block {
+      min-width: 100%;
+    }
+  </style>
 </head>
 <body>
 
@@ -22,7 +40,6 @@
         <li><a class="active" href="about.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/></svg> About</a></li>
         <li><a href="contact.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/></svg> Contact</a></li>
         <li><a href="index.html#faq"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14z"/><path d="M5.255 5.786a.237.237 0 0 1 .241-.247h.825c.138 0 .24.113.223.25-.007.053-.032.107-.077.154C6.936 6.5 6.474 6.936 6.474 7.5v.086c0 .102.028.2.08.287.05.086.13.15.225.18.695.212 1.086.726 1.086 1.16 0 .66-.526 1.26-1.503 1.26-.793 0-1.22-.346-1.22-.775 0-.237.07-.457.2-.638.143-.196.328-.35.547-.456.118-.055.255-.084.393-.084h.761c.138 0 .246.113.246.25 0 .136-.11.25-.246.25h-.761c-.196 0-.358.14-.358.31 0 .117.12.212.353.212.474 0 .801-.21.801-.582 0-.215-.179-.456-.53-.56-.28-.08-.324-.177-.324-.28 0-.21.192-.414.468-.6.76-.52 1.272-1.004 1.272-1.73 0-1.07-.888-1.893-2.199-1.893-1.18 0-2.24.64-2.285 1.786-.002.057.046.106.105.106h.87zM8 13a.905.905 0 1 1 0-1.81.905.905 0 0 1 0 1.81z"/></svg> FAQs</a></li>
-        
       </ul>
     </nav>
     <a id="langSwitch" class="lang-switch" href="#" aria-label="Switch language">HE</a>
@@ -34,43 +51,43 @@
 <main class="container page">
   <h1>About</h1>
   <div class="about-panel">
-    <img src="../images/ME.jpg" alt="Portrait of Yair Rozenberg" class="portrait">
+    <div class="about-hero">
+      <img src="../images/ME.jpg" alt="Portrait of Yair Rozenberg" class="portrait">
+    </div>
     <div class="text-block">
       <h2>Hello, I'm Yair - a Professional Event Photographer</h2>
-      <p>Welcome to my world of photography. For the past five years, I've been doing what I love most - capturing meaningful moments and creating memories that last forever.</p>
+      <p>Welcome to my photography world. For 5 years now, I've been doing what I love most - capturing special moments and creating memories that last forever.</p>
 
       <h3>My Story</h3>
-      <p>As a Jerusalem-based photographer, I have the privilege of working in one of the most unique and emotionally rich places in the world. I specialize in event photography and bring years of experience, meticulous attention to detail, and a genuine connection with every client I work with.</p>
-      <p>One of the most meaningful places I photograph is the Western Wall - an atmosphere filled with emotion, holiness, and excitement. Photography at the Kotel requires a special sensitivity and a deep understanding of both the setting and the moments that matter, and that's exactly what I bring to every event.</p>
+      <p>As a Jerusalem-based photographer, I have the privilege of working in one of the most unique and moving places in the world. I specialize in event photography and bring years of experience, attention to detail, and a genuine connection to every client.</p>
+      <p>One of the most meaningful places I photograph is the Western Wall - a place full of emotion, sanctity, and excitement. Photography at the Kotel requires special sensitivity and a deep understanding of the atmosphere and the right moments, which is exactly what I bring to every event.</p>
 
       <h3>What Do I Photograph?</h3>
       <ul>
-        <li>Family Events - Bar/Bat Mitzvahs, britot, engagements, and more</li>
-        <li><strong>Aliyah LaTorah at the Western Wall</strong> - heartfelt and meaningful documentation at the Kotel</li>
-        <li>Travel Photography - capturing family trips and moments in nature</li>
+        <li><strong>Family Events</strong> - Bar/Bat Mitzvahs, Brit Milah, Engagements, and more</li>
+        <li><strong>Aliyah LaTorah at the Western Wall</strong> - Moving documentation at the Kotel</li>
+        <li><strong>Travel Photography</strong> - Documenting group and family trips, and moments in nature</li>
       </ul>
 
       <h3>Where Do I Work?</h3>
-      <p>My home base is Jerusalem, a city I know inside and out. I regularly photograph in Jerusalem and the surrounding areas, and I also travel to events in central Israel and anywhere else a story needs to be told.</p>
+      <p>My home base is Jerusalem, a city I know every corner of. I regularly photograph in the Jerusalem area and its surroundings, but I also travel to events in Central Israel and anywhere there's a story to tell.</p>
 
       <h3>My Approach</h3>
-      <p>I believe every event is unique, and every moment deserves to be captured perfectly. I work quietly and efficiently, finding the most special angles and capturing the real, natural, authentic moments as they happen.</p>
+      <p>I believe every event is unique, and every moment deserves to be captured perfectly. I work quietly and efficiently, finding the most special angles and catching real moments - those that happen naturally and authentically.</p>
 
       <h3>Let's Create Something Special Together</h3>
-      <p>If you're looking for a reliable, professional photographer who understands the importance of life's meaningful moments - I'd be happy to be a part of your event.</p>
+      <p>If you're looking for a reliable, professional photographer who understands the importance of life's key moments - I'd be happy to be part of your event.</p>
 
-      <h3>Contact</h3>
-      <ul>
-        <li>Phone: <a href="tel:+972533468597">+972 53-346-8597</a></li>
-        <li>Email: <a href="mailto:005YRO@gmail.com">005YRO@gmail.com</a></li>
-        <li>Location: Jerusalem &amp; Central Israel</li>
-      </ul>
+      <p><strong>Contact Me:</strong><br>
+      Phone: <a href="tel:+972533468597">053-3468597</a><br>
+      Email: <a href="mailto:005YRO@gmail.com">005YRO@gmail.com</a><br>
+      Location: Jerusalem & Central Israel</p>
     </div>
   </div>
 </main>
 
 <footer class="footer">
-  <p>&copy; 2025 Yair Rozenberg Photography</p>
+  <p>&copy; 2026 Yair Rozenberg. All rights reserved.</p>
 </footer>
 
 <script>
@@ -93,12 +110,3 @@
 </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-

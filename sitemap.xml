@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <!-- Homepage -->
+  <url>
+    <loc>https://yairrozenberg.com/</loc>
+    <lastmod>2025-01-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="he" href="https://yairrozenberg.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://yairrozenberg.com/en/" />
+  </url>
+  
+  <!-- About Page -->
+  <url>
+    <loc>https://yairrozenberg.com/about.html</loc>
+    <lastmod>2025-01-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="he" href="https://yairrozenberg.com/about.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://yairrozenberg.com/en/about.html" />
+  </url>
+  
+  <!-- Contact Page -->
+  <url>
+    <loc>https://yairrozenberg.com/contact.html</loc>
+    <lastmod>2025-01-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="he" href="https://yairrozenberg.com/contact.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://yairrozenberg.com/en/contact.html" />
+  </url>
+  
+  <!-- Gallery - Events -->
+  <url>
+    <loc>https://yairrozenberg.com/gallery-events.html</loc>
+    <lastmod>2025-01-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="he" href="https://yairrozenberg.com/gallery-events.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://yairrozenberg.com/en/gallery-events.html" />
+  </url>
+  
+  <!-- Gallery - Travel -->
+  <url>
+    <loc>https://yairrozenberg.com/gallery-travel.html</loc>
+    <lastmod>2025-01-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="he" href="https://yairrozenberg.com/gallery-travel.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://yairrozenberg.com/en/gallery-travel.html" />
+  </url>
+  
+  <!-- Bar Mitzvah at Kotel -->
+  <url>
+    <loc>https://yairrozenberg.com/bar-mitzvah-kotel.html</loc>
+    <lastmod>2025-01-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="he" href="https://yairrozenberg.com/bar-mitzvah-kotel.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://yairrozenberg.com/en/bar-mitzvah-kotel.html" />
+  </url>
+  
+</urlset>

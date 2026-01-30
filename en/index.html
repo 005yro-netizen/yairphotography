@@ -1,10 +1,38 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9LCBZ5LLQF"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9LCBZ5LLQF');
+</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-  <title>Yair Rozenberg | Professional Photographer in Jerusalem</title>
-  <meta name="description" content="Yair Rozenberg - event, family, and travel photographer. Learn about me, view galleries, and book your shoot." />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="keywords" content="Jerusalem event photographer, bar mitzvah photographer kotel, western wall bar mitzvah photography, family photographer jerusalem, religious photographer israel, Yair Rozenberg" />
+  <meta name="author" content="Yair Rozenberg" />
+  <meta name="language" content="English" />
+  <title>Yair Rozenberg | Event & Bar Mitzvah Photographer at the Kotel</title>
+  <meta name="description" content="Yair Rozenberg - Professional photographer in Jerusalem. Specialized in Western Wall Bar Mitzvah & family events. High-quality documentation with double backup." />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yairrozenberg.com/en/" />
+  <meta property="og:title" content="Yair Rozenberg | Photographer in Jerusalem" />
+  <meta property="og:description" content="Capture your special moments: Bar Mitzvah at the Kotel, family events, and travel. Professional service with cultural sensitivity and fast delivery." />
+  <meta property="og:image" content="https://yairrozenberg.com/images/home-hero-1.jpg" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:site_name" content="Yair Rozenberg Photography" />
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://yairrozenberg.com/en/" />
+  
+  <link rel="icon" type="image/jpeg" href="../images/ME-64.jpg?v=2" />
+  <link rel="apple-touch-icon" href="../images/ME.jpg?v=2" />
   <link rel="stylesheet" href="../style.css" />
   <link rel="stylesheet" href="../protect-images.css" />
   <script src="../lang.js"></script>
@@ -16,14 +44,104 @@
   <style>
     html[lang="he"] .home-intro-tagline { font-family: 'Gveret Levin AlefAlefAlef','Heebo',cursive; font-weight: 400; font-size: clamp(1.1rem, 2.6vw, 1.45rem); letter-spacing: .2px; }
     html[lang="en"] .home-intro-tagline { font-family: 'Caveat','Heebo',cursive; font-weight: 400; font-size: clamp(1.1rem, 2.6vw, 1.45rem); letter-spacing: .2px; }
+    
+    /* Why choose me styles */
+    .why-me { padding: 60px 20px; background: rgba(255,255,255,0.02); text-align: center; }
+    .why-me-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; max-width: 1200px; margin: 40px auto 0; }
+    .why-item { padding: 30px; background: rgba(255,255,255,0.05); border-radius: 20px; border: 1px solid rgba(160, 196, 255, 0.1); transition: transform 0.3s; }
+    .why-item:hover { transform: translateY(-5px); background: rgba(255,255,255,0.08); }
+    .why-icon { font-size: 2.5rem; margin-bottom: 15px; display: block; }
+    .why-item h3 { color: #a0c4ff; margin-bottom: 10px; font-size: 1.4rem; }
+    .why-item p { color: #d5def5; font-size: 1rem; line-height: 1.6; }
+
+    /* Stats Section Styles */
+    .stats-section {
+        --sp-bg-default: #ffffff;
+        --sp-surface-default: #f7f7fb;
+        --sp-text-default: #0f172a;
+        --sp-muted-default: #475569;
+        --sp-accent-default: #2563eb;
+        --sp-border-default: #e5e7eb;
+        --sp-shadow-default: 0 10px 30px rgba(2, 6, 23, 0.08);
+        color: var(--sp-text-default);
+        background: transparent;
+        direction: ltr;
+    }
+    @media (prefers-color-scheme: dark) {
+        .stats-section {
+          --sp-bg-default: #0b1220;
+          --sp-surface-default: #0f172a;
+          --sp-text-default: #e2e8f0;
+          --sp-muted-default: #94a3b8;
+          --sp-accent-default: #60a5fa;
+          --sp-border-default: #1f2937;
+          --sp-shadow-default: 0 18px 45px rgba(0, 0, 0, 0.5);
+        }
+    }
+    .stats-wrap { max-width: 1100px; margin: 0 auto; padding: 2.5rem 1rem; }
+    .stats-grid { 
+        list-style: none; margin: 0; padding: 0; 
+        display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; 
+    }
+    .stat-card {
+        background: var(--sp-surface-default);
+        border: 1px solid var(--sp-border-default);
+        border-radius: 14px;
+        box-shadow: var(--sp-shadow-default);
+        padding: 16px 14px;
+        display: grid;
+        grid-template-columns: auto 1fr;
+        grid-template-rows: auto auto;
+        grid-template-areas: "icon number" "icon label";
+        align-items: center;
+        gap: 8px 10px;
+        opacity: 0;
+        transform: translateY(8px);
+        transition: opacity .6s ease, transform .6s ease;
+    }
+    .stats-section.is-inview .stat-card { opacity: 1; transform: translateY(0); }
+    .icon-wrap {
+        grid-area: icon;
+        width: 36px; height: 36px;
+        display: inline-flex;
+        align-items: center; justify-content: center;
+        border-radius: 10px;
+        background: color-mix(in oklab, var(--sp-accent-default) 14%, transparent);
+        color: var(--sp-accent-default);
+    }
+    .icon-wrap svg { width: 22px; height: 22px; stroke: currentColor; }
+    .stat-number { grid-area: number; font-weight: 800; font-size: clamp(1.35rem, 4.2vw, 1.9rem); color: var(--sp-text-default); line-height: 1.1; }
+    .stat-label { grid-area: label; margin: 0; font-size: .95rem; color: var(--sp-muted-default); font-weight: 600; }
+
+    /* FAQ Section Styles */
+    .faq-section { --bg: #0f1426; --surface: rgba(255,255,255,0.05); --text: #f6f7ff; --muted: #9ea9ce; --accent: #a0c4ff; --radius: 16px; background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.08) 100%); color: var(--text); }
+    .faq-wrap { max-width: 1100px; margin: 0 auto; padding: clamp(24px, 4vw, 44px) clamp(16px, 3vw, 32px); display: flex; flex-direction: column; gap: 20px; }
+    .faq-title { margin: 0; font-size: clamp(28px, 2.6vw, 34px); font-weight: 900; text-align: center; letter-spacing: -0.01em; }
+    .faq-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+    .faq-card { background: var(--surface); border: 1px solid rgba(255,255,255,0.12); border-radius: var(--radius); padding: clamp(16px, 2vw, 22px); display: flex; align-items: center; justify-content: space-between; gap: 12px; box-shadow: 0 12px 30px rgba(0,0,0,0.25); }
+    .faq-card h3 { margin: 0; font-size: clamp(18px, 2vw, 22px); font-weight: 700; line-height: 1.3; }
+    .faq-open { border: none; cursor: pointer; font-weight: 800; font-size: 0.95rem; border-radius: 999px; padding: 10px 18px; transition: all 0.2s ease; background: linear-gradient(135deg, var(--accent), #ffffff); color: #0f1426; }
+    .faq-a { background: rgba(255,255,255,0.03); border-left: 3px solid var(--accent); border-radius: 0 var(--radius) var(--radius) var(--radius); padding: clamp(16px, 2vw, 26px); color: var(--text); line-height: 1.65; }
+    .faq-a strong { color: var(--accent); display: block; margin-top: 15px; margin-bottom: 5px; }
+    .faq-a strong:first-child { margin-top: 0; }
+
+    /* Work Process Styles */
+    .work-process { color: #e6eaf2; position: relative; margin-bottom: clamp(40px, 6vw, 80px); }
+    .work-process-shell { background: linear-gradient(145deg, rgba(15, 20, 38, 0.95), rgba(20, 30, 50, 0.85)); border: 1px solid rgba(160, 196, 255, 0.2); border-radius: 32px; padding: clamp(32px, 5vw, 56px); }
+    .work-process-heading { text-align: center; font-size: clamp(1.5rem, 3.2vw, 2.2rem); font-weight: 900; background: linear-gradient(135deg, #ffffff 0%, #a0c4ff 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 30px; }
+    .work-process-content article { position: relative; padding: 24px; margin-bottom: 20px; background: rgba(255,255,255,0.03); border: 1px solid rgba(160, 196, 255, 0.1); border-radius: 20px; transition: transform 0.3s; }
+    .work-process-content article:hover { transform: translateY(-2px); background: rgba(255,255,255,0.05); }
+    .work-process-content h3 { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; color: #fff; }
+    .work-process-content h3::before { content: attr(data-step); display: inline-flex; align-items: center; justify-content: center; min-width: 36px; height: 36px; background: rgba(160, 196, 255, 0.2); border: 2px solid #a0c4ff; border-radius: 10px; color: #a0c4ff; font-weight: 900; flex-shrink: 0; }
+    html[lang="en"] .work-process-content h3::before { margin-right: 12px; }
+    .work-process-content p { color: #d5def5; line-height: 1.7; margin-bottom: 10px; }
+    .work-process-content ul { padding-inline-start: 20px; margin-bottom: 10px; }
+    .work-process-content ul li { color: #d5def5; margin-bottom: 5px; }
+    .work-process-details summary { cursor: pointer; list-style: none; text-align: center; }
+    .work-process-details summary::-webkit-details-marker { display: none; }
   </style>
-  <link rel="preload" as="image" href="../images/home-hero-1.jpg" />
-  <link rel="preload" as="image" href="../images/home-hero-2.jpg" />
-  <link rel="preload" as="image" href="../images/home-hero-3.jpg" />
 </head>
 <body class="home">
-
-<!-- Header -->
 <header class="header">
   <div class="header-inner">
     <div class="logo"><a href="index.html" style="color:#fff; text-decoration:none;">Yair Rozenberg</a></div>
@@ -33,38 +151,7 @@
         <li><a href="#gallery"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M15 12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h1.172a3 3 0 0 0 2.12-.879l.83-.828A1 1 0 0 1 6.827 3h2.344a1 1 0 0 1 .707.293l.828.828A3 3 0 0 0 12.828 5H14a1 1 0 0 1 1 1zM2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4z"/><path d="M8 11a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5m0 1a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7M3 6.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0"/></svg> Gallery</a></li>
         <li><a href="about.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/></svg> About</a></li>
         <li><a href="contact.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/></svg> Contact</a></li>
-        <!-- On-time -->
-        
-
-        <!-- Double Backup -->
-        
-
-        <!-- Color Grading -->
-        
-
-        <!-- High Quality -->
-        
-
-        <!-- 500,000+ Photos -->
-        
-
-        <li><a href="index.html#faq"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14z"/><path d="M5.255 5.786a.237.237 0 0 1 .241-.247h.825c.138 0 .24.113.223.25-.007.053-.032.107-.077.154C6.936 6.5 6.474 6.936 6.474 7.5v.086c0 .102.028.2.08.287.05.086.13.15.225.18.695.212 1.086.726 1.086 1.16 0 .66-.526 1.26-1.503 1.26-.793 0-1.22-.346-1.22-.775 0-.237.07-.457.2-.638.143-.196.328-.35.547-.456.118-.055.255-.084.393-.084h.761c.138 0 .246.113.246.25 0 .136-.11.25-.246.25h-.761c-.196 0-.358.14-.358.31 0 .117.12.212.353.212.474 0 .801-.21.801-.582 0-.215-.179-.456-.53-.56-.28-.08-.324-.177-.324-.28 0-.21.192-.414.468-.6.76-.52 1.272-1.004 1.272-1.73 0-1.07-.888-1.893-2.199-1.893-1.18 0-2.24.64-2.285 1.786-.002.057.046.106.105.106h.87zM8 13a.905.905 0 1 1 0-1.81.905.905 0 0 1 0 1.81z"/></svg> FAQs</a></li>
-
-        <!-- ���� ������ -->
-        
-
-        <!-- ����� ���� -->
-        
-
-        <!-- ����� ����� -->
-        
-
-        <!-- ����� ����� -->
-        
-
-        <!-- 500000+ ������ -->
-        
-        
+        <li><a href="#faq"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14z"/><path d="M5.255 5.786a.237.237 0 0 1 .241-.247h.825c.138 0 .24.113.223.25-.007.053-.032.107-.077.154C6.936 6.5 6.474 6.936 6.474 7.5v.086c0 .102.028.2.08.287.05.086.13.15.225.18.695.212 1.086.726 1.086 1.16 0 .66-.526 1.26-1.503 1.26-.793 0-1.22-.346-1.22-.775 0-.237.07-.457.2-.638.143-.196.328-.35.547-.456.118-.055.255-.084.393-.084h.761c.138 0 .246.113.246.25 0 .136-.11.25-.246.25h-.761c-.196 0-.358.14-.358.31 0 .117.12.212.353.212.474 0 .801-.21.801-.582 0-.215-.179-.456-.53-.56-.28-.08-.324-.177-.324-.28 0-.21.192-.414.468-.6.76-.52 1.272-1.004 1.272-1.73 0-1.07-.888-1.893-2.199-1.893-1.18 0-2.24.64-2.285 1.786-.002.057.046.106.105.106h.87zM8 13a.905.905 0 1 1 0-1.81.905.905 0 0 1 0 1.81z"/></svg> FAQs</a></li>
       </ul>
     </nav>
     <a id="langSwitch" class="lang-switch" href="#" aria-label="Switch language">HE</a>
@@ -76,1291 +163,307 @@
 <!-- Main content -->
 <main class="page-wrap">
 
-  <!-- Intro text above galleries -->
-  <!-- <section class="home-intro" aria-labelledby="intro-title">
-    <div class="home-intro-box">
-      <div class="home-intro-name"> ?</div>
-      <h2 id="intro-title" class="home-intro-title">? ?,  </h2>
-      <div class="cta">
-        <a class="btn" href="#contact">Contact<a class="btn" href="#contact">
-      </div>
-    </div>
-  </section> -->
-
   <!-- Hero Section -->
     <section class="hero" aria-labelledby="hero-title">
       <h2 id="hero-title" class="visually-hidden">Hero</h2>
     <div class="marquee-hero" aria-label="Marquee photo gallery">
       <div class="marquee-track">
         <div class="marquee-group">
-          <img class="marquee-item" src="../images/home-hero-1.jpg" alt="" fetchpriority="high" decoding="async" />
-          <img class="marquee-item" src="../images/home-hero-2.jpg" alt="" decoding="async" />
-          <img class="marquee-item" src="../images/home-hero-3.jpg" alt="" decoding="async" />
-          <img class="marquee-item" src="../images/home-hero-4.jpg" alt="" decoding="async" />
-          <img class="marquee-item" src="../images/home-hero-5.jpg" alt="" decoding="async" />
-          <img class="marquee-item" src="../images/home-hero-6.jpg" alt="" decoding="async" />
-          <img class="marquee-item" src="../images/home-hero-7.jpg" alt="" decoding="async" />
-          <img class="marquee-item" src="../images/home-hero-8.jpg" alt="" decoding="async" />
-          <img class="marquee-item" src="../images/home-hero-9.jpg" alt="" decoding="async" />
-          <img class="marquee-item" src="../images/home-hero-10.jpg" alt="" decoding="async" />
+          <img class="marquee-item" src="../images/home-hero-1.jpg" alt="Bar Mitzvah at the Western Wall - Yair Rozenberg Photography" fetchpriority="high" decoding="async" />
+          <img class="marquee-item" src="../images/home-hero-2.jpg" alt="Aliyah LaTorah photography Western Wall" decoding="async" />
+          <img class="marquee-item" src="../images/home-hero-3.jpg" alt="Jerusalem event photographer professional" decoding="async" />
+          <img class="marquee-item" src="../images/home-hero-4.jpg" alt="Family portraits Jerusalem Israel" decoding="async" />
+          <img class="marquee-item" src="../images/home-hero-5.jpg" alt="Jewish religious event photography" decoding="async" />
+          <img class="marquee-item" src="../images/home-hero-6.jpg" alt="Brit Milah ceremony photographer Jerusalem" decoding="async" />
+          <img class="marquee-item" src="../images/home-hero-7.jpg" alt="Travel and landscape photography Israel" decoding="async" />
+          <img class="marquee-item" src="../images/home-hero-8.jpg" alt="Professional event photography services" decoding="async" />
+          <img class="marquee-item" src="../images/home-hero-9.jpg" alt="Western Wall Kotel moments captured" decoding="async" />
+          <img class="marquee-item" src="../images/home-hero-10.jpg" alt="Yair Rozenberg Photographer Jerusalem" decoding="async" />
         </div>
-        <!-- duplicate removed; JS clones the group for seamless loop -->
       </div>
     </div>
     <div class="hero-inner"></div>
   </section>
 
-    <!-- Intro text above galleries -->
+  <!-- Intro text -->
   <section class="home-intro" aria-labelledby="intro-title-2">
-      <div class="home-intro-box">
-        <div class="home-intro-name">Yair Rozenberg</div>
-        <h2 id="intro-title-2" class="home-intro-title">Event Photographer</h2>
-        <p class="home-intro-tagline">Your event happens once. The photos will stay with you � forever.</p>
+    <div class="home-intro-box">
+      <div class="home-intro-name">Yair Rozenberg</div>
+      <h2 id="intro-title-2" class="home-intro-title">Capturing the Moments That Matter</h2>
+        <p class="home-intro-tagline">Your event happens once. I'm here to ensure the memories stay with you – forever.</p>
       <div class="cta">
-        <a class="btn" href="#contact">Contact</a>
+        <a class="btn" href="#contact">Let's Capture Your Moments</a>
       </div>
     </div>
   </section>
 
-    <!-- Galleries Section -->
+  <!-- Why choose me section -->
+  <section class="why-me">
+    <h2 class="section-title">Why Choose Me?</h2>
+    <div class="why-me-grid">
+      <div class="why-item">
+        <span class="why-icon">🏆</span>
+        <h3>7 Years of Experience</h3>
+        <p>Hundreds of events and emotional moments captured across Israel, with special expertise in Jerusalem and the Western Wall.</p>
+      </div>
+      <div class="why-item">
+        <span class="why-icon">🛡️</span>
+        <h3>Double Backup Protection</h3>
+        <p>Your peace of mind is my priority. Every photo is backed up in real-time and in two different locations after the event.</p>
+      </div>
+      <div class="why-item">
+        <span class="why-icon">⚡</span>
+        <h3>Fast Delivery</h3>
+        <p>No need to wait for weeks. Your full digital gallery will be ready within just 4 business days.</p>
+      </div>
+      <div class="why-item">
+        <span class="why-icon">🤝</span>
+        <h3>Personal & Professional</h3>
+        <p>I accompany you from the first call to the final album, with full sensitivity to your traditions and needs.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galleries Section -->
   <section id="gallery" class="gallery-main" aria-labelledby="gallery-title">
-    <h2 id="gallery-title">Galleries</h2>
+    <h2 id="gallery-title">My Work</h2>
     <div class="category-grid">
       <article class="category-card">
-        <h3>Events</h3>
-        <p>Highlights from family events and celebrations</p>
-        <a class="btn small" href="gallery-events.html">View Gallery</a>
+        <h3>Family Events</h3>
+        <p>Full documentation of peak moments, smiles, and human connections in all types of celebrations.</p>
+        <a class="btn small" href="gallery-events.html">View Events</a>
       </article>
       <article class="category-card">
-        <h3>Travel</h3>
-        <p>People and places across the world</p>
-        <a class="btn small" href="gallery-travel.html">View Gallery</a>
+        <h3>Travel & Landscapes</h3>
+        <p>The beauty of the world through my lens - from journeys in Israel to magical corners of the globe.</p>
+        <a class="btn small" href="gallery-travel.html">View Travel</a>
       </article>
       <article class="category-card">
         <h3>Bar Mitzvah at the Kotel</h3>
-        <p>Authentic moments at the Western Wall</p>
-        <a class="btn small" href="gallery-bm-kotel.html">View Gallery</a>
+        <p>Unique expertise in Aliyah LaTorah photography. Sensitivity to tradition at the Western Wall.</p>
+            <a class="btn small" href="gallery-bm-kotel.html">View Kotel Gallery</a>
       </article>
     </div>
   </section>
 
-  <!-- Social Proof / Statistics Section: start -->
-  <section id="social-proof-stats" class="stats-section is-inview" dir="ltr" lang="en" aria-label="����������">
-    <style>
-      /* ���� ������� �� ���� ������ :root �� ������ + ����� �-dark/light */
-      .stats-section {
-        --sp-bg-default: #ffffff;
-        --sp-surface-default: #f7f7fb;
-        --sp-text-default: #0f172a;
-        --sp-muted-default: #475569;
-        --sp-accent-default: #2563eb;
-        --sp-border-default: #e5e7eb;
-        --sp-shadow-default: 0 10px 30px rgba(2, 6, 23, 0.08);
-
-        color: var(--color-text, var(--text, var(--sp-text-default)));
-        font-family: var(--font-sans, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif);
-        background: var(--color-bg, var(--bg, transparent));
-        direction: ltr;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-      }
-      @media (prefers-color-scheme: dark) {
-        .stats-section {
-          --sp-bg-default: #0b1220;
-          --sp-surface-default: #0f172a;
-          --sp-text-default: #e2e8f0;
-          --sp-muted-default: #94a3b8;
-          --sp-accent-default: #60a5fa;
-          --sp-border-default: #1f2937;
-          --sp-shadow-default: 0 18px 45px rgba(0, 0, 0, 0.5);
-        }
-      }
-
-      .stats-section .stats-wrap {
-        max-width: 1100px;
-        margin: 0 auto;
-        padding: 2.5rem 1rem;
-      }
-
-      .stats-section .stats-header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 1rem;
-        margin-bottom: 1.25rem;
-      }
-
-      .stats-section .stats-title {
-        margin: 0;
-        font-size: clamp(1.25rem, 2.8vw, 1.75rem);
-        font-weight: 800;
-        letter-spacing: -0.02em;
-        color: var(--color-text, var(--text, var(--sp-text-default)));
-      }
-
-      .stats-section .stats-cta {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: .5rem;
-        padding: .55rem .9rem;
-        font-size: .95rem;
-        border-radius: 999px;
-        text-decoration: none;
-        background: var(--color-accent, var(--accent, var(--sp-accent-default)));
-        color: var(--on-accent, #ffffff);
-        border: 1px solid transparent;
-        box-shadow: 0 2px 12px rgba(37, 99, 235, 0.25);
-        transition: transform .12s ease, box-shadow .2s ease, opacity .2s ease;
-        white-space: nowrap;
-      }
-      .stats-section .stats-cta:hover {
-        transform: translateY(-1px);
-        box-shadow: 0 6px 20px rgba(37, 99, 235, 0.35);
-      }
-      .stats-section .stats-cta:focus-visible {
-        outline: 3px solid color-mix(in oklab, var(--color-accent, var(--accent, var(--sp-accent-default))) 55%, white);
-        outline-offset: 2px;
-      }
-
-      .stats-section .stats-grid {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-        gap: 14px;
-      }
-      /* Hide any non-card list items accidentally inside the stats grid */
-      .stats-section .stats-grid > li:not(.stat-card) { display: none; }
-      @media (min-width: 560px) {
-        .stats-section .stats-grid { gap: 16px; }
-      }
-      @media (min-width: 900px) {
-        .stats-section .stats-grid { gap: 18px; }
-      }
-
-      .stats-section .stat-card {
-        background: var(--color-surface, var(--surface, var(--sp-surface-default)));
-        border: 1px solid var(--color-border, var(--border, var(--sp-border-default)));
-        border-radius: 14px;
-        box-shadow: var(--shadow, var(--sp-shadow-default));
-        padding: 16px 14px;
-        display: grid;
-        grid-template-columns: auto 1fr;
-        grid-template-rows: auto auto;
-        grid-template-areas:
-          "icon number"
-          "icon label";
-        align-items: center;
-        gap: 8px 10px;
-        opacity: 0;
-        transform: translateY(8px);
-        transition: opacity .6s ease, transform .6s ease;
-      }
-      .stats-section.is-inview .stat-card { opacity: 1; transform: translateY(0); }
-      .stats-section.is-inview .stat-card:nth-child(1) { transition-delay: 40ms; }
-      .stats-section.is-inview .stat-card:nth-child(2) { transition-delay: 80ms; }
-      .stats-section.is-inview .stat-card:nth-child(3) { transition-delay: 120ms; }
-      .stats-section.is-inview .stat-card:nth-child(4) { transition-delay: 160ms; }
-      .stats-section.is-inview .stat-card:nth-child(5) { transition-delay: 200ms; }
-      .stats-section.is-inview .stat-card:nth-child(6) { transition-delay: 240ms; }
-
-      .stats-section .icon-wrap {
-        grid-area: icon;
-        width: 36px; height: 36px;
-        display: inline-flex;
-        align-items: center; justify-content: center;
-        border-radius: 10px;
-        background: color-mix(in oklab, var(--color-accent, var(--accent, var(--sp-accent-default))) 14%, transparent);
-        color: var(--color-accent, var(--accent, var(--sp-accent-default)));
-      }
-      .stats-section .icon-wrap svg {
-        width: 22px; height: 22px;
-        stroke: currentColor;
-      }
-
-      .stats-section .stat-number {
-        grid-area: number;
-        font-weight: 800;
-        font-size: clamp(1.35rem, 4.2vw, 1.9rem);
-        letter-spacing: -0.01em;
-        color: var(--color-text, var(--text, var(--sp-text-default)));
-        line-height: 1.1;
-      }
-      .stats-section .stat-label {
-        grid-area: label;
-        margin: 0;
-        font-size: .95rem;
-        color: var(--color-muted, var(--muted, var(--sp-muted-default)));
-        line-height: 1.25;
-        font-weight: 600;
-      }
-
-      /* ������: ��� ��� ������� */
-      @media (prefers-reduced-motion: reduce) {
-        .stats-section .stat-card { transition: none; transform: none; opacity: 1; }
-        .stats-section .stats-cta { transition: none; }
-      }
-    </style>
-
+  <!-- Social Proof / Statistics Section -->
+  <section id="social-proof-stats" class="stats-section" dir="ltr" lang="en">
     <div class="stats-wrap">
-      <header class="stats-header"></header>
-
-      <ul class="stats-grid" role="list" aria-label="����������">
-        <!-- ����� 1: ������� -->
-        <li class="stat-card" data-stat-id="events" aria-label="�������">
-          <div class="icon-wrap" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none">
-              <rect x="3" y="6" width="18" height="14" rx="2" stroke-width="1.8"/>
-              <path d="M7 6l2-2h6l2 2" stroke-width="1.8"/>
-              <circle cx="12" cy="13" r="4" stroke-width="1.8"/>
-            </svg>
-          </div>
-          <div class="stat-number" data-target="263" data-suffix="+">263+</div>
+      <ul class="stats-grid">
+        <li class="stat-card" data-stat-id="events">
+          <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="6" width="18" height="14" rx="2" stroke-width="1.8"/><path d="M7 6l2-2h6l2 2" stroke-width="1.8"/><circle cx="12" cy="13" r="4" stroke-width="1.8"/></svg></div>
+          <div class="stat-number" data-target="300" data-suffix="+">300+</div>
           <h3 class="stat-label">Events</h3>
         </li>
-
-        <!-- Card 2: Returning Clients -->
-        <li class="stat-card" data-stat-id="families" aria-label="Returning Clients">
-          <div class="icon-wrap" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none">
-              <circle cx="9" cy="8" r="3" stroke-width="1.8"/>
-              <path d="M15.5 9a2.5 2.5 0 1 0 0-5" stroke-width="1.8"/>
-              <path d="M4 18a5 5 0 0 1 10 0" stroke-width="1.8"/>
-              <path d="M16 18c.3-1.8 1.8-3 3.5-3S23 16.6 23 18" stroke-width="1.8"/>
-            </svg>
-          </div>
-          <div class="stat-number" data-target="NaN" data-suffix="">?</div>
+        <li class="stat-card" data-stat-id="families">
+          <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="9" cy="8" r="3" stroke-width="1.8"/><path d="M15.5 9a2.5 2.5 0 1 0 0-5" stroke-width="1.8"/><path d="M4 18a5 5 0 0 1 10 0" stroke-width="1.8"/><path d="M16 18c.3-1.8 1.8-3 3.5-3S23 16.6 23 18" stroke-width="1.8"/></svg></div>
+          <div class="stat-number" data-target="NaN" data-suffix="">✓</div>
           <h3 class="stat-label">Returning Clients</h3>
         </li>
-
-        
-
-        <!-- ����� 4: ������ ������� -->
-        <li class="stat-card" data-stat-id="galleries" aria-label="������ �������">
-          <div class="icon-wrap" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none">
-              <rect x="3" y="4" width="8" height="7" rx="1.5" stroke-width="1.8"/>
-              <rect x="13" y="4" width="8" height="7" rx="1.5" stroke-width="1.8"/>
-              <rect x="3" y="13" width="8" height="7" rx="1.5" stroke-width="1.8"/>
-              <rect x="13" y="13" width="8" height="7" rx="1.5" stroke-width="1.8"/>
-            </svg>
-          </div>
-          <div class="stat-number" data-target="320" data-suffix="+">320+</div>
-          <h3 class="stat-label">������ �������</h3>
-        </li>
-
-        <!-- ����� 5: ���� ������ -->
-        <li class="stat-card" data-stat-id="cities" aria-label="���� ������">
-          <div class="icon-wrap" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none">
-              <path d="M12 21s7-6.4 7-11.2A7 7 0 1 0 5 9.8C5 14.6 12 21 12 21z" stroke-width="1.8"/>
-              <circle cx="12" cy="9.8" r="2" stroke-width="1.8"/>
-            </svg>
-          </div>
+        <li class="stat-card" data-stat-id="cities">
+          <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 21s7-6.4 7-11.2A7 7 0 1 0 5 9.8C5 14.6 12 21 12 21z" stroke-width="1.8"/><circle cx="12" cy="9.8" r="2" stroke-width="1.8"/></svg></div>
           <div class="stat-number" data-target="25" data-suffix="">25</div>
           <h3 class="stat-label">Cities in Israel</h3>
         </li>
-
-        <!-- ����� 6: ������ ������� -->
-        <li class="stat-card" data-stat-id="reviews" aria-label="�����">
-          <div class="icon-wrap" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none">
-              <path d="M12 3l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4L12 18l-5.8 3.1 1.1-6.4L2.6 9.8l6.5-.9L12 3z" stroke-width="1.8"/>
-            </svg>
-          </div>
+        <li class="stat-card" data-stat-id="reviews">
+          <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 3l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4L12 18l-5.8 3.1 1.1-6.4L2.6 9.8l6.5-.9L12 3z" stroke-width="1.8"/></svg></div>
           <div class="stat-number" data-target="100" data-suffix="%">100%</div>
-          <h3 class="stat-label">Service</h3>
+          <h3 class="stat-label">Satisfaction</h3>
         </li>
-                <!-- On-time -->
-        <li class="stat-card" data-stat-id="ontime" aria-label="On-time">
-          <div class="icon-wrap" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none">
-              <circle cx="12" cy="12" r="9" stroke-width="1.8"/>
-              <path d="M12 7v5l3 3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          <div class="stat-number" data-target="NaN" data-suffix="">?</div>
-          <h3 class="stat-label">On-time</h3>
-        </li>
-
-        <!-- Double Backup -->
-        <li class="stat-card" data-stat-id="backup" aria-label="Double Backup">
-          <div class="icon-wrap" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none">
-              <rect x="7" y="7" width="10" height="10" rx="2" stroke-width="1.8"/>
-              <rect x="4" y="4" width="10" height="10" rx="2" stroke-width="1.8"/>
-            </svg>
-          </div>
-          <div class="stat-number" data-target="NaN" data-suffix="">?</div>
-          <h3 class="stat-label">Double Backup</h3>
-        </li>
-
-        <!-- Color Grading -->
-        <li class="stat-card" data-stat-id="color" aria-label="Color Grading">
-          <div class="icon-wrap" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none">
-              <path d="M12 4a8 8 0 1 0 0 16h2.5a2.5 2.5 0 0 0 0-5H13a1 1 0 0 1-1-1v-1a2 2 0 0 0-2-2H9a3 3 0 0 1-3-3" stroke-width="1.8" stroke-linecap="round"/>
-              <circle cx="8" cy="8" r="1.2" fill="currentColor"/>
-              <circle cx="10.5" cy="6.5" r="1.2" fill="currentColor"/>
-              <circle cx="14" cy="7.5" r="1.2" fill="currentColor"/>
-              <circle cx="15" cy="11" r="1.2" fill="currentColor"/>
-            </svg>
-          </div>
-          <div class="stat-number" data-target="NaN" data-suffix="">?</div>
-          <h3 class="stat-label">Color Grading</h3>
-        </li>
-
-        <!-- High Quality -->
-        <li class="stat-card" data-stat-id="quality" aria-label="High Quality">
-          <div class="icon-wrap" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none">
-              <path d="M3 9l4-5h10l4 5-9 11L3 9z" stroke-width="1.8" stroke-linejoin="round"/>
-              <path d="M3 9h18" stroke-width="1.8"/>
-            </svg>
-          </div>
-          <div class="stat-number" data-target="NaN" data-suffix="">?</div>
-          <h3 class="stat-label">High Quality</h3>
-        </li>
-
-        <!-- 500,000+ Photos -->
-        <li class="stat-card" data-stat-id="photos" aria-label="Photos">
-          <div class="icon-wrap" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none">
-              <rect x="3" y="7" width="18" height="12" rx="2" stroke-width="1.8"/>
-              <path d="M8 7l2-2h4l2 2" stroke-width="1.8"/>
-              <circle cx="12" cy="13" r="4" stroke-width="1.8"/>
-            </svg>
-          </div>
-          <div class="stat-number" data-target="500000" data-suffix="+">500,000+</div>
-          <h3 class="stat-label">Photos</h3>
-        </li>        <!-- On-time -->
-        
-
-        <!-- Double Backup -->
-        
-
-        <!-- Color Grading -->
-        
-
-        <!-- High Quality -->
-        
-
-        <!-- 500,000+ Photos -->
-        <li><a href="index.html#faq"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14z"/><path d="M5.255 5.786a.237.237 0 0 1 .241-.247h.825c.138 0 .24.113.223.25-.007.053-.032.107-.077.154C6.936 6.5 6.474 6.936 6.474 7.5v.086c0 .102.028.2.08.287.05.086.13.15.225.18.695.212 1.086.726 1.086 1.16 0 .66-.526 1.26-1.503 1.26-.793 0-1.22-.346-1.22-.775 0-.237.07-.457.2-.638.143-.196.328-.35.547-.456.118-.055.255-.084.393-.084h.761c.138 0 .246.113.246.25 0 .136-.11.25-.246.25h-.761c-.196 0-.358.14-.358.31 0 .117.12.212.353.212.474 0 .801-.21.801-.582 0-.215-.179-.456-.53-.56-.28-.08-.324-.177-.324-.28 0-.21.192-.414.468-.6.76-.52 1.272-1.004 1.272-1.73 0-1.07-.888-1.893-2.199-1.893-1.18 0-2.24.64-2.285 1.786-.002.057.046.106.105.106h.87zM8 13a.905.905 0 1 1 0-1.81.905.905 0 0 1 0 1.81z"/></svg> FAQs</a></li>
       </ul>
     </div>
-
-    <script>
-      (function () {
-        // ���������� ����� ��� ����: ���� ���
-        const CONFIG = {
-          title: "����������",
-          cta: null,
-          items: [
-            { id: "events",   label: "Events",           value: 263, suffix: "+" },
-            { id: "families", label: "Returning Clients",     value: 230,  suffix: "" },
-            { id: "cities",   label: "Cities in Israel",       value: 25,   suffix: ""  },
-            { id: "reviews",  label: "Service",   value: 100,   suffix: "%" }
-          ]
-        };
-
-        const section = document.getElementById("social-proof-stats");
-        if (!section) return;
-
-        // ������ ������/������ ��-CONFIG (�� ����� ����� �-HTML)
-        const format = (n) => new Intl.NumberFormat('he-IL').format(n);
-        const titleEl = section.querySelector(".stats-title");
-        if (titleEl && CONFIG.title) titleEl.textContent = CONFIG.title;
-
-        // ���� �����/����� �� ������ ��� ������
-        const headerEl = section.querySelector('.stats-header');
-        if (headerEl) headerEl.remove();
-        const ctaEl = section.querySelector('.stats-cta');
-        if (ctaEl) ctaEl.remove();
-        const galleriesCard = section.querySelector('[data-stat-id="galleries"]');
-        if (galleriesCard) galleriesCard.remove();
-
-        // ����� ������ ��� id ������ DOM
-        const itemMap = Object.fromEntries(CONFIG.items.map(i => [i.id, i]));
-        section.querySelectorAll(".stat-card").forEach(card => {
-          const id = card.getAttribute("data-stat-id");
-          const cfg = itemMap[id];
-          if (!cfg) return;
-          const numberEl = card.querySelector(".stat-number");
-          const labelEl = card.querySelector(".stat-label");
-          if (labelEl) labelEl.textContent = cfg.label;
-          if (numberEl && id !== "families") {
-            numberEl.setAttribute("data-target", String(cfg.value));
-            numberEl.setAttribute("data-suffix", cfg.suffix || "");
-            numberEl.textContent = format(cfg.value) + (cfg.suffix || "");
-          }
-        });
-
-        // ����� ����� + Counter-Up ������
-        const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-        const animateCounters = () => {
-          const nums = section.querySelectorAll(".stat-number");
-          nums.forEach((el) => {
-            const target = Number(el.getAttribute("data-target") || "0");
-            const suffix = el.getAttribute("data-suffix") || "";
-            if (!Number.isFinite(target)) return;
-
-            if (prefersReducedMotion) {
-              el.textContent = format(target) + suffix;
-              return;
-            }
-
-            const duration = 1200; // ms
-            const start = 0;
-            const startTime = performance.now();
-            // ������� �-0 �� ������� ����
-            el.textContent = format(0) + suffix;
-
-            const step = (now) => {
-              const t = Math.min((now - startTime) / duration, 1);
-              const eased = 1 - Math.pow(1 - t, 3); // easeOutCubic
-              const current = Math.round(start + (target - start) * eased);
-              el.textContent = format(current) + suffix;
-              if (t < 1) requestAnimationFrame(step);
-              else el.textContent = format(target) + suffix;
-            };
-            requestAnimationFrame(step);
-          });
-        };
-
-        const onVisible = (entries, obs) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              section.classList.add("is-inview");
-              animateCounters();
-              obs.disconnect();
-            }
-          });
-        };
-
-        const io = new IntersectionObserver(onVisible, { threshold: 0.35 });
-        io.observe(section);
-      })();
-    </script>
   </section>
-    <!-- Social Proof / Statistics Section: end -->
 
-  <section id="work-process" class="work-process" dir="ltr" lang="en" aria-label="Work process">
-    <style>
-      .work-process { color: #e6eaf2; margin-bottom: clamp(24px, 4vw, 48px); }
-      .work-process details {
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        border-radius: 28px;
-        background: rgba(255, 255, 255, 0.03);
-        overflow: hidden;
-      }
-      .work-process summary {
-        cursor: pointer;
-        font-size: clamp(1.2rem, 2.6vw, 1.6rem);
-        font-weight: 800;
-        padding: clamp(16px, 2vw, 24px) clamp(20px, 3vw, 28px);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        color: #ffffff;
-        list-style: none;
-      }
-      .work-process summary::marker { display: none; }
-      .work-process summary::after {
-        content: '+';
-        font-size: 1.4em;
-        line-height: 1;
-      }
-      .work-process details[open] summary::after { content: '?'; }
-      .work-process-content {
-        padding: clamp(16px, 2vw, 30px);
-        max-width: 900px;
-      }
-      .work-process-content article + article {
-        margin-top: clamp(18px, 2.2vw, 26px);
-        padding-top: 20px;
-        border-top: 1px solid rgba(255, 255, 255, 0.15);
-      }
-      .work-process-content h3 {
-        margin: 0 0 6px;
-        font-size: clamp(1.05rem, 2vw, 1.35rem);
-        font-weight: 700;
-        color: #f0f5ff;
-      }
-      .work-process-content h4 {
-        margin: 12px 0 4px;
-        font-size: 1rem;
-        font-weight: 600;
-        color: #b8c1d8;
-      }
-      .work-process-content p {
-        margin: 0 0 10px;
-        line-height: 1.6;
-        color: #d5def5;
-      }
-      .work-process-content ul {
-        margin: 4px 0 10px;
-        padding-inline-start: 18px;
-        line-height: 1.6;
-        color: #d5def5;
-        display: flex;
-        flex-direction: column;
-        gap: 4px;
-      }
-      .work-process-content strong {
-        color: #ffffff;
-      }
-    </style>
-
-    <details class="work-process-details">
-      <summary>Our Complete Work Process - From First Call to Finished Album</summary>
+  <!-- Work Process Section -->
+  <section id="work-process" class="work-process">
+    <div class="work-process-shell">
+      <h3 class="work-process-heading">Full Workflow - From First Call to Perfect Album</h3>
       <div class="work-process-content">
         <article>
-          <h3>Step 1: Initial Consultation and Planning </h3>
-          <p>Every event begins with a personal conversation with you. We'll discuss your expectations, the atmosphere you want to create, and the important moments you don't want to miss. Together, we'll choose the photography package that fits your event and budget perfectly.</p>
+          <h3 data-step="1">Initial Consultation 📞</h3>
+          <p>Every event starts with a personal chat. We discuss your expectations, the atmosphere you want to create, and the key moments you don't want to miss.</p>
         </article>
         <article>
-          <h3>Step 2: Event Day - Arrival and Preparation </h3>
-          <h4>Early Arrival (20 Minutes Before)</h4>
-          <p>I arrive at the event 20 minutes before the official start time so I can get to know the space, check the lighting, identify the best angles, and make sure the equipment is ready. This keeps surprises at bay and ensures I'm ready the moment the first guests arrive.</p>
+          <h3 data-step="2">Event Day - Arrival & Prep 🎯</h3>
+          <p>I arrive 20 minutes before the official start time to scout the location, check the lighting, identify the best angles, and ensure all equipment is fully ready.</p>
         </article>
-        <article>
-          <h3>Step 3: Family Photos - The First and Most Important Moment ?</h3>
-          <h4>Why Start with Family?</h4>
-          <ul>
-            <li><strong>Everyone still has full energy</strong> � not tired, not frustrated, simply excited.</li>
-            <li><strong>Clothes are still perfect</strong> � the kids haven�t gotten dirty yet and dresses and suits look fresh.</li>
-            <li><strong>The atmosphere is positive</strong> � everyone is looking forward to the celebration and it shows in the photos.</li>
-          </ul>
-          <p>I guide everyone naturally and comfortably, making sure everyone looks great, and capture the most beautiful moments, both posed and spontaneous.</p>
-        </article>
-        <article>
-          <h3>Step 4: Reception - The First Guests </h3>
-          <ul>
-            <li>The first hugs.</li>
-            <li>Warm congratulations.</li>
-            <li>The hosts' excitement.</li>
-            <li>The emerging atmosphere.</li>
-          </ul>
-          <p>I photograph without interrupting, staying present but not prominent so guests feel free and natural.</p>
-        </article>
-        <article>
-          <h3>Step 5: Event Begins - Sitting Down to Dine ?</h3>
-          <ul>
-            <li>The vibe around each table.</li>
-            <li>The conversations and laughter.</li>
-            <li>The happy faces.</li>
-            <li>The connections between people.</li>
-            <li>The small details that complete the story.</li>
-          </ul>
-          <p>Each table is its own little world, and I make sure to capture the uniqueness of every group.</p>
-        </article>
-        <article>
-          <h3>Step 6: Dancing - Peak Energy </h3>
-          <ul>
-            <li>The pure joy that bursts from the dancers.</li>
-            <li>The wide smiles.</li>
-            <li>The spontaneous moments that can�t be planned.</li>
-            <li>The energy that spreads to everyone.</li>
-          </ul>
-          <p><strong>I try not to miss a single moment.</strong> My eyes are on the dance floor, on the faces, on the magical moments that happen when nobody expects them. I know when to get close, when to shoot from afar, and how to capture the real joy.</p>
-        </article>
-        <article>
-          <h3>Step 7: Between Dances - Continued Documentation </h3>
-          <ul>
-            <li>New guests arriving to congratulate the parents or couple.</li>
-            <li>Intimate moments of meaningful conversations.</li>
-            <li>Connections between generations � grandparents with grandchildren.</li>
-            <li>The little details that tell the story.</li>
-          </ul>
-          <p>I'm always looking for the story � not just the pretty picture, but the real moment that will remind you how you felt.</p>
-        </article>
-        <article>
-          <h3>Step 8: End of Event - Final Family Photo </h3>
-          <ul>
-            <li>The extended family (everyone still at the venue).</li>
-            <li>Small groups who want a photo together.</li>
-            <li>The last moments before saying goodbye.</li>
-          </ul>
-          <p>This is the moment to capture everyone together again, this time with the energy and joy of a successful celebration.</p>
-        </article>
-        <article>
-          <h3>Step 9: Goodbye and Beginning Technical Work </h3>
-          <h4>Immediate Backup</h4>
-          <p>The moment I get home, the first thing I do is <strong>double backup all the photos.</strong> Two copies in different locations ensure no image gets lost.</p>
-          <h4>Professional Editing</h4>
-          <p>I import every photo into professional editing software and go through them individually:</p>
-          <ul>
-            <li>Correcting lighting and colors.</li>
-            <li>Sharpening and improving quality.</li>
-            <li>Creating a cohesive atmosphere throughout the album.</li>
-            <li>Removing small imperfections.</li>
-          </ul>
-          <p><strong>The result:</strong> Professional-level photos that look exactly like you remember the moment � but even more beautiful.</p>
-        </article>
-        <article>
-          <h3>Step 10: Receiving Photos - Within 4 Days </h3>
-          <p>Within 4 days of the event�s conclusion you receive a private link to all the photos:</p>
-          <ul>
-            <li>An organized, easy-to-view gallery.</li>
-            <li>Simple download options.</li>
-            <li>The ability to share with family and friends.</li>
-          </ul>
-          <p>You don�t have to wait weeks � I know you want to see the photos quickly and make sure that happens as soon as possible.</p>
-        </article>
-        <article>
-          <h3>Step 11: Selecting Photos for the Album </h3>
-          <ul>
-            <li>You go through the gallery at your own pace.</li>
-            <li>You choose the photos you love most.</li>
-            <li>You send me your selection.</li>
-          </ul>
-          <p><strong>No pressure, no deadlines.</strong> This is your album and you should feel great about every photo in it.</p>
-        </article>
-        <article>
-          <h3>Step 12: Album Design - Full Collaboration </h3>
-          <p>After you select the images, I pass them to the professional graphic designer I work with.</p>
-          <h4>Transparent and Guided Design Process</h4>
-          <ul>
-            <li>The designer reaches out to you directly.</li>
-            <li>She presents the initial layout.</li>
-            <li>She listens to your wishes and adjustments.</li>
-            <li>She makes changes until you are 100% satisfied.</li>
-          </ul>
-          <p><strong>Only after your final approval</strong> does the album go to print. No album is printed without you saying �yes, this is exactly what we wanted.�</p>
-        </article>
-        <article>
-          <h3>Step 13: Printing and Delivery </h3>
-          <ul>
-            <li>Sent to a high-quality print house I have worked with for years.</li>
-            <li>Printed with the finest standards.</li>
-            <li>Bound in a durable, premium cover.</li>
-            <li>Carefully packaged and delivered straight to your door.</li>
-          </ul>
-        </article>
-        <article>
-          <h3>Step 14: The Album in Your Hands </h3>
-          <p>The moment you open the album for the first time is the moment I worked for. I hope you love it, revisit it again and again, and that these photos remind you not only how it looked but how it felt.</p>
-        </article>
-        <article>
-          <p>Thank you for choosing me to be part of your special day. It was an honor to capture the moments that will stay with you forever.</p>
-          <p><strong>Yair Rosenberg</strong><br>Professional Photographer | Jerusalem<br> YairRozenberg.com</p>
-        </article>
+        
+        <details class="work-process-details">
+          <summary class="btn pkg-cta--ghost" style="width: auto; margin: 20px auto; display: flex; justify-content: center; align-items: center; gap: 10px; padding: 12px 24px;">
+            <span>View All Steps</span>
+            <span style="font-size: 1.2rem;">+</span>
+          </summary>
+          <div class="work-process-content">
+            <article>
+              <h3 data-step="3">Family Portraits 👨‍👩‍👧‍👦</h3>
+              <p>We start when energy is high, clothes are perfect, and the mood is great. I organize everyone naturally and comfortably, capturing both posed and candid moments.</p>
+            </article>
+            <article>
+              <h3 data-step="4">Reception 🎊</h3>
+              <p>Documenting first hugs, warm greetings, and the emerging atmosphere. I am present but unobtrusive, allowing guests to feel natural.</p>
+            </article>
+            <article>
+              <h3 data-step="5">Event Start - Dining 🍽️</h3>
+              <p>Capturing the mood around the tables, the conversations, and the connections. Every table is a small world I aim to document.</p>
+            </article>
+            <article>
+              <h3 data-step="6">Dancing - Peak Energy 💃🕺</h3>
+              <p>I strive not to miss a single beat. My eyes are on the dance floor, capturing pure joy and magical, spontaneous moments.</p>
+            </article>
+            <article>
+              <h3 data-step="7">Candid Moments 📷</h3>
+              <p>Documenting new guests, intimate moments, and the connection between generations. I'm always looking for the story behind the photo.</p>
+            </article>
+            <article>
+              <h3 data-step="8">Final Family Photo 👪</h3>
+              <p>Just before the end, we capture everyone together again with all the energy and joy of a successful event.</p>
+            </article>
+            <article>
+              <h3 data-step="9">Backup & Professional Editing 💻</h3>
+              <p>Immediately at home, I perform a <strong>double backup</strong> of all photos. Then, each photo undergoes professional editing: lighting, color, and quality enhancement.</p>
+            </article>
+            <article>
+              <h3 data-step="10">Gallery Delivery - Up to 4 Days 📦</h3>
+              <p>Within 4 days, you'll receive a link to an organized digital gallery, convenient for viewing, downloading, and sharing.</p>
+            </article>
+            <article>
+              <h3 data-step="11">Album Selection 📖</h3>
+              <p>No time pressure. You browse the gallery at your own pace and choose the photos you love most for your album.</p>
+            </article>
+            <article>
+              <h3 data-step="12">Album Design 🎨</h3>
+              <p>A professional graphic designer prepares an initial draft, shares it with you, and makes adjustments until you are 100% satisfied.</p>
+            </article>
+            <article>
+              <h3 data-step="13">Printing & Delivery 📬</h3>
+              <p>Highest quality printing, durable binding, and direct delivery to your doorstep.</p>
+            </article>
+            <article>
+              <h3 data-step="14">Album in Your Hands 🎁</h3>
+              <p>The moment memories become tangible. I hope these photos remind you not just how it looked, but how it felt.</p>
+            </article>
+            <button class="work-process-close-btn" style="width: auto; margin: 20px auto; cursor: pointer; display: flex; justify-content: center; align-items: center; gap: 10px; padding: 12px 24px; border-radius: 999px; background: rgba(160, 196, 255, 0.1); border: 1px solid rgba(160, 196, 255, 0.3); color: #a0c4ff; font-weight: 700; font-family: inherit;">Close Workflow</button>
+          </div>
+        </details>
       </div>
-    </details>
-  </section>
-
-  <section id="photo-packages" class="pkgs" dir="ltr" lang="en" aria-labelledby="pkgs-title" hidden aria-hidden="true">
-    <style>
-      /* Pricing packages: clean, high-contrast, RTL */
-      .pkgs { color: #e6eaf2; background: transparent; }
-      .pkgs-wrap { max-width: 1200px; margin: 0 auto; padding: clamp(24px, 5vw, 56px) 16px; }
-      .pkgs-head { text-align: center; margin-bottom: clamp(20px, 4vw, 40px); }
-      .pkgs-title { margin: 0 0 8px; font-weight: 900; letter-spacing: -0.02em; font-size: clamp(26px, 2.4vw, 34px); }
-      .pkgs-sub { margin: 0; color: #a8b3c7; font-size: clamp(14px, 1.2vw, 18px); }
-
-      .pkgs-grid { list-style: none; margin: 0; padding: 0; display: grid; gap: clamp(16px, 2.4vw, 28px);
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); align-items: stretch; }
-
-      .pkg { height: 100%; display: grid; grid-template-rows: auto auto 1fr auto auto; gap: 12px;
-        background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.16); border-radius: 16px; padding: 18px;
-        transition: background-color .25s ease, border-color .25s ease, transform .25s ease; }
-      .pkg:hover{ background: rgba(255,255,255,0.10); border-color: rgba(255,255,255,0.35); transform: translateY(-2px); }
-      .pkg--featured { position: relative; }
-      .pkg--featured .pkg-badge { position: absolute; top: 10px; inset-inline-end: 10px; background: #8ab4ff; color: #0b1220; font-weight: 800; font-size: 12px; padding: 6px 10px; border-radius: 999px; }
-
-      .pkg-name { margin: 0; font-size: 18px; font-weight: 800; letter-spacing: -0.01em; }
-      .pkg-desc { margin: 0; color: #a8b3c7; font-size: 14.5px; line-height: 1.6; }
-
-      .pkg-price { margin: 6px 0 0; color: #fff; }
-      .pkg-price .value { font-weight: 900; font-size: clamp(28px, 5vw, 44px); letter-spacing: 0; }
-      .pkg-price .per { color: #a8b3c7; font-size: 14px; margin-inline-start: 6px; }
-
-      .pkg-list { list-style: none; margin: 6px 0 0; padding: 0; display: grid; gap: 8px; font-size: 15px; }
-      .pkg-list li { display: grid; grid-template-columns: 18px 1fr; gap: 8px; align-items: start; }
-      .pkg-list svg { width: 18px; height: 18px; color: #22d3ee; margin-top: 2px; }
-
-      .pkg-cta { display: inline-flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none;
-        font-weight: 800; border-radius: 10px; padding: 10px 14px; border: 1px solid transparent; }
-      .pkg-cta--outline { color: #e6eaf2; border-color: rgba(255,255,255,0.35); background: transparent; }
-      .pkg-cta--primary { color: #0b1220; background: #8ab4ff; border-color: #8ab4ff; }
-      .pkg-cta--ghost { color: #e6eaf2; background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.18); }
-      .pkg-cta:hover { filter: brightness(1.05); }
-
-      .pkg-more { margin-top: 6px; }
-      .pkg-more > summary { cursor: pointer; list-style: none; user-select: none; display: inline-flex; align-items: center; gap: 8px;
-        color: #c4ccdb; font-weight: 700; font-size: 14px; }
-      .pkg-more > summary::-webkit-details-marker { display: none; }
-      .pkg-more[open] > summary { color: #8ab4ff; }
-      .pkg-more .more-body { margin-top: 10px; color: #cfd6e6; font-size: 14px; }
-      .pkg-more .more-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 6px; }
-
-      @media (min-width: 640px){ .pkg { padding: 20px; border-radius: 18px; } }
-    </style>
-
-    <div class="pkgs-wrap">
-      <header class="pkgs-head">
-        <h2 id="pkgs-title">Photography Packages</h2>
-        <p class="pkgs-sub">Clear, flexible packages � tailored to your event.</p>
-      </header>
-
-      <ul class="pkgs-grid" role="list">
-        <li>
-          <article class="pkg" aria-labelledby="pkg-basic-name">
-  <h3 id="pkg-basic-name" class="pkg-name">Basic</h3>
-  <p class="pkg-desc">Great for short sessions or intimate events.</p>
-  <div class="pkg-price"><span class="value">�1,200</span><span class="per">per event</span></div>
-  <ul class="pkg-list">
-    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Coverage up to 3 hours</li>
-    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Professional editing</li>
-    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>High?resolution photos</li>
-    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Private online gallery</li>
-  </ul>
-  <details class="pkg-more">
-    <summary aria-controls="basic-more">More details</summary>
-    <div id="basic-more" class="more-body">
-      <ul class="more-list">
-        <li>Delivery within 7�14 business days</li>
-        <li>Location guidance before the shoot</li>
-        <li>Up to 2 outfit changes</li>
-      </ul>
     </div>
-  </details>
-  <a class="pkg-cta pkg-cta--outline" href="contact.html?pkg=basic" aria-label="Contact about Basic package">Contact Me</a>
-</article>
-        </li>
-
-        <li>
-          <article class="pkg pkg--featured" aria-labelledby="pkg-classic-name">
-  <div class="pkg-badge" aria-hidden="true">Popular</div>
-  <h3 id="pkg-classic-name" class="pkg-name">Classic</h3>
-  <p class="pkg-desc">Our most booked package for family events.</p>
-  <div class="pkg-price"><span class="value">�1,800</span><span class="per">per event</span></div>
-  <ul class="pkg-list">
-    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Coverage up to 5 hours</li>
-    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>USB drive with photos</li>
-    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>200 edited images</li>
-    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Private online gallery</li>
-  </ul>
-  <details class="pkg-more">
-    <summary aria-controls="classic-more">More details</summary>
-    <div id="classic-more" class="more-body">
-      <ul class="more-list">
-        <li>Scheduling flexibility</li>
-        <li>Optional add?ons (album, prints)</li>
-        <li>Guidance before the event</li>
-      </ul>
-    </div>
-  </details>
-  <a class="pkg-cta pkg-cta--primary" href="contact.html?pkg=classic" aria-label="Contact about Classic package">Contact Me</a>
-</article>
-        </li>
-
-        <li>
-          <article class="pkg" aria-labelledby="pkg-premium-name">
-  <h3 id="pkg-premium-name" class="pkg-name">Premium</h3>
-  <p class="pkg-desc">Complete coverage for a full, unforgettable day.</p>
-  <div class="pkg-price"><span class="value">�2,600</span><span class="per">per event</span></div>
-  <ul class="pkg-list">
-    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Full?day coverage up to 8 hours</li>
-    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Second shooter (assistant)</li>
-    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Highlight video + social reel</li>
-    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Private online gallery</li>
-  </ul>
-  <details class="pkg-more">
-    <summary aria-controls="premium-more">More details</summary>
-    <div id="premium-more" class="more-body">
-      <ul class="more-list">
-        <li>Advanced retouching</li>
-        <li>Priority delivery</li>
-        <li>Custom timeline planning</li>
-      </ul>
-    </div>
-  </details>
-  <a class="pkg-cta pkg-cta--ghost" href="contact.html?pkg=premium" aria-label="Contact about Premium package">Contact Me</a>
-</article>
-        </li>
-      </ul>
-    </div>
-
-    <script>
-      // Improve details accessibility state
-      (function(){
-        var wraps = document.querySelectorAll('#photo-packages details');
-        wraps.forEach(function(d){
-          d.addEventListener('toggle', function(){ d.setAttribute('aria-expanded', d.open ? 'true' : 'false'); });
-        });
-      })();
-    </script>
-
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "name": "Photography Packages",
-        "provider": { "@type": "LocalBusiness", "name": "Yair Rozenberg" },
-        "areaServed": "Jerusalem, Israel",
-        "offers": [
-          {"@type":"Offer","name":"Basic","price":"1200","priceCurrency":"ILS","availability":"https://schema.org/InStock","url":"contact.html?pkg=basic"},
-          {"@type":"Offer","name":"Classic","price":"1800","priceCurrency":"ILS","availability":"https://schema.org/InStock","url":"contact.html?pkg=classic"},
-          {"@type":"Offer","name":"Premium","price":"2600","priceCurrency":"ILS","availability":"https://schema.org/InStock","url":"contact.html?pkg=premium"}
-        ]
-      }
-    </script>
   </section>
 
   <!-- FAQ Section -->
-  <section id="faq" class="faq-section" aria-labelledby="faq-title" dir="ltr" lang="en">
-    <style>
-      .faq-section {
-        --bg: #0b1224;
-        --surface: rgba(255,255,255,0.06);
-        --text: #e7eaf1;
-        --muted: #aab2c8;
-        --accent: #8ab4ff;
-        --ring: #90cdf4;
-        --radius: 16px;
-        color: var(--text);
-        background: linear-gradient(180deg, transparent 0%, rgba(255,255,255,0.03) 100%);
-      }
-      .faq-section .faq-wrap { max-width: 1100px; margin: 0 auto; padding: clamp(20px, 4vw, 40px); }
-      .faq-section .faq-title { margin: 0 0 16px; text-align: center; font-weight: 900; letter-spacing: -0.02em; font-size: clamp(26px, 2.4vw, 34px); }
-      .faq-section .faq-sub { margin: 0 0 26px; text-align: center; color: var(--muted); font-size: clamp(15px, 1.2vw, 18px); }
-      .faq-section .faq-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
-      .faq-section .faq-item { background: var(--surface); border: 1px solid color-mix(in oklab, var(--accent) 22%, transparent); border-radius: var(--radius); box-shadow: 0 8px 24px rgba(0,0,0,.25); padding: clamp(14px, 2.2vw, 20px); }
-      .faq-section .faq-q { margin: 0 0 10px; font-weight: 800; letter-spacing: -0.01em; font-size: clamp(18px, 1.6vw, 22px); color: var(--text); }
-      .faq-section .faq-actions { display: flex; gap: 10px; flex-wrap: wrap; }
-      .faq-section .faq-open,
-      .faq-section .faq-close {
-        display: inline-flex; align-items: center; justify-content: center;
-        gap: 8px; padding: 10px 14px; border-radius: 999px; cursor: pointer;
-        font-weight: 800; border: 1px solid color-mix(in oklab, var(--accent) 45%, transparent);
-        background: linear-gradient(135deg, var(--accent), color-mix(in oklab, var(--accent) 72%, #ffffff));
-        color: #0a1020; text-decoration: none; user-select: none;
-        transition: transform .18s ease, box-shadow .25s ease, filter .25s ease;
-        box-shadow: 0 8px 22px rgba(10,16,32,.25);
-      }
-      .faq-section .faq-open:hover,
-      .faq-section .faq-close:hover { transform: translateY(-1px); box-shadow: 0 14px 30px rgba(10,16,32,.35); filter: saturate(1.05); }
-      .faq-section .faq-open:focus-visible,
-      .faq-section .faq-close:focus-visible { outline: 3px solid color-mix(in oklab, var(--ring) 75%, transparent); outline-offset: 2px; }
-      .faq-section .faq-open.is-open { background: linear-gradient(135deg, color-mix(in oklab, var(--accent) 80%, #ffffff), var(--accent)); }
-      .faq-section .faq-a { margin-top: 12px; color: var(--text); line-height: 1.7; }
-      .faq-section .faq-a p { margin: 0 0 8px; color: var(--text); }
-      .faq-section .faq-a p + p { margin-top: 8px; }
-      .faq-section .faq-a ul { margin: 6px 0 10px; padding-inline-start: 1.1em; }
-      .faq-section .faq-a li { margin: 4px 0; color: var(--text); }
-      @media (prefers-reduced-motion: reduce) {
-        .faq-section .faq-open, .faq-section .faq-close { transition: none; }
-      }
-    </style>
-
-        <div class="faq-wrap">
-      <h2 id="faq-title" class="faq-title">Frequently Asked Questions</h2>
-      <p class="faq-sub">Everything you need to know before booking your event.</p>
-      <ul class="faq-list" role="list">
-      <li class='faq-item' role='listitem'>
-        <h3 class='faq-q'>How much does event photography cost?</h3>
-        <div class='faq-actions'>
-          <button type='button' class='faq-open' aria-expanded='false' aria-controls='faq-en-1'>Read answer</button>
-        </div>
-        <div id='faq-en-1' class='faq-a' hidden>
-            <p>Prices vary depending on the type of event, duration, and photography package you choose. All details and exact prices are available on our website at YairRozenberg.com. I recommend reviewing the different packages and then we can talk by phone to find the package that best suits you.</p>
-        </div>
-      </li>
-      <li class='faq-item' role='listitem'>
-        <h3 class='faq-q'>What's included in the photography package?</h3>
-        <div class='faq-actions'>
-          <button type='button' class='faq-open' aria-expanded='false' aria-controls='faq-en-2'>Read answer</button>
-        </div>
-        <div id='faq-en-2' class='faq-a' hidden>
-            <ul>
-              <li>Professional photography throughout the entire event</li>
-              <li>Early arrival 20 minutes before the event</li>
-              <li>Family photography at the beginning of the event</li>
-              <li>Full documentation of all stages (reception, meal, dancing)</li>
-              <li>Professional editing of all photos</li>
-              <li>Organized digital gallery</li>
-              <li>Delivery of all photos within 4 days</li>
-            </ul>
-            <p>More advanced packages also include a printed album, video coverage, and additional options.</p>
-        </div>
-      </li>
-      <li class='faq-item' role='listitem'>
-        <h3 class='faq-q'>Do you offer discounts for multiple events or early booking?</h3>
-        <div class='faq-actions'>
-          <button type='button' class='faq-open' aria-expanded='false' aria-controls='faq-en-3'>Read answer</button>
-        </div>
-        <div id='faq-en-3' class='faq-a' hidden>
-            <p>Absolutely! If you're booking more than one event (for example, a wedding + family bar mitzvah), or booking several months in advance, there's an option for a discount. Contact me and we'll find a price that works for you.</p>
-        </div>
-      </li>
-      <li class='faq-item' role='listitem'>
-        <h3 class='faq-q'>How do I book you for an event?</h3>
-        <div class='faq-actions'>
-          <button type='button' class='faq-open' aria-expanded='false' aria-controls='faq-en-4'>Read answer</button>
-        </div>
-        <div id='faq-en-4' class='faq-a' hidden>
-            <ol>
-              <li>Call me or send a message through the website</li>
-              <li>We'll talk about your event and expectations</li>
-              <li>Together we'll choose the appropriate photography package</li>
-              <li>We'll sign an agreement and you'll pay a deposit to secure the date</li>
-              <li>That's it - the date is reserved for you!</li>
-            </ol>
-        </div>
-      </li>
-      <li class='faq-item' role='listitem'>
-        <h3 class='faq-q'>How far in advance should I book?</h3>
-        <div class='faq-actions'>
-          <button type='button' class='faq-open' aria-expanded='false' aria-controls='faq-en-5'>Read answer</button>
-        </div>
-        <div id='faq-en-5' class='faq-a' hidden>
-            <p>The earlier the better. Events during peak season (spring-fall) tend to fill up quickly. I recommend booking at least 2-3 months in advance, but if it's urgent - it's always worth checking my availability. Sometimes you get lucky!</p>
-        </div>
-      </li>
-      <li class='faq-item' role='listitem'>
-        <h3 class='faq-q'>What happens if I need to change the event date?</h3>
-        <div class='faq-actions'>
-          <button type='button' class='faq-open' aria-expanded='false' aria-controls='faq-en-6'>Read answer</button>
-        </div>
-        <div id='faq-en-6' class='faq-a' hidden>
-            <p>I understand that sometimes things change. If you need to change the date, I'll try as much as possible to accommodate myself to the new date. It's important to update me as early as possible so we can find a solution.</p>
-        </div>
-      </li>
-      <li class='faq-item' role='listitem'>
-        <h3 class='faq-q'>What camera do you use?</h3>
-        <div class='faq-actions'>
-          <button type='button' class='faq-open' aria-expanded='false' aria-controls='faq-en-7'>Read answer</button>
-        </div>
-        <div id='faq-en-7' class='faq-a' hidden>
-            <p>I use one of the best professional cameras on the Israeli market. The camera excels in all lighting conditions and enables sharp, detailed close-up shots, strong zoom without quality loss, portraits with cinematic depth of field, wide landscape shots, and fast capture of spontaneous moments.</p>
-            <p>Additionally, I always arrive with backup equipment - in case something goes wrong (which almost never happens).</p>
-        </div>
-      </li>
-      <li class='faq-item' role='listitem'>
-        <h3 class='faq-q'>Do you come alone or with an assistant?</h3>
-        <div class='faq-actions'>
-          <button type='button' class='faq-open' aria-expanded='false' aria-controls='faq-en-8'>Read answer</button>
-        </div>
-        <div id='faq-en-8' class='faq-a' hidden>
-            <p>I come alone to most events, but if the event is particularly large or if you want video coverage - I can bring a professional videographer I work with. This ensures all angles are covered and no moment is missed.</p>
-        </div>
-      </li>
-      <li class='faq-item' role='listitem'>
-        <h3 class='faq-q'>How many photos will I receive?</h3>
-        <div class='faq-actions'>
-          <button type='button' class='faq-open' aria-expanded='false' aria-controls='faq-en-9'>Read answer</button>
-        </div>
-        <div id='faq-en-9' class='faq-a' hidden>
-            <p>It depends on the event duration and what happens during it, but on average:</p>
-            <ul>
-              <li>3-4 hour event: between 300-500 edited photos</li>
-              <li>Larger event: can reach 700-800 photos</li>
-            </ul>
-            <p>Important to note - I don't send blurry or failed photos. You only receive the best photos, edited and ready.</p>
-        </div>
-      </li>
-      <li class='faq-item' role='listitem'>
-        <h3 class='faq-q'>How do you know which moments to photograph?</h3>
-        <div class='faq-actions'>
-          <button type='button' class='faq-open' aria-expanded='false' aria-controls='faq-en-10'>Read answer</button>
-        </div>
-        <div id='faq-en-10' class='faq-a' hidden>
-            <p>That's an excellent question! After 7 years and over 300 events, I know how to recognize when something is about to happen:</p>
-            <ul>
-              <li>The look between mother and daughter before they embrace</li>
-              <li>The moment before the dance explodes</li>
-              <li>The spontaneous laughter that bursts out</li>
-              <li>The tear falling during a moving moment</li>
-            </ul>
-            <p>Additionally, before the event we talk about the moments that are especially important to you, and I make sure not to miss any of them.</p>
-        </div>
-      </li>
-      <li class='faq-item' role='listitem'>
-        <h3 class='faq-q'>What time do you arrive?</h3>
-        <div class='faq-actions'>
-          <button type='button' class='faq-open' aria-expanded='false' aria-controls='faq-en-11'>Read answer</button>
-        </div>
-        <div id='faq-en-11' class='faq-a' hidden>
-            <p>I arrive 20 minutes before the official event start. For example, if the event starts at 6:00 PM, I'm already there at 5:40 PM. This gives me time to familiarize myself with the venue, check lighting, and ensure everything is ready.</p>
-        </div>
-      </li>
-      <li class='faq-item' role='listitem'>
-        <h3 class='faq-q'>Until what time do you stay?</h3>
-        <div class='faq-actions'>
-          <button type='button' class='faq-open' aria-expanded='false' aria-controls='faq-en-12'>Read answer</button>
-        </div>
-        <div id='faq-en-12' class='faq-a' hidden>
-            <p>I stay until the end of the event - including the final family photo. If the event runs longer than planned, I don't leave in the middle. I'm here until the last guest leaves.</p>
-        </div>
-      </li>
-      <li class='faq-item' role='listitem'>
-        <h3 class='faq-q'>When will I receive the photos?</h3>
-        <div class='faq-actions'>
-          <button type='button' class='faq-open' aria-expanded='false' aria-controls='faq-en-13'>Read answer</button>
-        </div>
-        <div id='faq-en-13' class='faq-a' hidden>
-            <p><strong>Within 4 days of the event's conclusion</strong>, you receive a link to a full gallery with all the edited photos. This is relatively fast for the industry, because I know you're dying to see the photos!</p>
-        </div>
-      </li>
-      <li class='faq-item' role='listitem'>
-        <h3 class='faq-q'>How long does it take to receive the printed album?</h3>
-        <div class='faq-actions'>
-          <button type='button' class='faq-open' aria-expanded='false' aria-controls='faq-en-14'>Read answer</button>
-        </div>
-        <div id='faq-en-14' class='faq-a' hidden>
-            <p>After you've selected the photos and approved the design with the designer, the printing and binding process usually takes 2-3 weeks. I do everything to expedite the process, but I don't compromise on quality.</p>
-        </div>
-      </li>
-      <li class='faq-item' role='listitem'>
-        <h3 class='faq-q'>What does your editing style look like?</h3>
-        <div class='faq-actions'>
-          <button type='button' class='faq-open' aria-expanded='false' aria-controls='faq-en-15'>Read answer</button>
-        </div>
-        <div id='faq-en-15' class='faq-a' hidden>
-            <p>I prefer a natural and authentic editing style - not too fancy or artificial. The photos look like the real moment, just at its best:</p>
-            <ul>
-              <li>Warm, pleasant colors</li>
-              <li>Balanced lighting</li>
-              <li>Professional sharpening</li>
-              <li>Without exaggerated filters</li>
-            </ul>
-            <p>I want that in 10 years you'll look at the photos and say "wow, what a day that was", not "wow, what weird editing".</p>
-        </div>
-      </li>
-      <li class='faq-item' role='listitem'>
-        <h3 class='faq-q'>Can I request changes to photos?</h3>
-        <div class='faq-actions'>
-          <button type='button' class='faq-open' aria-expanded='false' aria-controls='faq-en-16'>Read answer</button>
-        </div>
-        <div id='faq-en-16' class='faq-a' hidden>
-            <p>Absolutely. If there's a specific photo you want to improve or change something in - tell me and I'll do it. I want you to be 100% satisfied.</p>
-        </div>
-      </li>
-      <li class='faq-item' role='listitem'>
-        <h3 class='faq-q'>Do you do retouching on photos?</h3>
-        <div class='faq-actions'>
-          <button type='button' class='faq-open' aria-expanded='false' aria-controls='faq-en-17'>Read answer</button>
-        </div>
-        <div id='faq-en-17' class='faq-a' hidden>
-            <p>Yes, I do basic retouching on all photos (lighting correction, colors, minor cleanup). If more advanced retouching is needed (removing skin blemishes, teeth whitening, etc.) - it's usually for an additional fee, but it depends on the scope. We'll discuss this in advance.</p>
-        </div>
-      </li>
-      <li class='faq-item' role='listitem'>
-        <h3 class='faq-q'>Why do you start with family photography?</h3>
-        <div class='faq-actions'>
-          <button type='button' class='faq-open' aria-expanded='false' aria-controls='faq-en-18'>Read answer</button>
-        </div>
-        <div id='faq-en-18' class='faq-a' hidden>
-            <p>This is one of the most important decisions! I start with family photography because:</p>
-            <ul>
-              <li><strong>Everyone still has energy</strong> - not tired from the event</li>
-              <li><strong>Clothes are perfect</strong> - kids haven't gotten dirty yet</li>
-              <li><strong>The atmosphere is good</strong> - everyone is in good anticipation and happy</li>
-              <li><strong>There's time</strong> - we can organize everyone without pressure</li>
-            </ul>
-            <p>Family photos taken at the end of the event often look tired and less good.</p>
-        </div>
-      </li>
-      <li class='faq-item' role='listitem'>
-        <h3 class='faq-q'>Can you photograph specific family configurations?</h3>
-        <div class='faq-actions'>
-          <button type='button' class='faq-open' aria-expanded='false' aria-controls='faq-en-19'>Read answer</button>
-        </div>
-        <div id='faq-en-19' class='faq-a' hidden>
-            <p>Absolutely! Tell me in advance which configurations you want (for example: entire family, just parents with children, second generation, all grandchildren with grandparents, etc.) and I'll make sure to capture all these photos.</p>
-        </div>
-      </li>
-      <li class='faq-item' role='listitem'>
-        <h3 class='faq-q'>Do you also film video?</h3>
-        <div class='faq-actions'>
-          <button type='button' class='faq-open' aria-expanded='false' aria-controls='faq-en-20'>Read answer</button>
-        </div>
-        <div id='faq-en-20' class='faq-a' hidden>
-            <p>I specialize in still photography (photos), but I work with a professional videographer who can come to the event. If you want video as well - just tell me and I'll handle all the coordination.</p>
-        </div>
-      </li>
-      <li class='faq-item' role='listitem'>
-        <h3 class='faq-q'>How much does it cost to add video coverage?</h3>
-        <div class='faq-actions'>
-          <button type='button' class='faq-open' aria-expanded='false' aria-controls='faq-en-21'>Read answer</button>
-        </div>
-        <div id='faq-en-21' class='faq-a' hidden>
-            <p>It depends on the video length and type of editing, but usually it's an addition of about 30-40% to the photography package price. We'll talk about it in our conversation and find something that fits your budget.</p>
-        </div>
-      </li>
-      <li class='faq-item' role='listitem'>
-        <h3 class='faq-q'>What happens if the camera breaks in the middle of the event?</h3>
-        <div class='faq-actions'>
-          <button type='button' class='faq-open' aria-expanded='false' aria-controls='faq-en-22'>Read answer</button>
-        </div>
-        <div id='faq-en-22' class='faq-a' hidden>
-            <p>I always arrive with a backup camera. If something happens (which is really rare), I switch to the second camera within seconds. No moment is lost.</p>
-        </div>
-      </li>
-      <li class='faq-item' role='listitem'>
-        <h3 class='faq-q'>How do you back up the photos?</h3>
-        <div class='faq-actions'>
-          <button type='button' class='faq-open' aria-expanded='false' aria-controls='faq-en-23'>Read answer</button>
-        </div>
-        <div id='faq-en-23' class='faq-a' hidden>
-            <p>The moment I get home, I do a <strong>double backup</strong>:</p>
-            <ul>
-              <li>First backup on external hard drive</li>
-              <li>Second backup in the cloud</li>
-            </ul>
-            <p>This means there are two copies in different locations, and there's no chance anything gets lost.</p>
-        </div>
-      </li>
-      <li class='faq-item' role='listitem'>
-        <h3 class='faq-q'>What's your guarantee?</h3>
-        <div class='faq-actions'>
-          <button type='button' class='faq-open' aria-expanded='false' aria-controls='faq-en-24'>Read answer</button>
-        </div>
-        <div id='faq-en-24' class='faq-a' hidden>
-            <p>I offer a <strong>100% full money-back guarantee</strong> if you're not satisfied with the photos. Period. I'm confident in what I do, and I want you to be completely at ease.</p>
-        </div>
-      </li>
-      <li class='faq-item' role='listitem'>
-        <h3 class='faq-q'>Where are you located?</h3>
-        <div class='faq-actions'>
-          <button type='button' class='faq-open' aria-expanded='false' aria-controls='faq-en-25'>Read answer</button>
-        </div>
-        <div id='faq-en-25' class='faq-a' hidden>
-            <p>I'm based in Jerusalem, but I photograph events throughout the country - from north to south.</p>
-        </div>
-      </li>
-      <li class='faq-item' role='listitem'>
-        <h3 class='faq-q'>Is there an additional charge for travel?</h3>
-        <div class='faq-actions'>
-          <button type='button' class='faq-open' aria-expanded='false' aria-controls='faq-en-26'>Read answer</button>
-        </div>
-        <div id='faq-en-26' class='faq-a' hidden>
-            <p>It depends on the distance:</p>
-            <ul>
-              <li>Events in Jerusalem and surroundings - no addition</li>
-              <li>Events in central Israel - minimal addition</li>
-              <li>Events in the north/south - there's an addition for fuel and travel</li>
-            </ul>
-            <p>We'll discuss this in our conversation and clarify everything in advance, without surprises.</p>
-        </div>
-      </li>
-      <li class='faq-item' role='listitem'>
-        <h3 class='faq-q'>Do you also photograph abroad?</h3>
-        <div class='faq-actions'>
-          <button type='button' class='faq-open' aria-expanded='false' aria-controls='faq-en-27'>Read answer</button>
-        </div>
-        <div id='faq-en-27' class='faq-a' hidden>
-            <p>If it's a special event and you're willing to cover flight and accommodation costs - absolutely! Talk to me and we'll see how we can arrange it.</p>
-        </div>
-      </li>
-      <li class='faq-item' role='listitem'>
-        <h3 class='faq-q'>Is there a contract?</h3>
-        <div class='faq-actions'>
-          <button type='button' class='faq-open' aria-expanded='false' aria-controls='faq-en-28'>Read answer</button>
-        </div>
-        <div id='faq-en-28' class='faq-a' hidden>
-            <p>Yes, there's a simple and clear contract that defines date and time, price and package, inclusions/exclusions, rights, and cancellation terms. Everything is transparent, without fine print.</p>
-        </div>
-      </li>
-      <li class='faq-item' role='listitem'>
-        <h3 class='faq-q'>Who owns the photos?</h3>
-        <div class='faq-actions'>
-          <button type='button' class='faq-open' aria-expanded='false' aria-controls='faq-en-29'>Read answer</button>
-        </div>
-        <div id='faq-en-29' class='faq-a' hidden>
-            <p>You receive full usage rights to the photos for personal and family use. You can print, share, upload to social media - whatever you want. The copyright remains with me as the photographer, which means I may use some of the photos for my portfolio or marketing. If you don't want certain photos published - just tell me.</p>
-        </div>
-      </li>
-      <li class='faq-item' role='listitem'>
-        <h3 class='faq-q'>What happens if I need to cancel the event?</h3>
-        <div class='faq-actions'>
-          <button type='button' class='faq-open' aria-expanded='false' aria-controls='faq-en-30'>Read answer</button>
-        </div>
-        <div id='faq-en-30' class='faq-a' hidden>
-            <p>Cancellation terms depend on notice:</p>
-            <ul>
-              <li>More than 60 days before - full refund of deposit</li>
-              <li>30-60 days before - 50% refund</li>
-              <li>Less than 30 days - no refund</li>
-            </ul>
-            <p>But if it's a real emergency, I'm always willing to talk and find a fair solution.</p>
-        </div>
-      </li>
-      <li class='faq-item' role='listitem'>
-        <h3 class='faq-q'>Is it possible to print large photos for framing?</h3>
-        <div class='faq-actions'>
-          <button type='button' class='faq-open' aria-expanded='false' aria-controls='faq-en-31'>Read answer</button>
-        </div>
-        <div id='faq-en-31' class='faq-a' hidden>
-            <p>Yes! I can arrange quality printing of large photos for the wall. This is done at a professional printing house I work with, and you receive the photo printed on quality paper or canvas.</p>
-        </div>
-      </li>
-      <li class='faq-item' role='listitem'>
-        <h3 class='faq-q'>Can I buy additional albums?</h3>
-        <div class='faq-actions'>
-          <button type='button' class='faq-open' aria-expanded='false' aria-controls='faq-en-32'>Read answer</button>
-        </div>
-        <div id='faq-en-32' class='faq-a' hidden>
-            <p>Absolutely. If you want an additional album for parents, grandparents, or another copy for yourself - I'll arrange it. The price is cheaper than the first album because the design already exists.</p>
-        </div>
-      </li>
-      <li class='faq-item' role='listitem'>
-        <h3 class='faq-q'>How can I contact you?</h3>
-        <div class='faq-actions'>
-          <button type='button' class='faq-open' aria-expanded='false' aria-controls='faq-en-33'>Read answer</button>
-        </div>
-        <div id='faq-en-33' class='faq-a' hidden>
-            <p>The easiest way is to call or send a WhatsApp message. I usually respond within a few hours, and I'm always happy to answer additional questions.</p>
-            <p>All contact details are available on the website: <strong>YairRozenberg.com</strong></p>
-        </div>
-      </li>
+  <section id='faq' class='faq-section'>
+    <div class='faq-wrap'>
+      <h2 class='faq-title'>Frequently Asked Questions</h2>
+      <ul class='faq-list'>
+        <li class='faq-item'>
+          <div class='faq-card'><h3>💰 Pricing & Packages</h3><button class='faq-open'>Show Answer</button></div>
+          <div class='faq-a' hidden>
+            <strong>How much does event photography cost?</strong><p>Prices vary based on the type of event and duration. For a precise and personalized quote, please contact me and you will receive all the updated details immediately.</p>
+            <strong>What's included in the package?</strong><ul><li>Professional photography throughout the event</li><li>20-minute early arrival</li><li>Family portraits at the start</li><li>Full documentation of all stages</li><li>Professional editing of all photos</li><li>Organized digital gallery</li><li>Delivery within 4 days</li></ul>
+            <strong>Is there a discount for multiple events or early booking?</strong><p>Absolutely! If you book more than one event or book several months in advance, there's room for a discount. Let's talk!</p>
+          </div>
+        </li>
+        <li class='faq-item'>
+          <div class='faq-card'><h3>📅 Coordination & Booking</h3><button class='faq-open'>Show Answer</button></div>
+          <div class='faq-a' hidden>
+            <strong>How do I book you?</strong><ol><li>Call me or send a message through the site</li><li>We discuss your event and expectations</li><li>We choose the right package together</li><li>We sign an agreement and you pay a deposit to save the date</li><li>That's it - the date is yours!</li></ol>
+            <strong>How far in advance should I book?</strong><p>The earlier, the better. Peak season dates fill up fast. I recommend booking at least 2-3 months ahead.</p>
+            <strong>What if I need to change the date?</strong><p>I understand things change. If you need a date change, I'll try to accommodate. Please update me as soon as possible.</p>
+          </div>
+        </li>
+        <li class='faq-item'>
+          <div class='faq-card'><h3>📸 About the Photography</h3><button class='faq-open'>Show Answer</button></div>
+          <div class='faq-a' hidden>
+            <strong>What camera do you use?</strong><p>Top-tier professional equipment that performs in all lighting conditions, allowing for sharp close-ups, powerful zoom without loss of quality, cinematic portraits, and wide landscapes. I always bring backup gear.</p>
+            <strong>Do you come alone or with an assistant?</strong><p>For most events, I come alone. For large events or if video is requested, I bring a professional videographer.</p>
+            <strong>How do you know which moments to capture?</strong><p>After 7 years, I identify moments before they happen. We also talk in advance about the moments most important to you.</p>
+          </div>
+        </li>
+        <li class='faq-item'>
+          <div class='faq-card'><h3>⏱️ Timing & Delivery</h3><button class='faq-open'>Show Answer</button></div>
+          <div class='faq-a' hidden>
+            <strong>What time do you arrive?</strong><p>I arrive 20 minutes before the start to prep gear and check lighting.</p>
+            <strong>When will I get the photos?</strong><p><strong>Within 4 days</strong> of the event, you'll receive a link to a full gallery with all edited photos.</p>
+            <strong>How long does the printed album take?</strong><p>After photo selection and design approval, the printing and binding process takes 2-3 weeks.</p>
+          </div>
+        </li>
+        <li class='faq-item'>
+          <div class='faq-card'><h3>🎨 Editing & Quality</h3><button class='faq-open'>Show Answer</button></div>
+          <div class='faq-a' hidden>
+            <strong>What is your editing style?</strong><p>Natural and authentic: warm colors, balanced lighting, professional sharpening, without excessive filters.</p>
+            <strong>Can I request changes to photos?</strong><p>Certainly. If a photo needs an adjustment, we'll make it until you're satisfied.</p>
+            <strong>Do you retouch photos?</strong><p>Basic retouching (lighting, colors) is included.</p>
+          </div>
+        </li>
+        <li class='faq-item'>
+          <div class='faq-card'><h3>👨‍👩‍👧‍👦 Family Portraits</h3><button class='faq-open'>Show Answer</button></div>
+          <div class='faq-a' hidden>
+            <strong>Why start with family portraits?</strong><p>Because everyone is high energy, clothes are clean, the mood is good, and there's time to organize everyone without pressure.</p>
+            <strong>Can you take specific family combinations?</strong><p>Yes, tell me in advance which combinations you want and I'll make sure to capture them all.</p>
+          </div>
+        </li>
+        <li class='faq-item'>
+          <div class='faq-card'><h3>🎥 Video Services</h3><button class='faq-open'>Show Answer</button></div>
+          <div class='faq-a' hidden><p>I specialize in stills but work with professional videographers who can be added to the event.</p></div>
+        </li>
+        <li class='faq-item'>
+          <div class='faq-card'><h3>🛡️ Security & Backup</h3><button class='faq-open'>Show Answer</button></div>
+          <div class='faq-a' hidden>
+            <strong>What if the camera breaks?</strong><p>I arrive with backup gear and swap within seconds if needed.</p>
+            <strong>How do you backup photos?</strong><p>Double backup: an external hard drive and a secure cloud, so no moment is ever lost.</p>
+          </div>
+        </li>
+        <li class='faq-item'>
+          <div class='faq-card'><h3>🌍 Location & Travel</h3><button class='faq-open'>Show Answer</button></div>
+          <div class='faq-a' hidden><p>I'm based in Jerusalem and travel nationwide. For international events, we'll coordinate travel and accommodation costs.</p></div>
+        </li>
+        <li class='faq-item'>
+          <div class='faq-card'><h3>🎁 Additional Services</h3><button class='faq-open'>Show Answer</button></div>
+          <div class='faq-a' hidden>
+            <strong>Can I print large photos for framing?</strong><p>Yes! I work with a high-quality print house providing prints on paper or canvas.</p>
+            <strong>Can I buy additional albums?</strong><p>Certainly. Duplicate albums for parents or grandparents at a lower price since the design already exists.</p>
+          </div>
+        </li>
+        <li class='faq-item'>
+          <div class='faq-card'><h3>☎️ Contact</h3><button class='faq-open'>Show Answer</button></div>
+          <div class='faq-a' hidden>
+            <strong>How to get in touch?</strong><p>The easiest way is phone or WhatsApp. I usually reply within minutes to a few hours.</p>
+            <p><strong>📞 Yair Rozenberg</strong> | <a href="tel:0533468597">053-3468597</a></p>
+          </div>
+        </li>
       </ul>
     </div>
-    <script>
-      (function(){
-        const section = document.getElementById('faq');
-        if (!section) return;
-        section.querySelectorAll('.faq-open').forEach(btn => {
-          btn.addEventListener('click', () => {
-            const id = btn.getAttribute('aria-controls');
-            const panel = document.getElementById(id);
-            if (!panel) return;
-            const expanded = btn.getAttribute('aria-expanded') === 'true';
-            panel.hidden = expanded;
-            btn.setAttribute('aria-expanded', expanded ? 'false' : 'true');
-            btn.textContent = expanded ? 'Read answer' : 'Hide answer';
-          });
-        });
-      })();
-    </script>
+  </section>
+
   <!-- Quick Contact Section -->
-  <section id="contact" class="home-contact" aria-labelledby="contact-title">
-    <h2 id="contact-title">Contact</h2>
+  <section id="contact" class="home-contact">
+    <h2>Ready to start?</h2>
+    <p>I'd love to hear about your event and plan the perfect documentation together.</p>
     <ul class="contact-list">
-      <li><a href="tel:0533468597">053-3468597</a></li>
-      <li><a href="https://wa.me/9725338597">WhatsApp</a></li>
-      <li><a href="mailto:005yro@gmail.com">005yro@gmail.com</a></li>
+      <li><a href="tel:0533468597">📞 053-3468597</a></li>
+      <li><a href="https://wa.me/972533468597" class="btn pkg-cta--primary">Chat on WhatsApp</a></li>
+      <li><a href="https://share.google/WBRgOnFRbB7KLplmj" target="_blank">📍 Find Me on Google</a></li>
     </ul>
-    <a class="btn" href="contact.html">Contact Form</a>
+    <a class="btn" href="contact.html">Price List & Details</a>
   </section>
 </main>
 
 <!-- Footer -->
 <footer class="footer">
-  <p>&copy; 2025 Yair Rozenberg. All rights reserved.</p>
+  <p>&copy; 2026 Yair Rozenberg. All rights reserved.</p>
 </footer>
 
 <!-- WhatsApp Floating Button -->
-<a class="whatsapp-fab" href="https://wa.me/972533468597?text=Hi%20Yair%2C%20I%20saw%20your%20website%20and%20I%27d%20love%20to%20get%20details%20and%20a%20quote%20for%20photography." target="_blank" aria-label="Open WhatsApp">
+<a class="whatsapp-fab" href="https://wa.me/972533468597" target="_blank" aria-label="Open WhatsApp">
   <svg viewBox="0 0 32 32"><path d="M19.11 17.16c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.15-.42-2.2-1.34-.81-.72-1.35-1.6-1.51-1.87-.16-.27-.02-.41.12-.55.13-.13.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.45-.84-1.99-.22-.53-.45-.46-.61-.47-.16-.01-.34-.01-.52-.01s-.48.07-.73.34c-.25.27-.96.94-.96 2.3s.98 2.66 1.12 2.84c.14.18 1.92 2.94 4.66 4.12.65.28 1.16.45 1.56.58.65.21 1.24.18 1.7.11.52-.08 1.6-.65 1.83-1.28.23-.63.23-1.17.16-1.28-.07-.11-.25-.18-.52-.32z"></path></svg>
 </a>
 
 <!-- Scripts -->
 <script>
+  // Hide broken images
+  document.querySelectorAll('img').forEach(img => {
+    img.onerror = function() { this.style.display = 'none'; };
+  });
+
   const hamburger = document.getElementById('hamburger');
   const navMenu = document.getElementById('navMenu');
   const overlay = document.getElementById('overlay');
@@ -1374,127 +477,78 @@
 
   hamburger.addEventListener('click', () => toggleMenu(!navMenu.classList.contains('open')));
   overlay.addEventListener('click', () => toggleMenu(false));
-  document.querySelectorAll('#navMenu a').forEach(a => 
-    a.addEventListener('click', () => toggleMenu(false))
-  );
-
-  // Header scroll effect - toggle background
+  
+  // Header scroll effect
   window.addEventListener('scroll', () => {
-    const headerEl = document.querySelector('.header');
-    if (headerEl) {
-      headerEl.classList.toggle('scrolled', window.scrollY > 0);
-    }
+    document.querySelector('.header')?.classList.toggle('scrolled', window.scrollY > 0);
   });
 
-  // Hero caption appears with a later delay via CSS
-  // ===== Marquee: JS-driven seamless scroll (avoids CSS jump) =====
+  // Marquee
   (function(){
     const track = document.querySelector('.marquee-track');
     if (!track) return;
-    // Ensure we have at most two initial groups, then clone as needed
-    while (track.children.length > 2) track.removeChild(track.lastElementChild);
-    if (track.children.length === 1) track.appendChild(track.firstElementChild.cloneNode(true));
-
     const group = track.querySelector('.marquee-group');
-    let gw = 0; // group width in px
-    let x = 0;  // current offset in px
-    const isMobile = window.matchMedia('(max-width: 768px)').matches;
-    let duration = isMobile ? 60 : 45; // slower on phones for smoother feel
-
-    function ensureFillWidth(){
-      // Clone first group until we comfortably exceed viewport width
-      const minWidth = Math.ceil(window.innerWidth * 1.5);
-      while (track.scrollWidth < minWidth) {
-        track.appendChild(track.firstElementChild.cloneNode(true));
-      }
+    if (!group) return;
+    const clone = group.cloneNode(true);
+    track.appendChild(clone);
+    
+    let x = 0;
+    function animate() {
+      x -= 0.5;
+      if (Math.abs(x) >= group.offsetWidth) x = 0;
+      track.style.transform = `translateX(${x}px)`;
+      requestAnimationFrame(animate);
     }
-
-    function measure(){
-      ensureFillWidth();
-      const rect = group.getBoundingClientRect();
-      gw = rect.width;
-      if (gw > 0) x = x % gw;
-      return gw > 0;
-    }
-
-    function waitImages(cb){
-      const imgs = track.querySelectorAll('img');
-      let left = imgs.length; if (left === 0) { cb(); return; }
-      const done = () => { if (--left <= 0) cb(); };
-      imgs.forEach(img => {
-        if (img.complete) { left--; }
-        else { img.addEventListener('load', done, { once:true }); img.addEventListener('error', done, { once:true }); }
-      });
-      if (left <= 0) cb();
-    }
-
-    function loop(ts){
-      if (!loop.t0) loop.t0 = ts;
-      if (!loop.last) loop.last = ts;
-      const dt = (ts - loop.last) / 1000; loop.last = ts;
-      if (gw > 0) {
-        const pps = gw / duration; // pixels per second
-        x -= pps * dt;
-        if (-x >= gw) x += gw; // wrap seamlessly
-        track.style.transform = 'translateX(' + x + 'px)';
-      }
-      requestAnimationFrame(loop);
-    }
-
-    function onResize(){
-      duration = window.matchMedia('(max-width: 768px)').matches ? 60 : 45;
-      measure();
-    }
-
-    function start(){
-      if (!measure()) { requestAnimationFrame(start); return; }
-      window.addEventListener('resize', onResize);
-      requestAnimationFrame(loop);
-    }
-    waitImages(start);
+    animate();
   })();
+
+  // FAQ
+  document.querySelectorAll('.faq-open').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const content = btn.parentElement.nextElementSibling;
+      const isOpen = !content.hidden;
+      content.hidden = isOpen;
+      btn.textContent = isOpen ? 'Show Answer' : 'Hide Answer';
+    });
+  });
+
+  // Close work process
+  document.querySelector('.work-process-close-btn')?.addEventListener('click', function() {
+    this.closest('details').removeAttribute('open');
+  });
+
+  // Intersection Observer for stats animation
+  const statsSection = document.getElementById('social-proof-stats');
+  if (statsSection) {
+      const observer = new IntersectionObserver((entries) => {
+          if (entries[0].isIntersecting) {
+              statsSection.classList.add('is-inview');
+              animateCounters();
+              observer.disconnect();
+          }
+      }, { threshold: 0.3 });
+      observer.observe(statsSection);
+  }
+
+  function animateCounters() {
+      document.querySelectorAll('.stat-number').forEach(el => {
+          const target = parseInt(el.getAttribute('data-target'));
+          if (isNaN(target)) return;
+          const suffix = el.getAttribute('data-suffix') || '';
+          let current = 0;
+          const duration = 1500;
+          const stepTime = Math.abs(Math.floor(duration / target));
+          const timer = setInterval(() => {
+              current += Math.ceil(target / 50);
+              if (current >= target) {
+                  el.textContent = target + suffix;
+                  clearInterval(timer);
+              } else {
+                  el.textContent = current + suffix;
+              }
+          }, 30);
+      });
+  }
 </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

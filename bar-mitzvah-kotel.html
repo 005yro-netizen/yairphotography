@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
   <meta charset="UTF-8" />
@@ -11,6 +11,11 @@
   <link rel="stylesheet" href="protect-images.css" />
   <script src="lang.js"></script>
   <script src="protect-images.js" defer></script>
+  <style>
+    /* Prevent extra zoom while in lightbox (allow fullscreen only) */
+    .lightbox { touch-action: none; overscroll-behavior: contain; }
+    .lightbox .lightbox-img { pointer-events: none; max-width: 100%; max-height: 100%; user-select: none; }
+  </style>
 </head>
 <body class="page-events">
 
@@ -26,7 +31,7 @@
       </ul>
     </nav>
     <a id="langSwitch" class="lang-switch" href="#" aria-label="Switch language">EN</a>
-    <button class="hamburger" id="hamburger" aria-label="פתיחת תפריט">&#9776;</button>
+    <button class="hamburger" id="hamburger" aria-label="פתח תפריט">&#9776;</button>
   </div>
 </header>
 <div class="overlay" id="overlay"></div>
@@ -44,7 +49,7 @@
     גלריית צילומי בר מצווה בכותל המערבי – תיעוד אותנטי של העלייה לתורה, הרגע המשפחתי והאור הירושלמי הייחודי. צילום עדין שמדגיש את החוויה הרוחנית לצד תמונות משפחה שמחות ומחויכות.
   </p>
 
-  <div class="gallery-grid">
+  <div class="gallery-grid" id="bm-kotel-grid">
     <img src="images/bar-mitzvah-western-wall-jerusalem-hero-2025.jpg" alt="בר מצווה בכותל - תמונה 1">
     <img src="images/bar-mitzvah-kotel2.jpg" alt="בר מצווה בכותל - תמונה 2">
     <img src="images/bar-mitzvah-kotel3.jpg" alt="בר מצווה בכותל - תמונה 3">
@@ -70,13 +75,21 @@
 </main>
 
 <footer class="footer">
-  <p>&copy; 2025 יאיר רוזנברג. כל הזכויות שמורות.</p>
+  <p>&copy; 2026 יאיר רוזנברג. כל הזכויות שמורות.</p>
 </footer>
 
 <!-- Lightbox -->
-<div id="lightbox" class="lightbox">
+<div id="lightbox" class="lightbox" aria-hidden="true">
   <span class="close" aria-label="סגירה">&times;</span>
-  <img class="lightbox-img" src="" alt="">
+  <button class="fullscreen-toggle" type="button" aria-label="מסך מלא" aria-pressed="false" data-fullscreen="false">
+    <svg class="icon-enter" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4H4v3m0-3 5 5M17 4h3v3m0-3-5 5M7 20H4v-3m0 3 5-5M17 20h3v-3m0 3-5-5"/>
+    </svg>
+    <svg class="icon-exit" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 9H5V5h4m6 0h4v4h-4M9 15H5v4h4m6 0h4v-4h-4"/>
+    </svg>
+  </button>
+  <img class="lightbox-img" src="" alt="" />
   <a class="prev" aria-label="תמונה קודמת">&#10094;</a>
   <a class="next" aria-label="תמונה הבאה">&#10095;</a>
 </div>
@@ -97,7 +110,6 @@
   if (overlay) overlay.addEventListener('click', () => toggleMenu(false));
   document.querySelectorAll('#navMenu a').forEach(a => a.addEventListener('click', () => toggleMenu(false)));
 
-  // Lightbox
   document.addEventListener('DOMContentLoaded', () => {
     const images = Array.from(document.querySelectorAll('.gallery-grid img'));
     const lightbox = document.getElementById('lightbox');
@@ -105,33 +117,101 @@
     const closeBtn = lightbox.querySelector('.close');
     const prevBtn = lightbox.querySelector('.prev');
     const nextBtn = lightbox.querySelector('.next');
+    const fullscreenBtn = lightbox.querySelector('.fullscreen-toggle');
     let currentIndex = 0;
 
-    images.forEach((img, idx) => {
-      img.addEventListener('click', () => {
-        currentIndex = idx;
-        lightboxImg.src = img.src;
-        lightboxImg.alt = img.alt;
-        lightbox.classList.add('open');
-      });
-      if (!img.hasAttribute('loading')) img.setAttribute('loading', 'lazy');
-      img.setAttribute('decoding', 'async');
-    });
+    // Aggressive broken image removal
+    const removeBrokenImage = (img) => {
+      if (!img.dataset.triedCaseSwitch) {
+        img.dataset.triedCaseSwitch = 'true';
+        const s = img.getAttribute('src') || '';
+        if (s.toLowerCase().endsWith('.jpg')) {
+          img.src = s.slice(0, -4) + (s.endsWith('.jpg') ? '.JPG' : '.jpg');
+          return;
+        }
+      }
+      img.remove();
+      const index = images.indexOf(img);
+      if (index > -1) images.splice(index, 1);
+    };
 
-    function shift(dir) {
-      currentIndex = (currentIndex + dir + images.length) % images.length;
+    (function initImageHandlers() {
+      images.forEach(img => {
+        if (img.complete && img.naturalWidth === 0) removeBrokenImage(img);
+        img.addEventListener('error', () => removeBrokenImage(img), { once: true });
+      });
+    })();
+
+    const isFullscreenActive = () => !!(document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement);
+
+    const syncFullscreenState = () => {
+      if (!fullscreenBtn) return;
+      const active = isFullscreenActive();
+      fullscreenBtn.dataset.fullscreen = active ? 'true' : 'false';
+      fullscreenBtn.setAttribute('aria-pressed', active ? 'true' : 'false');
+      fullscreenBtn.setAttribute('aria-label', active ? 'יציאה ממסך מלא' : 'מסך מלא');
+    };
+
+    const exitLightboxFullscreen = () => {
+      if (document.exitFullscreen) return document.exitFullscreen();
+      if (document.webkitExitFullscreen) return document.webkitExitFullscreen();
+      if (document.mozCancelFullScreen) return document.mozCancelFullScreen();
+      if (document.msExitFullscreen) return document.msExitFullscreen();
+    };
+
+    const closeLightbox = () => {
+      if (isFullscreenActive()) {
+        exitLightboxFullscreen();
+      }
+      lightbox.classList.remove('open');
+      lightbox.setAttribute('aria-hidden', 'true');
+      syncFullscreenState();
+    };
+
+    function showImage() {
       const target = images[currentIndex];
       lightboxImg.src = target.src;
       lightboxImg.alt = target.alt;
     }
 
-    closeBtn.addEventListener('click', () => lightbox.classList.remove('open'));
+    function shift(dir) {
+      currentIndex = (currentIndex + dir + images.length) % images.length;
+      showImage();
+    }
+
+    images.forEach((img, idx) => {
+      img.addEventListener('click', () => {
+        currentIndex = idx;
+        showImage();
+        lightbox.classList.add('open');
+        lightbox.setAttribute('aria-hidden', 'false');
+        syncFullscreenState();
+      });
+      if (!img.hasAttribute('loading')) img.setAttribute('loading', 'lazy');
+      img.setAttribute('decoding', 'async');
+    });
+
+    closeBtn.addEventListener('click', closeLightbox);
     prevBtn.addEventListener('click', () => shift(-1));
     nextBtn.addEventListener('click', () => shift(1));
-    lightbox.addEventListener('click', (e) => { if (e.target === lightbox) lightbox.classList.remove('open'); });
+    lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+    
+    if (fullscreenBtn) {
+      fullscreenBtn.addEventListener('click', () => {
+        if (isFullscreenActive()) {
+          exitLightboxFullscreen();
+        } else {
+          (lightbox.requestFullscreen || lightbox.webkitRequestFullscreen || lightbox.mozRequestFullScreen || lightbox.msRequestFullscreen).call(lightbox);
+        }
+      });
+    }
+
+    ['fullscreenchange','webkitfullscreenchange','mozfullscreenchange','MSFullscreenChange']
+      .forEach(e => document.addEventListener(e, syncFullscreenState));
+
     window.addEventListener('keydown', (e) => {
       if (!lightbox.classList.contains('open')) return;
-      if (e.key === 'Escape') lightbox.classList.remove('open');
+      if (e.key === 'Escape') closeLightbox();
       if (e.key === 'ArrowLeft') shift(-1);
       if (e.key === 'ArrowRight') shift(1);
     });
