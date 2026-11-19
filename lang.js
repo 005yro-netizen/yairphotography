@@ -4,6 +4,7 @@
     var path = window.location.pathname || '';
     var isEn = /\/(en)\//.test(path);
     var file = path.split('/').pop() || 'index.html';
+    var translatedFile = isEn ? (file === 'gallery-bm-kotel.html' ? 'bar-mitzvah-kotel.html' : file) : (file === 'bar-mitzvah-kotel.html' ? 'gallery-bm-kotel.html' : file);
     var saved = localStorage.getItem('preferredLang');
 
     // Default preference is Hebrew unless user explicitly switched
@@ -12,12 +13,7 @@
       try { localStorage.setItem('preferredLang', saved); } catch(e) {}
     }
 
-    // Never auto-redirect to English from Hebrew root.
-    // Only enforce Hebrew if user is under /en/ but preference is Hebrew.
-    if (isEn && saved === 'he') {
-      window.location.replace('../' + file + window.location.search + window.location.hash);
-      return;
-    }
+    // Respect direct links to either language; switching is explicit.
 
     // Wire up the header toggle if present
     document.addEventListener('DOMContentLoaded', function() {
@@ -30,8 +26,8 @@
         e.preventDefault();
         var next = current === 'he' ? 'en' : 'he';
         try { localStorage.setItem('preferredLang', next); } catch(e) {}
-        var target = next === 'en' ? (isEn ? file : ('en/' + file))
-                                   : (isEn ? ('../' + file) : file);
+        var target = next === 'en' ? (isEn ? file : ('en/' + translatedFile))
+                                   : (isEn ? ('../' + translatedFile) : file);
         window.location.href = target + window.location.search + window.location.hash;
       });
     });
