@@ -11,12 +11,17 @@
   <link rel="stylesheet" href="protect-images.css" />
   <script src="lang.js"></script>
   <script src="protect-images.js" defer></script>
-  
+
   <style>
     /* Prevent extra zoom while in lightbox (allow fullscreen only) */
     .lightbox { touch-action: none; overscroll-behavior: contain; }
     .lightbox .lightbox-img { pointer-events: none; max-width: 100%; max-height: 100%; user-select: none; }
   </style>
+
+  <link rel="canonical" href="https://www.yairrozenberg.com/gallery-events.html" />
+  <link rel="alternate" hreflang="he" href="https://www.yairrozenberg.com/gallery-events.html" />
+  <link rel="alternate" hreflang="en" href="https://www.yairrozenberg.com/en/gallery-events.html" />
+  <link rel="alternate" hreflang="x-default" href="https://www.yairrozenberg.com/gallery-events.html" />
 </head>
 <body class="page-events">
 
@@ -145,11 +150,11 @@
       <img src="images/barmitzvah14.jpg" alt="צילומים בר מצווה 14">
       <img src="images/barmitzvah15.jpg" alt="צילומים בר מצווה 15">
       <img src="images/barmitzvah16.jpg" alt="צילומים בר מצווה 16">
-      <img src="images/barmitzvah17.jpg" alt="צילומים בר מצווה 17">
-      <img src="images/barmitzvah18.jpg" alt="צילומים בר מצווה 18">
-      <img src="images/barmitzvah19.jpg" alt="צילומים בר מצווה 19">
+
+
+
       <img src="images/barmitzvah20.jpg" alt="צילומים בר מצווה 20">
-      <img src="images/barmitzvah21.jpg" alt="צילומים בר מצווה 21">
+
     </div>
   </section>
 
@@ -180,19 +185,19 @@
       <img src="images/brit15.jpg" alt="ברית 15">
       <img src="images/brit16.jpg" alt="ברית 16">
       <img src="images/brit17.jpg" alt="ברית 17">
-      <img src="images/brit18.jpg" alt="ברית 18">
-      <img src="images/brit19.jpg" alt="ברית 19">
-      <img src="images/brit20.jpg" alt="ברית 20">
-      <img src="images/brit21.jpg" alt="ברית 21">
-      <img src="images/brit22.jpg" alt="ברית 22">
-      <img src="images/brit23.jpg" alt="ברית 23">
-      <img src="images/brit24.jpg" alt="ברית 24">
-      <img src="images/brit25.jpg" alt="ברית 25">
-      <img src="images/brit26.jpg" alt="ברית 26">
-      <img src="images/brit27.jpg" alt="ברית 27">
-      <img src="images/brit28.jpg" alt="ברית 28">
-      <img src="images/brit29.jpg" alt="ברית 29">
-      <img src="images/brit30.jpg" alt="ברית 30">
+
+
+
+
+
+
+
+
+
+
+
+
+
     </div>
   </section>
 </main>
@@ -362,7 +367,7 @@
     prevBtn.addEventListener('click', () => shift(-1));
     nextBtn.addEventListener('click', () => shift(1));
     lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
-    
+
     if (fullscreenBtn) {
       fullscreenBtn.addEventListener('click', () => {
         if (isFullscreenActive()) {
