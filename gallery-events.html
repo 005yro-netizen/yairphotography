@@ -2,9 +2,9 @@
 <html lang="he" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-  <title>גלריית אירועים - צילומי חוץ / בר מצווה / ברית</title>
-  <meta name="description" content="גלריית האירועים של יאיר רוזנברג: צילומי חוץ, בר מצווה, ברית ועוד." />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>גלריית צילום אירועים בירושלים | יאיר רוזנברג</title>
+  <meta name="description" content="דוגמאות לצילום ברית, בר מצווה וצילומי חוץ בירושלים ובמרכז. צפו בתמונות של יאיר רוזנברג ובדקו זמינות לצילום האירוע שלכם." />
   <link rel="icon" type="image/jpeg" href="images/ME-64.jpg?v=2" />
   <link rel="apple-touch-icon" href="images/ME.jpg?v=2" />
   <link rel="stylesheet" href="style.css" />
@@ -13,10 +13,13 @@
   <script src="protect-images.js" defer></script>
 
   <style>
+    .gallery-intro-links { display: flex; flex-wrap: wrap; gap: .75rem; align-items: center; justify-content: center; margin: 1rem 0; }
+    .gallery-intro-links a { padding-block: .6rem; }
     /* Prevent extra zoom while in lightbox (allow fullscreen only) */
     .lightbox { touch-action: none; overscroll-behavior: contain; }
     .lightbox .lightbox-img { pointer-events: none; max-width: 100%; max-height: 100%; user-select: none; }
   </style>
+  <noscript><style>.tab-panel { display: block !important; } .tabs { display: none; }</style></noscript>
 
   <link rel="canonical" href="https://www.yairrozenberg.com/gallery-events.html" />
   <link rel="alternate" hreflang="he" href="https://www.yairrozenberg.com/gallery-events.html" />
@@ -50,13 +53,22 @@
 
   <header class="page-header">
     <h1>גלריית אירועים</h1>
+    <p>צילומי יאיר רוזנברג מאירועים משפחתיים ומצילומי חוץ.</p>
   </header>
+
+  <section aria-label="דוגמאות ותיאום צילום">
+    <p>מחפשים צלם לברית או לבר מצווה בירושלים? בגלריה תוכלו לראות דוגמאות לצילום סטילס של יאיר רוזנברג, כולל <a href="#brit">צילומי ברית</a>, <a href="#barmitzvah">צילומי בר מצווה</a> ו<a href="#outdoor">צילומי חוץ</a>.</p>
+    <div class="gallery-intro-links">
+      <a class="btn" href="https://wa.me/972533468597">בדיקת זמינות עם יאיר בוואטסאפ</a>
+      <a href="event-photographer-jerusalem.html">מידע על צילום אירועים בירושלים ומחירים</a>
+    </div>
+  </section>
 
   <!-- Tabs for sub-categories -->
   <ul class="tabs" role="tablist">
-    <li><button class="tab active" id="tab-outdoor" role="tab" aria-selected="true" data-target="outdoor">צילומי חוץ</button></li>
-    <li><button class="tab" id="tab-barmitzvah" role="tab" aria-selected="false" data-target="barmitzvah">בר מצווה</button></li>
-    <li><button class="tab" id="tab-brit" role="tab" aria-selected="false" data-target="brit">ברית</button></li>
+    <li><button class="tab active" id="tab-outdoor" role="tab" aria-controls="outdoor" aria-selected="true" data-target="outdoor">צילומי חוץ</button></li>
+    <li><button class="tab" id="tab-barmitzvah" role="tab" aria-controls="barmitzvah" aria-selected="false" tabindex="-1" data-target="barmitzvah">בר מצווה</button></li>
+    <li><button class="tab" id="tab-brit" role="tab" aria-controls="brit" aria-selected="false" tabindex="-1" data-target="brit">ברית</button></li>
   </ul>
 
   <!-- Outdoor Gallery -->
@@ -200,6 +212,10 @@
 
     </div>
   </section>
+  <section aria-labelledby="gallery-contact-title">
+    <h2 id="gallery-contact-title">יש לכם תאריך לאירוע?</h2>
+    <p><a class="btn" href="contact.html">בדיקת זמינות לצילום</a></p>
+  </section>
 </main>
 
 <footer class="footer">
@@ -270,6 +286,7 @@
         const isActive = btn === tab;
         btn.classList.toggle('active', isActive);
         btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+        btn.tabIndex = isActive ? 0 : -1;
       });
       tabPanels.forEach((panel) => {
         const isActive = panel.id === targetId;
@@ -279,7 +296,40 @@
       });
     };
 
-    tabButtons.forEach((tab) => tab.addEventListener('click', () => activateTab(tab)));
+    const tabForHash = () => tabButtons.find(
+      (tab) => '#' + tab.dataset.target === window.location.hash
+    );
+    const syncTabWithHash = () => {
+      const tab = tabForHash();
+      if (!tab && window.location.hash) return;
+      activateTab(tab || tabButtons[0]);
+      if (tab) document.getElementById(tab.dataset.target)?.scrollIntoView();
+    };
+
+    tabButtons.forEach((tab, index) => {
+      tab.addEventListener('click', () => activateTab(tab));
+      tab.addEventListener('keydown', (event) => {
+        // The tab strip is laid out right-to-left on this Hebrew page.
+        let next;
+        if (event.key === 'ArrowLeft') next = (index + 1) % tabButtons.length;
+        else if (event.key === 'ArrowRight') next = (index - 1 + tabButtons.length) % tabButtons.length;
+        else if (event.key === 'Home') next = 0;
+        else if (event.key === 'End') next = tabButtons.length - 1;
+        else return;
+        event.preventDefault();
+        activateTab(tabButtons[next]);
+        tabButtons[next].focus();
+      });
+    });
+    // Clicking the same in-page link again need not emit hashchange.
+    document.querySelectorAll('a[href="#outdoor"], a[href="#barmitzvah"], a[href="#brit"]').forEach((link) => {
+      link.addEventListener('click', () => {
+        const tab = tabButtons.find((item) => '#' + item.dataset.target === link.hash);
+        if (tab) activateTab(tab);
+      });
+    });
+    window.addEventListener('hashchange', syncTabWithHash);
+    syncTabWithHash();
 
     // Lightbox
     const lightbox = document.getElementById('lightbox');
